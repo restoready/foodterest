@@ -1,0 +1,39 @@
+<a href="#nav" class="main-nav__toggle toggle--open" title="{{ "Ouvrir le menu" | t }}">{{ "Menu" | t }}</a>
+<a href="#nav" class="main-nav__toggle-link">Menu</a>
+<a href="#" class="main-nav__toggle toggle--close" title="{{ "Fermer le menu" | t }}">{{ "Fermer le menu" | t }}</a>
+<ul class="main-nav__items">
+  {% for link in linklists.navigation-primaire.links %}
+    {% if link.linklist_handle == "" or link.linklist_handle == null %}
+      <li class="main-nav__item {{ link.url | current_path: 'class:main-nav__item--current' }}">
+        <a class="main-nav__link" href="{{ link.url }}">{{ link.title }}</a>
+      </li>
+    {% else %}
+      <li class="main-nav__item has-sub-nav {{ link.url | current_path: 'class:main-nav__item--current' }}">
+        <a class="main-nav__link" href="{{ link.url }}" aria-haspopup="true">
+          <span>{{ link.title }}</span>
+        </a>
+        <ul class="main-sub-nav__items">
+          {% for l in linklists[link.linklist_handle].links %}
+          <li class="main-sub-nav__item {{ l.url | current_path: 'class:main-sub-nav__item--current' }}">
+            <a class="main-sub-nav__link" href="{{ l.url }}">{{ l.title }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </li>
+    {% endif %}
+  {% endfor %}
+  {% if localized_page_paths.size > 0 %}
+    <li class="main-nav__item has-sub-nav">
+      <a class="main-nav__link" href="#" aria-haspopup="true">
+        <span>{{ "Langue" | t }}</span>
+      </a>
+      <ul class="main-sub-nav__items">
+        {% for path in localized_page_paths %}
+          <li class="main-sub-nav__item">
+            <a class="main-sub-nav__link" href="{{ path.url }}">{{ path.locale_name }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </li>
+  {% endif %}
+</ul>

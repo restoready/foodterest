@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="{{ current_locale }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <meta http-equiv="cleartype" content="on">
+
+    {% title_tag %}
+    {% meta_description_tag %}
+
+    {{ restaurant.host | url_canonical | canonical_tag }}
+    {{ 'application.css' | asset_url | stylesheet_tag }}
+    {% if theme_settings.google-fonts-link %}
+      {{ theme_settings.google-fonts-link | replace:'http:','https:' }}
+    {% endif %}
+
+    <script src="https://cdn.polyfill.io/v1/polyfill.min.js"></script>
+  </head>
+  <body>
+    <section class="page" id="top">
+      <header class="main-header">
+        <div class="wrapper">
+          <div class="identity">
+            {% if restaurant.logo? %}
+              <div class="logo">
+                <a class="logo__link" href="{{ localized_root_path }}">
+                  {{ restaurant.logo_url | image_tag:'class:logo__image' }}
+                </a>
+              </div>
+            {% endif %}
+            <div class="restaurant-name">
+              <a class="restaurant-name__link" href="{{ localized_root_path }}">
+                {{ restaurant.name }}
+              </a>
+              {% if restaurant.slogan? %}
+                <div class="slogan">
+                  {{ restaurant.slogan }}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+          {% if restaurant.phone? %}
+            <div class="phone-number">
+              <a class="phone-number__link" href="tel:{{ restaurant.phone_uri }}">
+                <i class="icon-phone"></i> <span class="phone-number__label">{{ restaurant.phone }}</span>
+              </a>
+            </div>
+          {% endif %}
+        </div>
+      </header>
+      <nav id="nav" class="main-nav" role="navigation">
+        {% include 'nav' %}
+      </nav>
+      <main class="main-content" role="main">
+        {{ content_for_layout }}
+      </main>
+      <footer class="main-footer" role="contentinfo">
+        {% include 'footer' %}
+      </footer>
+    </section>
+
+    {{ 'jquery-2.1.1.min.js' | javascript_tag }}
+    {{ 'doubletaptogo.min.js' | javascript_tag }}
+    <script type="text/javascript">
+      $( function() {
+        $( '.has-sub-nav' ).doubleTapToGo();
+      });
+    </script>
+  </body>
+</html>

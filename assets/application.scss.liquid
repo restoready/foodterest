@@ -1,0 +1,1495 @@
+/*
+ * RestoReady v1.0
+ * Copyright 2014 MH Communication.
+ * Author MH Communication @MHCommunication
+ * Built with Sass - http://sass-lang.com/
+
+ * Some things to know about this file:
+    - Sass is compiled on RestoReady's server so you don't need to convert it to CSS yourself
+    - The output CSS is compressed and comments are removed
+    - You cannot use @imports in this file
+    - Helpers variables, mixins, and starter classes are provided. Change as needed.
+    - The file is prepped with a CSS reset
+*/
+
+/* Table of Contents
+==============================================================================
+  Colors
+  Box Model
+  Breakpoint and Grid Variables
+  General Variables
+  Sass Mixins
+  Dependency-free breakpoint mixin
+  Reset
+  Grid Setup
+  Basic Styles
+  Helper classes
+  Typography
+  Lists
+  Images and Iframes
+  Forms
+  Links and buttons
+  Layout
+  Modules
+  Icomoon Font
+  Breakpoints
+=========================================================================== */
+
+// ===========================================================================
+// #Colors
+// ===========================================================================
+$body-background: {{ theme_settings.body-background }};
+$body-color: {{ theme_settings.body-color }};
+$accent-color: {{ theme_settings.accent-color }};
+
+// Foods
+$food-separator-color: #f0f0f0;
+
+// ===========================================================================
+// #Box model
+// ===========================================================================
+*, input, :before, :after {
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+}
+
+// ===========================================================================
+// #Breakpoint and Grid Variables
+// ===========================================================================
+$viewportIncrement: 1px;
+
+$small: 480px;
+$medium: 768px;
+$large: 769px;
+
+$postSmall: $small + $viewportIncrement;
+$preMedium: $medium - $viewportIncrement;
+$preLarge: $large - $viewportIncrement;
+
+/* The following are dependencies of csswizardry grid */
+$breakpoints: (
+  'small' '(max-width: #{$small})',
+  'medium' '(min-width: #{$postSmall}) and (max-width: #{$medium})',
+  'medium-down' '(max-width: #{$medium})',
+  'large' '(min-width: #{$large})'
+);
+$breakpoint-has-widths: ('small', 'medium', 'medium-down', 'large');
+$breakpoint-has-push:  ('medium', 'medium-down', 'large');
+$breakpoint-has-pull:  ('medium', 'medium-down', 'large');
+
+// ===========================================================================
+// #General Variables
+// ===========================================================================
+
+
+/* Width variables */
+$siteWidth: 960px;
+$gutter: 24px;
+$gridGutter: 24px; // can be a %, but nested grids will have smaller margins because of it
+
+/* Radius */
+$radius: .25em;
+
+/* Typography */
+$headerFontStack: {{ theme_settings.header-font }};
+$bodyFontStack: {{ theme_settings.body-font }};
+
+
+
+// ===========================================================================
+// #Sass Mixins
+// ===========================================================================
+.clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  *zoom: 1;
+}
+@mixin clearfix() {
+  @extend .clearfix;
+}
+
+@mixin box-shadow($shadow) {
+  -webkit-box-shadow: #{$shadow};
+  -moz-box-shadow:    #{$shadow};
+  box-shadow:         #{$shadow};
+}
+
+@mixin transition($transition:0.1s all) {
+  -webkit-transition: #{$transition};
+  -moz-transition: #{$transition};
+  -o-transition: #{$transition};
+  transition: #{$transition};
+}
+
+@mixin gradient($from, $to, $fallback) {
+  background: $fallback;
+  background: -moz-linear-gradient(top, $from 0%, $to 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$from), color-stop(100%,$to));
+  background: -webkit-linear-gradient(top, $from 0%,$to 100%);
+  background: -o-linear-gradient(top, $from 0%,$to 100%);
+  background: -ms-linear-gradient(top, $from 0%,$to 100%);
+  background: linear-gradient(top bottom, $from 0%,$to 100%);
+}
+
+@mixin backface($visibility: hidden) {
+  -moz-backface-visibility: $visibility;
+  -webkit-backface-visibility: $visibility;
+  -o-backface-visibility: $visibility;
+  backface-visibility: $visibility;
+}
+
+// @see http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
+@mixin media() {
+  overflow: hidden;
+  _overflow: visible;
+  zoom: 1;
+}
+  @mixin media-aside($side: left) {
+    float: $side;
+  }
+
+  @mixin media-body() {
+    @include media;
+  }
+
+
+// ===========================================================================
+// Dependency-free breakpoint mixin
+// http://blog.grayghostvisuals.com/sass/sass-media-query-mixin/
+// ===========================================================================
+$min: min-width;
+$max: max-width;
+@mixin at-query ($constraint, $viewport1, $viewport2:null) {
+  @if $constraint == $min {
+    @media screen and ($min: $viewport1) {
+      @content;
+    }
+  } @else if $constraint == $max {
+    @media screen and ($max: $viewport1) {
+      @content;
+    }
+  } @else {
+    @media screen and ($min: $viewport1) and ($max: $viewport2) {
+      @content;
+    }
+  }
+}
+
+// ===========================================================================
+// #Reset
+// ===========================================================================
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}ol,ul{list-style:none;}blockquote,q{quotes:none;}blockquote:before,blockquote:after,q:before,q:after{content:none;}table{border-collapse:collapse;border-spacing:0;}code,pre{background-color:#faf7f5;font-family:Consolas,monospace;border:0 none;padding:0 2px;color:#51ab62;}pre{overflow:auto;padding:0.5em;margin:0 0 1em;}
+
+
+// ==============================================================================
+// #Grid Setup
+//
+// - Based on csswizardry grid, but with floated columns and a fixed gutter size
+// - Breakpoints defined above, under #Breakpoint and Grid Variables
+// - Note the inclusion of .grid-uniform to take care of clearfixes on evenly sized grid-items
+// ==============================================================================
+$responsive:         true;
+$mobile-first:       true;
+$use-silent-classes: false;
+$push:               true;
+$pull:               false;
+
+$class-type: unquote(".");
+
+@mixin grid-media-query($media-query) {
+  $breakpoint-found: false;
+
+  @each $breakpoint in $breakpoints {
+    $name: nth($breakpoint, 1);
+    $declaration: nth($breakpoint, 2);
+
+    @if $media-query == $name and $declaration {
+      $breakpoint-found: true;
+
+      @media only screen and #{$declaration} {
+        @content;
+      }
+    }
+  }
+
+  @if $breakpoint-found == false{
+    @warn "Breakpoint '#{$media-query}' does not exist";
+  }
+}
+
+/*------------------------------------*\
+  $HELPERS
+\*------------------------------------*/
+/**
+ * Create helper show/hide classes around our breakpoints.
+ */
+@mixin device-helper($namespace:"") {
+
+  #{$class-type}#{$namespace}show        { display:block!important; }
+  #{$class-type}#{$namespace}hide        { display:none!important; }
+
+  #{$class-type}#{$namespace}text-left   { text-align:left!important; }
+  #{$class-type}#{$namespace}text-right  { text-align:right!important; }
+  #{$class-type}#{$namespace}text-center { text-align:center!important; }
+
+  #{$class-type}#{$namespace}left        { float:left!important; }
+  #{$class-type}#{$namespace}right       { float:right!important; }
+
+}
+
+/* Our regular, non-responsive width and helper classes. */
+@include device-helper();
+
+/* Our responsive classes, if we have enabled them. */
+@if $responsive == true {
+
+  @each $name in $breakpoint-has-widths {
+    @include grid-media-query($name) {
+      @include device-helper('#{$name}--');
+    }
+  }
+
+}
+
+
+// ===========================================================================
+// #Basic Styles
+// ===========================================================================
+.wrapper {
+  @include clearfix();
+  max-width: $siteWidth;
+  margin: 0 auto;
+  padding: 0 $gutter;
+}
+
+
+// ===========================================================================
+// #Helper Classes
+// ===========================================================================
+.left { float: left; }
+.right { float: right; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.hidden { display: none; }
+.hide-text {
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  overflow: hidden;
+  top: -10px;
+}
+.display-table {
+  display: table;
+}
+
+.display-table-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+// ===========================================================================
+// #Typography
+// ===========================================================================
+body,
+input,
+textarea,
+button,
+select {
+  font-size: 87.5%; // Henseforth known as 1em (assumed at 14px)
+  line-height: 1.6;
+  font-family: $bodyFontStack;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  display: block;
+  font-family: $headerFontStack;
+  font-weight: normal;
+  line-height: 1.4;
+  a {
+    font-weight: inherit;
+    text-decoration: none;
+  }
+}
+
+// Pixel to EM conversion tool http://pxtoem.com/
+h1 { font-size: 2.5em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.5em; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1em; }
+h6 { font-size: .9em; }
+
+p { margin: 0 0 1em 0; }
+p img { margin: 0; }
+
+em { font-style: italic; }
+strong { font-weight: bold; }
+small { font-size: 80%; }
+sup {
+  position: relative;
+  top: -0.5em;
+  font-size: 60%;
+}
+
+
+// ===========================================================================
+// #Lists
+// ===========================================================================
+ul, ol { margin-bottom: 1em; }
+ul { list-style: none outside; }
+ol { list-style: decimal; }
+ol, ul.square, ul.disc { margin-left: 1em; }
+ul.square { list-style: square outside; }
+ul.disc { list-style: disc outside; }
+ol.alpha { list-style: lower-alpha outside; }
+li { margin-bottom: 0.25em; }
+.inline-list li {
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+
+// ===========================================================================
+// #Images and Iframes
+// ===========================================================================
+img.auto,
+.grid-item img,
+.grid-item iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+img.circle {
+  border-radius: 50%;
+}
+
+
+// ===========================================================================
+// #Forms
+// ===========================================================================
+.button,
+button,
+input[type="text"],
+input[type="search"],
+input[type="password"],
+input[type="email"],
+input[type="file"],
+input[type="number"],
+input[type="tel"],
+input[type="submit"],
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+input,
+textarea,
+select,
+fieldset {
+  max-width: 100%;
+}
+
+input,
+select,
+textarea {
+  font-size: 1em;
+  line-height: 1.42;
+  margin: 0;
+  padding: .2rem;
+}
+
+input {
+  display: inline-block;
+  width: auto;
+}
+
+button,
+input[type="submit"] {
+  cursor: pointer;
+}
+
+/* Input width and border */
+input[type="text"],
+input[type="search"],
+input[type="password"],
+input[type="email"],
+input[type="file"],
+input[type="number"],
+input[type="tel"],
+textarea,
+select {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+}
+
+textarea {
+  min-height: 100px;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline;
+  margin: 0;
+}
+
+/* Form labels */
+label,
+legend {
+  display: block;
+  margin-bottom: 2px;
+}
+
+label[for] {
+  cursor: pointer;
+}
+
+/* Horizontal Form */
+form.form-horizontal,
+.form-horizontal {
+  margin-bottom: 0;
+
+  input[type="text"],
+  input[type="search"],
+  input[type="password"],
+  input[type="email"],
+  input[type="file"],
+  input[type="number"],
+  input[type="tel"],
+  textarea,
+  select,
+  label {
+    display: inline-block;
+    margin-bottom: 0;
+    width: auto;
+  }
+}
+
+
+// ===========================================================================
+// #Links and Buttons
+// ===========================================================================
+.button {
+  background-color: $accent-color;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0;
+  padding: .5em 2em;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  -webkit-appearance: none;
+
+  &.button--small {
+    font-size: 0.75em;
+    padding: .25em .5em;
+  }
+
+  &.button--full {
+    width: 100%;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: scale-color($accent-color, $lightness: -15%);
+  }
+
+  &[disabled],
+  &.disabled {
+    cursor: default;
+  }
+}
+
+
+// ===========================================================================
+// #Layout
+// ===========================================================================
+body {
+  color: $body-color;
+  background-color: $body-background;
+}
+
+.page {
+  @extend .clearfix;
+}
+
+.main-header {
+}
+  .logo {
+    text-align: center;
+  }
+    .logo__link {
+      display: block;
+      text-decoration: none;
+    }
+      .logo__image {
+        padding: 1em 0;
+        vertical-align: middle;
+        width: 180px;
+      }
+  .restaurant-name {
+    text-align: center;
+  }
+    .slogan {
+      color: scale-color($body-color, $lightness: +25%);
+      font-size: .9em;
+      font-style: italic;
+    }
+    .restaurant-name__link {
+      color: scale-color($body-color, $lightness: -25%);
+      font-family: {{ theme_settings.header-font }};
+      font-size: 2em;
+      line-height: 1;
+      text-decoration: none;
+    }
+  .phone-number {
+    margin: 1em 0;
+    text-align: center;
+  }
+    .phone-number__link {
+      color: $accent-color;
+      font-size: 1.5em;
+      text-decoration: none;
+      &:hover, &:focus {
+        color: #000;
+        .phone-number__label {
+          color: #000;
+        }
+      }
+    }
+      .phone-number__label {
+        color: $body-color;
+      }
+
+.main-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+}
+.main-nav__toggle {
+  display: none;
+  float: right;
+  width: 3.9em;
+  height: 3.9em;
+  text-align: left;
+  text-indent: -9999px;
+  background-color: $accent-color;
+  position: relative;
+  &:before,
+  &:after {
+    position: absolute;
+    border: 2px solid #fff;
+    top: 42%;
+    left: 15%;
+    right: 15%;
+    content: '';
+  }
+  &:after {
+    top: 60%;
+  }
+}
+.main-nav__toggle-link {
+  position: absolute;
+  right: 7px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+  .toggle--close {
+    background-color: $body-color;
+  }
+.main-nav:not(:target) .toggle--open,
+.main-nav:target .toggle--close {
+  display: block;
+}
+.main-nav__items {
+  background-color: $accent-color;
+  display: none;
+  height: auto;
+  margin-bottom: 0;
+}
+  .main-nav:target .main-nav__items {
+    display: block;
+    width: 100%;
+  }
+  .main-nav__item {
+    &:not(:last-child) {
+      border-bottom: 1px solid scale-color($accent-color, $lightness: +25%);
+    }
+    display: block;
+    margin: 0;
+  }
+  .main-nav__item--current {
+    background-color: scale-color($accent-color, $lightness: -15%);
+  }
+    .main-nav__link {
+      color: #fff;
+      display: block;
+      height: auto;
+      padding: 0.75em 1em;
+      font-size: 1.3em;
+      font-weight: 700;
+      text-decoration: none;
+      &:hover, &:focus {
+        background-color: scale-color($accent-color, $lightness: -15%);
+      }
+      &:active {
+        background-color: scale-color($accent-color, $lightness: -30%);
+      }
+    }
+
+  .has-sub-nav {
+    span:after {
+      width: 0;
+      height: 0;
+      border: 0.313em solid transparent;
+      border-bottom: none;
+      border-top-color: scale-color($accent-color, $lightness: +50%);
+      content: '';
+      vertical-align: middle;
+      display: inline-block;
+      position: relative;
+      right: -0.313em;
+    }
+    &:hover > .main-sub-nav__items {
+      display: block;
+    }
+  }
+
+.main-sub-nav__items {
+  background-color: scale-color($accent-color, $lightness: -10%);
+  display: none;
+  margin-bottom: 0;
+}
+  .main-sub-nav__item {
+    @extend .main-nav__item;
+    &:not(:last-child) {
+      border-bottom: 1px solid scale-color($accent-color, $lightness: +5%);
+    }
+  }
+  .main-sub-nav__item--current {
+    background-color: scale-color($accent-color, $lightness: -15%);
+  }
+    .main-sub-nav__link {
+      @extend .main-nav__link;
+      font-weight: 400;
+      padding-left: 1.5em;
+    }
+
+
+.main-content {
+  margin-bottom: 1em;
+}
+  .section__header {
+  }
+  .section__footer {
+  }
+
+.main-footer {
+  background-color: scale-color($body-color, $lightness: +95%);
+  border-top: 1px solid scale-color($body-color, $lightness: +85%);
+}
+  .back-to-top {
+    padding: $gutter;
+    text-align: center;
+  }
+    .back-to-top__link {
+      color: scale-color($body-color, $lightness: +25%);
+      text-decoration: none;
+      &:hover, &:focus {
+        color: $body-color;
+      }
+    }
+      .back-to-top__label {
+      }
+  .footer__subscribe {
+  }
+  .footer__social {
+  }
+    .social__items {
+      margin: .75em 0;
+      text-align: center;
+    }
+      .social__item {
+        display: inline-block;
+      }
+        .social__link {
+          color: $body-color;
+          display: inline-block;
+          font-size: 2em;
+          padding: .25em;
+          text-decoration: none;
+          vertical-align: middle;
+          &:hover, &:focus {
+            color: $accent-color;
+          }
+        }
+        .social__link .icon-phone,
+        .social__link .icon-envelope {
+          font-size: .7em;
+        }
+          .social__label {
+            @extend .hide-text;
+          }
+
+  .footer__legal {
+    margin-bottom: 1em;
+    text-align: center;
+  }
+    .legal__link {
+      color: scale-color($body-color, $lightness: +25%);
+      text-decoration: none;
+      &:hover, &:focus {
+        color: $body-color;
+      }
+    }
+
+
+// Forms
+input[type="text"],
+input[type="search"],
+input[type="password"],
+input[type="email"],
+input[type="file"],
+input[type="number"],
+input[type="tel"],
+textarea,
+select {
+  background-color: #fff;
+  border: 1px solid scale-color($body-color, $lightness: +50%);
+}
+
+legend {
+  color: #444;
+}
+
+.field-group {
+  margin-bottom: .5em;
+}
+  .field-group__legend {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: .5em;
+  }
+
+.input,
+.select,
+.textarea {
+  margin: 0 0 .5em 0;
+}
+  .input-hint {
+    padding: .15em .4em;
+  }
+  .input-hint--info {
+    background: #68708A;
+    color: #fff;
+  }
+  .input-hint--error {
+    background: #DF5900;
+    color: #fff;
+  }
+
+.submit {
+  text-align: center;
+}
+
+// Messages
+.message {
+  margin-bottom: 1em;
+  padding: .5em 1em;
+}
+  .message__description {
+    p {
+      margin-bottom: 0;
+    }
+  }
+.message--success {
+  background-color: #4E6F25;
+  color: #fff;
+}
+.message--notice {
+  background-color: #DF5900;
+  color: #fff;
+}
+.message--error {
+  background-color: #811515;
+  color: #fff;
+}
+
+
+// ===========================================================================
+// #Modules
+// ===========================================================================
+
+// Default page
+.page-header {
+  padding: 1em 0;
+}
+.page-body {
+  ol, ul, dl {
+    margin-left: 2em;
+  }
+  ul {
+    list-style: disc;
+  }
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  a {
+    color: $accent-color;
+    text-decoration: none;
+    &:hover, &:focus {
+      color: #999;
+    }
+  }
+}
+
+// Home page
+.restaurant-main-image {
+  {% if restaurant.main_image? %}
+    background-image: url({{ restaurant.main_image | custom_image_url: '1920x480#' }});
+  {% endif %}
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: $accent-color;
+}
+  .restaurant-main-image__overlay {
+    background-color: rgba(0,0,0, .5);
+  }
+.restaurant-summary {
+  color: #fff;
+  padding-top: 4em;
+  padding-bottom: 3em;
+  text-align: center;
+  p {
+    font-size: 1.2em;
+  }
+}
+.menus--featured {
+  background-color: #fff;
+  margin-bottom: 1em;
+  padding: 1em 0;
+  .section__title {
+    color: #444;
+    border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
+    margin-bottom: .5em;
+  }
+}
+
+.foods--featured {
+  background-color: scale-color($body-color, $lightness: +95%);
+  margin-bottom: 1em;
+  padding: 1em 0;
+  .section__title {
+    color: #444;
+    border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
+    margin-bottom: .5em;
+  }
+}
+
+.menus__footer,
+.foods__footer {
+  text-align: center;
+}
+
+.opening-hours {
+  background-color: #fff;
+  margin-bottom: 1em;
+  .section__title {
+    color: #444;
+    border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
+    margin-bottom: .5em;
+  }
+}
+  .opening-days {
+    @extend .clearfix;
+    margin-bottom: 1em;
+  }
+    .opening-day {
+      color: $body-color;
+      clear: left;
+      float: left;
+      font-size: 1em;
+      width: 25%;
+    }
+    .opening-shifts {
+      color: scale-color($accent-color, $saturation: -75%);
+      font-size: 1em;
+      margin-left: 30%;
+    }
+  .opening-hours__information {
+    margin-bottom: 1em;
+  }
+
+.directions, .business-view {
+  background-color: #fff;
+  margin-bottom: 1em;
+  .section__title {
+    color: #444;
+    border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
+    margin-bottom: 1em;
+  }
+}
+  .map {
+    margin-bottom: 1em;
+  }
+    .map__image {
+      @extend .auto;
+    }
+  .address {
+    color: $body-color;
+    font-size: 1.2em;
+  }
+  .directions__footer {
+    text-align: center;
+  }
+
+// Menu item
+.menu {
+  padding-bottom: 1em;
+}
+  .menu--featured {
+
+  }
+    .menu__image {
+      @extend .auto;
+    }
+  .menu__header {
+
+  }
+    .menu__title {
+      color: #000;
+      margin-bottom: .5em;
+    }
+  .menu__description {
+    font-size: 1em;
+    margin-bottom: 1em;
+  }
+
+.menus__menu-link {
+    color: scale-color($accent-color, $saturation: -75%);
+    &:hover, &:focus {
+      color: $accent-color;
+    }
+  }
+  .menus__separator {
+    border: none;
+    border-top: medium solid $food-separator-color;
+    color: $food-separator-color;
+    margin: 1em 0;
+    padding: 0;
+  }
+
+// Menu children
+.menu-children {
+}
+  .menu-child {
+    display: inline-block;
+    margin-bottom: .5em;
+    text-align: center;
+    vertical-align: top;
+    width: 49%;
+  }
+    .menu-child__link {
+      display: block;
+      padding: .5em;
+      text-decoration: none;
+      &:hover, &:focus {
+        .menu-child__title {
+          color: $accent-color;
+        }
+      }
+    }
+      .menu-child__image {
+        @extend .auto;
+        border-radius: 50%;
+        margin-bottom: .5em;
+        vertical-align: middle;
+      }
+      .anchor-image {
+        width: 100px;
+        border-radius: 50%;
+      }
+      .menu-child__title {
+        color: scale-color($accent-color, $saturation: -75%);
+        display: block;
+      }
+
+// Food item
+.food {
+  @include media;
+  padding: 0;
+}
+  .food__image {
+    @include media-aside;
+    margin-right: $gutter / 2;
+    vertical-align: middle;
+  }
+  .food__body {
+    @include media-body;
+  }
+    .food__title {
+      color: #000;
+      font-family: $bodyFontStack;
+      font-size: 1.25em;
+      font-weight: 700;
+      margin-bottom: .25em;
+    }
+    .food__summary {
+      font-size: 1em;
+    }
+  .food__separator {
+    border: none;
+    border-top: 1px solid $food-separator-color;
+    color: $food-separator-color;
+    margin: 1em 0;
+    padding: 0;
+  }
+.food--featured {
+  .icon-star {
+    color: $accent-color;
+  }
+}
+
+// Food prices
+.prices {
+}
+  .price {
+    @include clearfix;
+  }
+  .price__label {
+    color: scale-color($body-color, $lightness: +25%);
+    float: left;
+  }
+  .price__value {
+    font-weight: 700;
+    float: right;
+  }
+
+// Back to menu
+.back-to-menu {
+    text-align: center;
+    &:before {
+      color: #727272;
+      content: "\2191";
+      display: inline-block;
+    }
+  }
+    .back-to-menu__link {
+      color: #727272;
+      text-decoration: none;
+      &:hover, &:focus {
+        color: #000;
+      }
+    }
+
+
+// Tags
+.food__tags {
+}
+  .tag {
+    font-size: .95em;
+    border-radius: $radius;
+    padding: .2em .4em;
+  }
+    .tag--vegan, .tag--vegetarian {
+      background-color: #8a9e6c;
+      color: #fff;
+    }
+    .tag--new {
+      background-color: #d8c061;
+      color: #fff;
+    }
+
+// Gallery
+.restaurant-gallery {
+  margin-bottom: 1em;
+}
+  .gallery__item {
+    position: relative;
+    margin-bottom: 1em;
+  }
+    .gallery__img {
+      img {
+        @extend .auto;
+        vertical-align: middle;
+      }
+    }
+      .photo__link {
+        display: block;
+        &:hover {
+          .photo__caption {
+            background-color: $accent-color;
+          }
+        }
+      }
+        .photo__caption {
+          color: white;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          padding: .5em;
+          font-size: 1em;
+          font-weight: 700;
+          background-color: rgba($body-color, .75);
+        }
+
+/**
+ * Pure CSS Lightbox
+ * @see http://tympanus.net/codrops/2011/12/26/css3-lightbox/
+ */
+.lb-overlay{
+  width: 0px;
+  height: 0px;
+  position: fixed;
+  overflow: hidden;
+  left: 0px;
+  top: 0px;
+  padding: 0px;
+  z-index: 99;
+  text-align: center;
+  background: rgba(255,255,255, .95);
+}
+.lb-overlay > div {
+  position: relative;
+  width: 100%;
+  margin: 50px auto 0px auto;
+}
+.lb-overlay div h3 {
+  text-align: center;
+  font-size: 24px;
+  width: 100%;
+}
+.lb-overlay a.lb-close{
+  z-index: 1001;
+  position: absolute;
+  top: 5px;
+  text-align: center;
+  height: 23px;
+  overflow: hidden;
+  text-decoration: none;
+}
+.lb-overlay img{
+  /* height: 100%; For Opera max-height does not seem to work */
+  max-height: 100%;
+  position: relative;
+  opacity: 0;
+  top: 30px;
+  filter: alpha(opacity=0); /* internet explorer */
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(opacity=0)"; /*IE8*/
+  -webkit-transition: opacity 0.5s linear;
+  -moz-transition: opacity 0.5s linear;
+  -o-transition: opacity 0.5s linear;
+  -ms-transition: opacity 0.5s linear;
+  transition: opacity 0.5s linear;
+}
+.lb-prev, .lb-next{
+  position: absolute;
+  width: 24px;
+  height: 25px;
+  left: 50%;
+  opacity: 0.8;
+  filter: alpha(opacity=80); /* internet explorer */
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(opacity=80)"; /*IE8*/
+}
+.lb-prev:hover, .lb-next:hover{
+  opacity: 1;
+  filter: alpha(opacity=99); /* internet explorer */
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(opacity=99)"; /*IE8*/
+}
+.lb-prev{
+  color: $body-color;
+  margin-left: -30px;
+  text-decoration: none;
+}
+.lb-next{
+  color: $body-color;
+  margin-left: 6px;
+  text-decoration: none;
+}
+.lb-overlay:target {
+  width: 100%;
+  height: auto;
+  bottom: 0px;
+  right: 0px;
+}
+.lb-overlay:target img,
+.lb-overlay:target a.lb-close{
+  margin: 0 auto;
+  opacity: 1;
+  filter: alpha(opacity=99); /* internet explorer */
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(opacity=99)"; /*IE8*/
+}
+/* 
+  100% Height for Opera as the max-height seems to be ignored, not optimal for large screens 
+  http://bricss.net/post/11230266445/css-hack-to-target-opera 
+*/
+x:-o-prefocus, .lb-overlay img {
+    height: 100%;
+}
+
+
+// Contact page
+.contact-item {
+  a {
+    color: $accent-color;
+    text-decoration: none;
+    &:hover, &:focus {
+      color: #999;
+    }
+  }
+}
+  .contact-item__name {
+    border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
+    color: #444;
+    margin-bottom: .5em;
+  }
+  .contact-item__label {
+    font-weight: 700;
+  }
+
+
+// ===========================================================================
+// #Icomoon font
+// https://icomoon.io/app/
+// ===========================================================================
+@font-face {
+  font-family: 'restoready-starter';
+  src:url("{{ 'restoready-starter.eot?g9q59m' | asset_url }}");
+  src:url("{{ 'restoready-starter.eot?#iefixg9q59m' | asset_url }}") format('embedded-opentype'),
+    url("{{ 'restoready-starter.woff?g9q59m' | asset_url }}") format('woff'),
+    url("{{ 'restoready-starter.ttf?g9q59m' | asset_url }}") format('truetype'),
+    url("{{ 'restoready-starter.svg?g9q59m#restoready-starter' | asset_url }}") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'restoready-starter';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-tripadvisor:before {
+  content: "\e600";
+}
+.icon-times:before {
+  content: "\e601";
+}
+.icon-chevron-right:before {
+  content: "\e602";
+}
+.icon-chevron-left:before {
+  content: "\e603";
+}
+.icon-star:before {
+  content: "\e604";
+}
+.icon-warning:before {
+  content: "\e605";
+}
+.icon-input-checked:before {
+  content: "\e606";
+}
+.icon-social-twitter:before {
+  content: "\e607";
+}
+.icon-social-facebook:before {
+  content: "\e608";
+}
+.icon-phone:before {
+  content: "\e609";
+}
+.icon-envelope:before {
+  content: "\f0e0";
+}
+
+
+// ===========================================================================
+// #Breakpoints
+// ===========================================================================
+
+// Medium
+@include at-query($min, $small) {
+  body,
+  input,
+  textarea,
+  select {
+    font-size: 112.5%;
+  }
+  .identity {
+    @include media;
+  }
+  .logo {
+    @include media-aside;
+  }
+    .logo__image {
+      width: 120px;
+      margin-right: 1.5em;
+    }
+  .restaurant-name {
+    @include media-body;
+    padding: 1em 0;
+    text-align: left;
+  }
+  .main-nav__toggle {
+    width: 3.1em;
+    height: 3.1em;
+  }
+  .main-nav__toggle-link {
+    font-size: .85em;
+  }
+  .main-nav__link {
+    font-size: 1em;
+  }
+  .menu-child {
+    width: 32%;
+  }
+
+  .gallery__item {
+    display: inline-block;
+    vertical-align: top;
+    width: 45%;
+    margin: 2%;
+  }
+}
+
+// Large
+@include at-query($min, $medium) {
+  body,
+  input,
+  textarea,
+  select {
+    font-size: 125%;
+  }
+
+  .identity {
+    float: left;
+    width: 65%;
+  }
+  .phone-number {
+    float: right;
+    text-align: right;
+    width: 35%;
+  }
+  
+  .main-nav {
+    position: relative;
+    text-align: center;
+  }
+    .main-nav__toggle {
+      display: none !important;
+    }
+    .main-nav__toggle-link {
+      display: none;
+    }
+    .main-nav__items {
+      display: block;
+    }
+      .main-nav__item {
+        display: inline-block;
+        &:not(:last-child) {
+          border-bottom: none;
+        }
+      }
+        .main-nav__link {
+          display: inline-block;
+        }
+      .main-sub-nav__items {
+        position: absolute;
+      }
+        .main-sub-nav__item {
+          display: block;
+          text-align: left;
+        }
+          .main-sub-nav__link {
+            display: block;
+            padding-left: 1em;
+          }
+
+  
+  .footer__subscribe {
+    .input {
+      display: inline-block;
+      width: 70%;
+    }
+    .submit {
+      display: inline-block;
+      width: 20%;
+      vertical-align: top;
+      margin-top: 1.65em;
+    }
+  }
+
+  .opening-hours,
+  .directions {
+    width: 48%;
+  }
+  .opening-hours {
+    float: left;
+  }
+  .directions {
+    float: right;
+  }
+
+  .menu-child {
+    width: 19%;
+  }
+
+  .gallery__item {
+    width: 30%;
+    margin: 1%;
+  }
+  .lb-overlay a.lb-close{
+    top: 45px;
+  }
+  .lb-overlay:target {
+    width: auto;
+    padding: 80px 100px 120px 100px;
+  }
+
+  .aside--contact {
+    float: left;
+    font-size: 75%;
+    width: floor($siteWidth / 3);
+  }
+  .page-header--contact,
+  .page-body--contact {
+    margin-left: ceil($siteWidth / 3) + $gutter;
+  }
+    .contact-item__name {
+      margin-top: 2.15em;
+    }
+}
+
+// > Large
+@include at-query($min, $siteWidth) {
+  .footer__subscribe {
+    margin: 0 auto;
+    width: 75%;
+  }
+}

@@ -1,0 +1,158 @@
+<div class="tabs-wrapper">
+  <input checked="checked" class="tab-head" id="tab1" name="tab" type="radio">
+  <label for="tab1">
+    Couleurs
+  </label>
+  <input class="tab-head" id="tab2" name="tab" type="radio">
+  <label for="tab2">
+    Polices
+  </label>
+  <input class="tab-head" id="tab3" name="tab" type="radio">
+  <label for="tab3">
+    Modules
+  </label>
+  <input class="tab-head" id="tab4" name="tab" type="radio">
+  <label for="tab4">
+    Titres
+  </label>
+
+  <div class="tab-body-wrapper">
+    <div class="tab-body" id="tab-body-1">
+      <fieldset>
+        <legend>Général</legend>
+        <div class="row">
+          <div class="columns medium-4 large-3">
+            <label for="body-background">Fond de page</label>
+            <input name="admin_theme_settings[body-background]" id="body-background" value="{{ theme_settings.body-background }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="body-color">Couleur par défaut du texte</label>
+            <input name="admin_theme_settings[body-color]" id="body-color" value="{{ theme_settings.body-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3 end">
+            <label for="accent-color">Couleur d'accent</label>
+            <input name="admin_theme_settings[accent-color]" id="accent-color" value="{{ theme_settings.accent-color }}" type="text" class="minicolors">
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="tab-body" id="tab-body-2">
+      <fieldset>
+        <legend>Polices</legend>
+        <div class="row">
+          <div class="columns">
+            <p>Si vous utilisez une ou plusieurs polices du service Google Fonts, indiquez dans ce champ le code fourni par Google. Lorsque vous êtes à l'étape "Use" sur Google Fonts, le point "3. Add this code to your website:" affiche un tag &lt;link&gt;. Copiez tout le code et collez-le ici.</p>
+            <label for="google-fonts-link">Google Fonts : tag &lt;link&gt;</label>
+            <input type="text" id="google-fonts-link" name="admin_theme_settings[google-fonts-link]" value="{{ theme_settings.google-fonts-link | escape_once }}" placeholder="&lt;link href='http://fonts.googleapis.com/css?family=...">
+          </div>
+        </div>
+        <div class="row">
+          <div class="columns large-6">
+            <label for="body-font">Corps de texte</label>
+            <input type="text" id="body-font" name="admin_theme_settings[body-font]" value="{{ theme_settings.body-font }}">
+            <span>Indiquez le nom de la police seulement, ou bien la font stack</span>
+          </div>
+          <div class="columns large-6">
+            <label for="header-font">Titres</label>
+            <input type="text" id="header-font" name="admin_theme_settings[header-font]" value="{{ theme_settings.header-font }}">
+            <span>Indiquez le nom de la police seulement, ou bien la font stack</span>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="tab-body" id="tab-body-3">
+      <fieldset>
+        <legend>Communication</legend>
+        <div class="columns">
+            <input class="icheck-me" name="admin_theme_settings[footer_display_newsletter]" id="footer_display_newsletter" type="checkbox" value="{{ theme_settings.footer_display_newsletter }}" {% if theme_settings.footer_display_newsletter %}checked{% endif %} data-skin='black-green' checked/>
+          <label style="margin-right:.5em;" for="footer_display_newsletter">Afficher la newsletter</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Carte Google</legend>
+        <div class="columns">
+          <input class="icheck-me" name="admin_theme_settings[google_map_type]" id="radio_google_none" type="radio" value="" data-skin='black-green' {% if theme_settings.google_map_type == "" %}checked{% endif %}/>
+          <label style="margin-right:.5em;" for="radio_google_none">Ne pas afficher la carte</label>
+          <input class="icheck-me" name="admin_theme_settings[google_map_type]" id="radio_google_map_image" type="radio" value="image" data-skin='black-green' {% if theme_settings.google_map_type == "image" %}checked{% endif %}/>
+          <label style="margin-right:.5em;" for="radio_google_map_image">Afficher la carte sous forme d'image</label>
+          <input class="icheck-me" name="admin_theme_settings[google_map_type]" id="radio_google_map_embed" type="radio" value="embed" data-skin='black-green' {% if theme_settings.google_map_type == "embed" %}checked{% endif %}/>
+          <label style="margin-right:.5em;" for="radio_google_map_embed">Afficher la carte interactive</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>
+          Visite virtuelle
+          <a class="small dropdown" data-options="align:top" data-dropdown="informations-link" style="display:inline;width:25px;text-align:center;">
+            &nbsp<i class="fa fa-info"></i>&nbsp
+          </a>
+          <div class="f-dropdown content info" id="informations-link" data-dropdown-content="">
+            <p>
+              Où trouver vos informations ? <a target="blank" href='https://www.google.com/maps?output=classic'>google.com/maps?output=classic</a>
+            </p>
+            <img src="/assets/business-view-info.jpg">
+          </div>
+        </legend>
+        <div class="columns large-6">
+          <div class="row">
+            <div class="columns">
+              <input class="icheck-me" name="admin_theme_settings[display_google_business_view_embed]" id="display_google_business_view_embed" type="checkbox" value="{{ theme_settings.display_google_business_view_embed }}" data-skin='black-green' {% if theme_settings.display_google_business_view_embed %}checked{% endif %}/>
+            <label style="margin-right:.5em;" for="display_google_business_view_embed">Afficher la visite virtuelle</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="columns">
+              <label class="left" for="google_business_view_embed">Code HTML</label>
+              <input name="admin_theme_settings[google_business_view_embed]" type="text" id="google_business_view_embed" value="{{ theme_settings.google_business_view_embed | escape_once }}" />
+            </div>
+          </div>
+        </div>
+
+        <div class="columns large-6">
+          <div class="row">
+            <div class="columns">
+              <input class="icheck-me" name="admin_theme_settings[display_google_business_view_url]" id="display_google_business_view_url" type="checkbox" value="{{ theme_settings.display_google_business_view_url }}" data-skin='black-green' {% if theme_settings.display_google_business_view_url %}checked{% endif %}/>
+              <label style="margin-right:.5em;" for="display_google_business_view_url">Afficher le lien</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="columns">
+              <label class="left" for="google_business_view_url">Url</label>
+              <input name="admin_theme_settings[google_business_view_url]" type="text" id="google_business_view_url" value="{{ theme_settings.google_business_view_url }}" />
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <div class="tab-body" id="tab-body-4">
+      <fieldset>
+        <legend>Page d'accueil</legend>
+        <div class="row">
+          <div class="columns medium-4 large-3">
+
+            <label for="home-menus-featured-text_fr">Titre menus en avant (fr)</label>
+            <input name="admin_theme_settings[home_menus_featured_text_fr]" id="home_menus_featured_text_fr" value="{{ theme_settings.home_menus_featured_text_fr }}" type="text">
+
+            <label for="home-menus-featured-text_en">Titre menus en avant (en)</label>
+            <input name="admin_theme_settings[home_menus_featured_text_en]" id="home_menus_featured_text_en" value="{{ theme_settings.home_menus_featured_text_en }}" type="text">
+
+          </div>
+          <div class="columns medium-4 large-3 end">
+
+            <label for="home-foods-featured-text_fr">Titre plats en avant (fr)</label>
+            <input name="admin_theme_settings[home_foods_featured_text_fr]" id="home_foods_featured_text_fr" value="{{ theme_settings.home_foods_featured_text_fr }}" type="text">
+
+             <label for="home-foods-featured-text_en">Titre plats en avant (en)</label>
+            <input name="admin_theme_settings[home_foods_featured_text_en]" id="home_foods_featured_text_en" value="{{ theme_settings.home_foods_featured_text_en }}" type="text">
+
+          </div>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+</div>

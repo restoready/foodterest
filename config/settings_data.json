@@ -1,0 +1,40 @@
+{
+  "current":{
+    "google-fonts-link": "<link href='http://fonts.googleapis.com/css?family=Bevan|Open+Sans:400,700' rel='stylesheet' type='text/css'>",
+    "header-font": "Bevan",
+    "body-font": "'Open Sans', sans-serif",
+    "body-background": "#ffffff",
+    "body-color": "#465155",
+    "accent-color": "#e5442e",
+    "home_menus_featured_text_fr": "Cette semaine",
+    "home_menus_featured_text_en": "This week",
+    "home_foods_featured_text_fr": "Suggestions",
+    "home_foods_featured_text_en": "Suggestions",
+    "google_business_view_url": "",
+    "display_google_business_view_url": false,
+    "google_business_view_embed": "",
+    "display_google_business_view_embed": false,
+    "google_map_type": "image",
+    "footer_display_newsletter": true
+  },
+  "presets":{
+    "Original":{
+      "google-fonts-link": "<link href='http://fonts.googleapis.com/css?family=Bevan|Open+Sans:400,700' rel='stylesheet' type='text/css'>",
+      "header-font": "Bevan",
+      "body-font": "'Open Sans', sans-serif",
+      "body-background": "#ffffff",
+      "body-color": "#465155",
+      "accent-color": "#e5442e",
+      "home_menus_featured_text_fr": "Cette semaine",
+      "home_menus_featured_text_en": "This week",
+      "home_foods_featured_text_fr": "Suggestions",
+      "home_foods_featured_text_en": "Suggestions",
+      "google_business_view_url": "",
+      "display_google_business_view_url": false,
+      "google_business_view_embed": "",
+      "display_google_business_view_embed": false,
+      "google_map_type": "image",
+      "footer_display_newsletter": true
+    }
+  }
+}

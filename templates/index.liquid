@@ -1,0 +1,127 @@
+<div class="restaurant-main-image">
+  {% if restaurant.summary? %}
+    <div class="restaurant-main-image__overlay">
+      <div class="wrapper">
+        <div class="restaurant-summary">
+          {{ restaurant.summary }}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</div>
+
+{% if home_menus.size > 0 %}
+  <section class="menus menus--featured">
+    <div class="wrapper">
+      <header class="section__header">
+        <h2 class="section__title">{% if current_locale == 'fr' %}{{ theme_settings.home_menus_featured_text_fr | t }}{% else %}{{ theme_settings.home_menus_featured_text_en | t }}{% endif %}</h2>
+      </header>
+      <main class="section__main">
+        {% for menu in home_menus %}
+          <h3 class="menu__title">{{ menu.name }}</h3>
+          {% if menu.summary? %}
+            <div class="menu__description">
+              {{ menu.summary }}
+            </div>
+          {% endif %}
+          {% for food in menu.foods %}
+            {% assign_prices_to prices for food in menu %}
+            {% include 'food' with food:food %}
+          {% endfor %}
+        {% endfor %}
+      </main>
+      <footer class="section__footer menus__footer">
+        <p>
+          <a class="button" href="{{ restaurant.menus_path }}">
+            {{ "Voir toute la carte" | t }}
+          </a>
+        </p>
+      </footer>
+    </div>
+  </section>
+{% endif %}
+
+{% if home_foods.size > 0 %}
+  <section class="foods foods--featured">
+    <div class="wrapper">
+      <header class="section__header">
+        <h2 class="section__title">{% if current_locale == 'fr' %}{{ theme_settings.home_foods_featured_text_fr | t }}{% else %}{{ theme_settings.home_foods_featured_text_en | t }}{% endif %}</h2>
+      </header>
+      <main class="section__main">
+        {% for food in home_foods %}
+          {% include 'food' with food:food %}
+        {% endfor %}
+      </main>
+      <footer class="section__footer foods__footer">
+        <p>
+          <a class="button" href="{{ restaurant.menus_path }}">
+            {{ "Voir toute la carte" | t }}
+          </a>
+        </p>
+      </footer>
+    </div>
+  </section>
+{% endif %}
+
+<div class="wrapper">
+  <section class="opening-hours">
+    <header class="section__header">
+      <h2 class="section__title">{{ "Horaires" | t }}</h2>
+    </header>
+    <main class="section__main">
+      <dl class="opening-days">
+      {% for day in opening_hours %}
+        <dt class="opening-day">
+          {{ day.name }}
+        </dt>
+        <dd class="opening-shifts">
+          {{ day.shifts }}
+        </dd>
+      {% endfor %}
+      </dl>
+    {% if restaurant.opening_hours_information? %}
+      <div class="opening-hours__information">
+        <p>{{ restaurant.opening_hours_information }}</p>
+      </div>
+    {% endif %}
+    </main>
+  </section>
+
+  <section class="directions">
+    <header class="section__header">
+      <h2 class="section__title">{{ "Localisation" | t }}</h2>
+    </header>
+    <main class="section__main">
+      {% if theme_settings.google_map_type != "" %}
+        <div class="map">
+          {% if theme_settings.google_map_type == "embed" %}
+            {% google_map_embed: "size:100%x320" %}
+          {% elsif theme_settings.google_map_type == "image" %}
+            <a class="map__link" href="{% google_map_url %}">
+              <img class="map__image" src="{% google_map_image_url: "size:640x320" %}" />
+            </a>
+          {% endif %}
+        </div>
+      {% endif %}
+      {% if restaurant.street_address? || restaurant.zip_code? || restaurant.city? %}
+      <div class="address">
+        <p>
+          {% if restaurant.street_address? %}
+            {{ restaurant.street_address }}
+            <br />
+          {% endif %}
+          {% if restaurant.zip_code? %} {{ restaurant.zip_code }} {% endif %}
+          {% if restaurant.city? %} <strong>{{ restaurant.city }}</strong> {% endif %}
+        </p>
+      </div>
+      {% endif %}
+    </main>
+    <footer class="section__footer directions__footer">
+      <p>
+        <a class="button" href="{% google_map_url %}">
+          {{ "Voir l'itinéraire" | t }}
+        </a>
+      </p>
+    </footer>
+  </section>
+</div>

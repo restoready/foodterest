@@ -1,0 +1,85 @@
+<section class="page-header page-header--legal">
+  <div class="wrapper">
+    <header class="section__header page-header__header">
+      <h1 class="section__title page-header__title">Mentions légales</h1>
+    </header>
+  </div>
+</section>
+
+<section class="page-body page-body--legal">
+  <div class="wrapper">
+    <main class="section__main">
+      <h2>Identification et publication</h2>
+      <h3>Éditeur</h3>
+      <p>
+        Ce site est publié par l'entreprise <strong>{{company.name}}</strong>, <strong>{{company.statute}}</strong>
+        {% if company.capital != nil %}
+         au capital de <strong>{{company.capital}} euros</strong>
+        {% endif %}
+        , immatriculée sous le numéro <strong>{{ company.registration_number }}</strong> et dont le siège social est situé <strong>{{ company.registration_address }}</strong>. Le responsable de publication du site <a href="http://{{ restaurant.host }}/" title="{{ restaurant.name }} - {{ restaurant.host }}">{{ restaurant.host }}</a> est <strong>{{ company.publication_director }}</strong>
+      </p>
+      <h3>Hébergement</h3>
+      <p>
+        Ce site est conçu et hébergé par la S.A.R.L <a href="http://www.mh-communication.fr" title="MH Communication"><strong>MH Communication</strong></a>, département <a href="http://www.restoready.com" title="MH Communication"><strong>RestoReady</strong></a>, solution Internet pour développer son restaurant, immatriculée à Caen sous le numéro <strong>50092784300028</strong> et dont le siège social est 171, rue d'Épron 14200, Hérouville Saint Clair.
+      </p>
+      <h2>Propriété intellectuelle</h2>
+      <p>
+        La charte graphique du site a été créée par RestoReady.
+      </p>
+      <p>
+        Les textes, graphismes, dessins, logos et photos qui sont diffusés sur {{ restaurant.host }} peuvent faire l'objet d'une reproduction sur un support papier ou un support électronique, sous réserve de citer le nom et l'adresse du site et de ne pas en faire une utilisation commerciale.
+        Le non-respect des dispositions ci-dessus est susceptible de constituer une contrefaçon engageant la responsabilité civile ou pénale de l'auteur de la contrefaçon.
+      </p>
+      <h2>Conditions générales d’utilisation du site</h2>
+      <p>
+        Ce site est accessible à tout moment aux utilisateurs. Une interruption pour raison de maintenance technique peut être toutefois décidée par {{ company.name }} ou par MH Communication, qui s’efforcera alors de communiquer préalablement aux utilisateurs les dates et heures de l’intervention.
+      </p>
+
+      <p>
+        Le site <a href="http://{{ restaurant.host }}/" title="{{ restaurant.name }} - {{ restaurant.host }}">{{ restaurant.host }}</a> a pour objet de fournir une information concernant l’ensemble des activités de la société.
+      </p>
+
+      <p>
+        {{ company.name }} s’efforce de fournir sur le site <a href="http://{{ restaurant.host }}/" title="{{ company.name }} - {{ restaurant.host }}">{{ restaurant.host }}</a> des informations aussi précises que possible. Toutefois, il ne pourra être tenue responsable des omissions, des inexactitudes et des carences dans la mise à jour, qu’elles soient de son fait ou du fait des tiers partenaires qui lui fournissent ces informations.
+      </p>
+
+      <p>
+        Tous les informations indiquées sur le site <a href="http://{{ restaurant.host }}/" title="{{ company.name }} - {{ restaurant.host }}">{{ restaurant.host }}</a> sont données à titre indicatif, et sont susceptibles d’évoluer. Par ailleurs, les renseignements figurant sur le site <a href="http://{{ restaurant.host }}/" title="{{ company.name }} - {{ restaurant.host }}">{{ restaurant.host }}</a> ne sont pas exhaustifs. Ils sont donnés sous réserve de modifications ayant été apportées depuis leur mise en ligne.
+      </p>
+
+      <p>
+        Le site Internet ne pourra être tenu responsable de dommages matériels liés à l’utilisation du site. De plus, l’utilisateur du site s’engage à accéder au site en utilisant un matériel récent, ne contenant pas de virus et avec un navigateur de dernière génération mis-à-jour
+      </p>
+      <h2>Gestion des données personnelles</h2>
+      <p>
+        En France, les données personnelles sont notamment protégées par la loi n° 78-87 du 6 janvier 1978, la loi n° 2004-801 du 6 août 2004, l'article L. 226-13 du Code pénal et la Directive Européenne du 24 octobre 1995.
+      </p>
+      <p>
+        A l'occasion de l'utilisation du site <a href="http://{{ restaurant.host }}/" title="{{ company.name }} - {{ restaurant.host }}">{{ restaurant.host }}</a>, peuvent êtres recueillies : l'URL des liens par l'intermédiaire desquels l'utilisateur a accédé au site <a href="http://{{ restaurant.host }}/" title="{{ company.name }} - {{ restaurant.host }}">{{ restaurant.host }}</a>, le fournisseur d'accès de l'utilisateur, l'adresse de protocole Internet (IP) de l'utilisateur.
+      </p>
+      <p>
+        En tout état de cause {{ company.name }} ne collecte des informations personnelles relatives à l'utilisateur que pour le besoin de certains services proposés par le site <a href="http://{{ restaurant.host }}/" title="{{ company.name }} - {{ restaurant.host }}">{{ restaurant.host }}</a>. L'utilisateur fournit ces informations en toute connaissance de cause, notamment lorsqu'il procède par lui-même à leur saisie. Il est alors précisé à l'utilisateur du site <a href="http://{{ restaurant.host }}/" title="{{ company.name }} - {{ restaurant.host }}">{{ restaurant.host }}</a> l’obligation ou non de fournir ces informations.
+      </p>
+      <p>
+        Conformément aux dispositions des articles 38 et suivants de la loi 78-17 du 6 janvier 1978 relative à l’informatique, aux fichiers et aux libertés, tout utilisateur dispose d’un droit d’accès, de rectification et d’opposition aux données personnelles le concernant, en effectuant sa demande écrite et signée, accompagnée d’une copie du titre d’identité avec signature du titulaire de la pièce, en précisant l’adresse à laquelle la réponse doit être envoyée.
+      </p>
+      <p>
+        Aucune information personnelle de l'utilisateur du site <a href="http://{{ restaurant.host }}/" title="{{ company.name }} - {{ restaurant.host }}">{{ restaurant.host }}</a> n'est publiée à l'insu de l'utilisateur, échangée, transférée, cédée ou vendue sur un support quelconque à des tiers. Seule l'hypothèse du rachat de {{ company.name }} et de ses droits permettrait la transmission des dites informations à l'éventuel acquéreur qui serait à son tour tenu de la même obligation de conservation et de modification des données vis à vis de l'utilisateur du site <a href="http://{{ restaurant.host }}/" title="{{ company.name }} - {{ restaurant.host }}">{{ restaurant.host }}</a>.
+      </p>
+      <p>
+        Les bases de données sont protégées par les dispositions de la loi du 1er juillet 1998 transposant la directive 96/9 du 11 mars 1996 relative à la protection juridique des bases de données.
+      </p>
+      <h2>Liens hypertextes et cookies</h2>
+      <p>
+        Le site <a href="http://{{ restaurant.host }}/" title="{{ company.name }} - {{ restaurant.host }}">{{ restaurant.host }}</a> contient un certain nombre de liens hypertextes vers d’autres sites, mis en place avec l’autorisation de {{ company.name }}. Cependant, {{ company.name }} n’a pas la possibilité de vérifier le contenu des sites ainsi visités, et n’assumera en conséquence aucune responsabilité de ce fait.
+      </p>
+      <p>
+        La navigation sur le site <a href="http://{{ restaurant.host }}/" title="{{ company.name }} - {{ restaurant.host }}">{{ restaurant.host }}</a> est susceptible de provoquer l’installation de cookie(s) sur l’ordinateur de l’utilisateur. Un cookie est un fichier de petite taille, qui ne permet pas l’identification de l’utilisateur, mais qui enregistre des informations relatives à la navigation d’un ordinateur sur un site. Les données ainsi obtenues visent à faciliter la navigation ultérieure sur le site, et ont également vocation à permettre diverses mesures de fréquentation.
+      </p>
+      <h2>Droit applicable et attribution de juridiction.</h2>
+      <p>
+        Tout litige en relation avec l’utilisation du site <a href="http://{{ restaurant.host }}/" title="{{ company.name }} - {{ restaurant.host }}">{{ restaurant.host }}</a> est soumis au droit français. Il est fait attribution exclusive de juridiction aux tribunaux compétents de {{ company.court_city }}.
+      </p>
+    </main>
+  </div>
+</section>

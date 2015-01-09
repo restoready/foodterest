@@ -1,0 +1,39 @@
+<div class="menu {% if menu.featured %} menu--featured {% endif %}" id="menu-{{menu.id}}">
+  {% if menu.main_image? %}
+    {{ menu.main_image | custom_image_url: '1920x590#' | image_tag:'class: menu__image' }}
+  {% endif %}
+  {% if menu.depth == 1 %}
+    <div class="wrapper">
+  {% endif %}
+  {% if title == true %}
+    <div class="menu__header">
+      <h{{ menu.depth | plus: 1 }} class="menu__title">
+        {{ menu.name }}
+      </h{{ menu.depth | plus: 1 }}>
+    </div>
+  {% endif %}
+  {% if menu.summary? %}
+    <div class="menu__description">
+      {{ menu.summary }}
+    </div>
+  {% endif %}
+  {% if menu.foods? %}
+    {% for food in menu.foods %}
+      {% assign_prices_to prices for food in menu %}
+      {% include 'food' with food:food, menu:menu %}
+    {% endfor %}
+  {% endif %}
+  {% if menu.children? %}
+    {% for child in menu.children %}
+      {% include 'menu' with menu:child %}
+    {% endfor %}
+  {% endif %}
+  {% if menu.depth == 1 %}
+    <div class="back-to-menu">
+      <a class="back-to-menu__link" href="#top">{{ "Retour au menu" | t }}</a>
+    </div>
+  {% endif %}
+  {% if menu.depth == 1 %}
+    </div>
+  {% endif %}
+</div>

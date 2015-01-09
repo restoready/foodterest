@@ -1,0 +1,108 @@
+# RestoReady
+# Theme : lemenhir
+# Copyright (C) 2013
+# This file is distributed under the same license as the RestoReady package.
+# Pierre-Emmanuel Fringant <pierre.fringant@gmail.com>, 2013.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: version 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-08-06 10:55+0200\n"
+"PO-Revision-Date: 2013-08-06 10:55+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+msgid "Tél. : "
+msgstr "Phone :"
+
+msgid "Accueil"
+msgstr "Home"
+
+msgid "Le restaurant"
+msgstr "The restaurant"
+
+msgid "Voir toute la carte"
+msgstr "All menus"
+
+msgid "Nos suggestions"
+msgstr "Our suggestions"
+
+msgid "Horaires"
+msgstr "Opening hours"
+
+msgid "Fermé"
+msgstr "Closed"
+
+msgid "Localisation"
+msgstr "Location"
+
+msgid "Voir l'itinéraire"
+msgstr "Directions"
+
+msgid "Retour au menu"
+msgstr "Back to menu"
+
+msgid "Recommandé par le chef"
+msgstr "Recommended by the chef"
+
+msgid "Cette semaine"
+msgstr "This week"
+
+msgid "Plats de la semaine"
+msgstr "Food of week"
+
+msgid "Une erreur s'est produite lors de votre abonnement."
+msgstr "An error has occurred while processing your subscription."
+
+msgid "Votre inscription à la newsletter a bien été enregistrée."
+msgstr "Your newsletter subscription has been registered."
+
+msgid "Abonnez-vous à notre newsletter pour recevoir les dernières nouveautés du restaurant."
+msgstr "Subscribe to our newsletter for the latest news of the restaurant."
+
+msgid "Abonnement Newsletter"
+msgstr "Newsletter Subscription"
+
+msgid "S'abonner"
+msgstr "Subscribe"
+
+msgid "Mentions légales"
+msgstr "Terms of use"
+
+msgid "Suivez-nous"
+msgstr "Follow Us"
+
+msgid "Nouveaux plats"
+msgstr "New foods"
+
+msgid "Venez découvrir nos derniers plats."
+msgstr "Discover our latest foods."
+
+msgid "Les incontournables"
+msgstr "Must sees"
+
+msgid "Haut de page"
+msgstr "Back to top"
+
+msgid "Nom"
+msgstr "Name"
+
+msgid "Email"
+msgstr "E-mail"
+
+msgid "Téléphone"
+msgstr "Phone"
+
+msgid "Message"
+msgstr "Message"
+
+msgid "Envoyer"
+msgstr "Send"
+
