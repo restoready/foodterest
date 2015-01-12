@@ -547,25 +547,6 @@ body {
         height: 100px;
       }
 
-  .phone-number {
-    margin: 1em 0;
-    text-align: center;
-  }
-    .phone-number__link {
-      color: $accent-color;
-      font-size: 1.5em;
-      text-decoration: none;
-      &:hover, &:focus {
-        color: #000;
-        .phone-number__label {
-          color: #000;
-        }
-      }
-    }
-      .phone-number__label {
-        color: $body-color;
-      }
-
 .main-nav {
   position: absolute;
   top: 0;
@@ -881,6 +862,23 @@ legend {
     line-height: 1;
     text-decoration: none;
   }
+
+  .phone-number {
+    text-align: center;
+  }
+    .phone-number__link {
+      color: $accent-color;
+      font-size: 1.5em;
+      text-decoration: none;
+      &:hover, &:focus {
+        .phone-number__label {
+          color: $accent-color;
+        }
+      }
+    }
+      .phone-number__label {
+        color: white;
+      }
 
 // .menus--featured {
 //   background-color: #fff;
@@ -1397,12 +1395,6 @@ x:-o-prefocus, .lb-overlay img {
   textarea,
   select {
     font-size: 125%;
-  }
-
-  .phone-number {
-    float: right;
-    text-align: right;
-    width: 35%;
   }
 
   .footer__subscribe {
