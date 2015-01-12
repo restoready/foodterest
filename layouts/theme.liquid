@@ -21,38 +21,19 @@
   <body>
     <section class="page" id="top">
       <header class="main-header">
-        <div class="wrapper">
-          <div class="identity">
-            {% if restaurant.logo? %}
-              <div class="logo">
-                <a class="logo__link" href="{{ localized_root_path }}">
-                  {{ restaurant.logo_url | image_tag:'class:logo__image' }}
-                </a>
-              </div>
-            {% endif %}
-            <div class="restaurant-name">
-              <a class="restaurant-name__link" href="{{ localized_root_path }}">
-                {{ restaurant.name }}
-              </a>
-              {% if restaurant.slogan? %}
-                <div class="slogan">
-                  {{ restaurant.slogan }}
-                </div>
-              {% endif %}
-            </div>
-          </div>
-          {% if restaurant.phone? %}
-            <div class="phone-number">
-              <a class="phone-number__link" href="tel:{{ restaurant.phone_uri }}">
-                <i class="icon-phone"></i> <span class="phone-number__label">{{ restaurant.phone }}</span>
+        <div class="identity">
+          {% if restaurant.logo? %}
+            <div class="logo">
+              <a class="logo__link" href="{{ localized_root_path }}">
+                {{ restaurant.logo_url | image_tag:'class:logo__image' }}
               </a>
             </div>
           {% endif %}
         </div>
+        <nav id="nav" class="main-nav" role="navigation">
+          {% include 'nav' %}
+        </nav>
       </header>
-      <nav id="nav" class="main-nav" role="navigation">
-        {% include 'nav' %}
-      </nav>
       <main class="main-content" role="main">
         {{ content_for_layout }}
       </main>

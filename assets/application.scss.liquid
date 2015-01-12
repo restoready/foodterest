@@ -525,6 +525,7 @@ body {
 }
 
 .main-header {
+  background-color: #212121;
 }
   .logo {
     text-align: center;
@@ -534,7 +535,7 @@ body {
       text-decoration: none;
     }
       .logo__image {
-        padding: 1em 0;
+        padding: .25em;
         vertical-align: middle;
         width: 180px;
       }
@@ -1341,16 +1342,6 @@ x:-o-prefocus, .lb-overlay img {
   select {
     font-size: 112.5%;
   }
-  .identity {
-    @include media;
-  }
-  .logo {
-    @include media-aside;
-  }
-    .logo__image {
-      width: 120px;
-      margin-right: 1.5em;
-    }
   .restaurant-name {
     @include media-body;
     padding: 1em 0;
@@ -1387,51 +1378,12 @@ x:-o-prefocus, .lb-overlay img {
     font-size: 125%;
   }
 
-  .identity {
-    float: left;
-    width: 65%;
-  }
   .phone-number {
     float: right;
     text-align: right;
     width: 35%;
   }
-  
-  .main-nav {
-    position: relative;
-    text-align: center;
-  }
-    .main-nav__toggle {
-      display: none !important;
-    }
-    .main-nav__toggle-link {
-      display: none;
-    }
-    .main-nav__items {
-      display: block;
-    }
-      .main-nav__item {
-        display: inline-block;
-        &:not(:last-child) {
-          border-bottom: none;
-        }
-      }
-        .main-nav__link {
-          display: inline-block;
-        }
-      .main-sub-nav__items {
-        position: absolute;
-      }
-        .main-sub-nav__item {
-          display: block;
-          text-align: left;
-        }
-          .main-sub-nav__link {
-            display: block;
-            padding-left: 1em;
-          }
 
-  
   .footer__subscribe {
     .input {
       display: inline-block;
@@ -1488,6 +1440,63 @@ x:-o-prefocus, .lb-overlay img {
 
 // > Large
 @include at-query($min, $siteWidth) {
+
+  .main-header {
+    overflow: hidden;
+  }
+  .identity {
+    width: 15%;
+  }
+  .main-nav {
+    position: absolute;
+    width: 85%;
+    margin-left: 15%;
+  }
+    .main-nav__toggle {
+      display: none !important;
+    }
+    .main-nav__toggle-link {
+      display: none;
+    }
+    .main-nav__items {
+      display: block;
+      background-color: transparent;
+    }
+      .main-nav__item {
+        display: inline-block;
+        &:not(:last-child) {
+          border-bottom: none;
+        }
+      }
+      .main-nav__item--current {
+        background-color: transparent;
+      }
+        .main-nav__link {
+          display: inline-block;
+          &:hover, &:focus {
+            background-color: transparent;
+          }
+          &:active {
+            background-color: transparent;
+          }
+        }
+      .main-sub-nav__items {
+        position: absolute;
+        background-color: transparent;
+      }
+        .main-sub-nav__item {
+          display: block;
+          text-align: left;
+        }
+        .main-sub-nav__item--current {
+          background-color: transparent;
+        }
+          .main-sub-nav__link {
+            display: block;
+            padding-left: 1em;
+          }
+
+
   .footer__subscribe {
     margin: 0 auto;
     width: 75%;
