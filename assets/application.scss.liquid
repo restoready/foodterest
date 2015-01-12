@@ -156,6 +156,13 @@ $bodyFontStack: {{ theme_settings.body-font }};
     @include media;
   }
 
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
 
 // ===========================================================================
 // Dependency-free breakpoint mixin
@@ -537,7 +544,7 @@ body {
       .logo__image {
         padding: .25em;
         vertical-align: middle;
-        width: 180px;
+        height: 100px;
       }
 
   .phone-number {
@@ -644,7 +651,7 @@ body {
       height: 0;
       border: 0.313em solid transparent;
       border-bottom: none;
-      border-top-color: scale-color($accent-color, $lightness: +50%);
+      border-top-color: white;
       content: '';
       vertical-align: middle;
       display: inline-block;
@@ -1469,11 +1476,13 @@ x:-o-prefocus, .lb-overlay img {
   }
   .identity {
     width: 15%;
+    float: left;
   }
   .main-nav {
-    position: absolute;
+    position: relative;
+    float: right;
     width: 85%;
-    margin-left: 15%;
+    height: 100%;
   }
     .main-nav__toggle {
       display: none !important;
@@ -1487,15 +1496,22 @@ x:-o-prefocus, .lb-overlay img {
     }
       .main-nav__item {
         display: inline-block;
+        height: 100px;
+        background-color: #353535;
+        margin-bottom: .25em;
         &:not(:last-child) {
           border-bottom: none;
         }
+        &:hover, &:active {
+          background-color: $accent-color;
+        }
       }
       .main-nav__item--current {
-        background-color: transparent;
+        background-color: $accent-color;
       }
         .main-nav__link {
           display: inline-block;
+          height: 100px;
           &:hover, &:focus {
             background-color: transparent;
           }
@@ -1503,22 +1519,9 @@ x:-o-prefocus, .lb-overlay img {
             background-color: transparent;
           }
         }
-      .main-sub-nav__items {
-        position: absolute;
-        background-color: transparent;
-      }
-        .main-sub-nav__item {
-          display: block;
-          text-align: left;
+        .main-nav__title {
+          @include vertical-align;
         }
-        .main-sub-nav__item--current {
-          background-color: transparent;
-        }
-          .main-sub-nav__link {
-            display: block;
-            padding-left: 1em;
-          }
-
 
   .footer__subscribe {
     margin: 0 auto;
