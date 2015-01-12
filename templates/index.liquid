@@ -11,58 +11,32 @@
   </div>
 </div>
 
-{% if home_menus.size > 0 %}
-  <section class="menus menus--featured">
-    <div class="wrapper">
-      <header class="section__header">
-        <h2 class="section__title">{% if current_locale == 'fr' %}{{ theme_settings.home_menus_featured_text_fr | t }}{% else %}{{ theme_settings.home_menus_featured_text_en | t }}{% endif %}</h2>
-      </header>
-      <main class="section__main">
-        {% for menu in home_menus %}
+{% if home_menus.size > 0 or if home_foods.size > 0 %}
+  <section class="featured">
+    <main class="section__main" id="container">
+      {% for menu in home_menus %}
+        <div class="item">
+          <h6 class="menu-tag">Menu</h6>
           <h3 class="menu__title">{{ menu.name }}</h3>
-          {% if menu.summary? %}
-            <div class="menu__description">
-              {{ menu.summary }}
-            </div>
+          {% if menu.main_image? %}
+            <img src="{{ menu.main_image | custom_image_url: "100x100#" }}" alt="menu" class="featured__menu-image">
           {% endif %}
-          {% for food in menu.foods %}
-            {% assign_prices_to prices for food in menu %}
-            {% include 'food' with food:food %}
-          {% endfor %}
-        {% endfor %}
-      </main>
-      <footer class="section__footer menus__footer">
-        <p>
-          <a class="button" href="{{ restaurant.menus_path }}">
-            {{ "Voir toute la carte" | t }}
-          </a>
-        </p>
-      </footer>
-    </div>
+        </div>
+      {% endfor %}
+      {% for food in home_foods %}
+        {% include 'food' with food:food %}
+      {% endfor %}
+    </main>
   </section>
 {% endif %}
 
-{% if home_foods.size > 0 %}
-  <section class="foods foods--featured">
-    <div class="wrapper">
-      <header class="section__header">
-        <h2 class="section__title">{% if current_locale == 'fr' %}{{ theme_settings.home_foods_featured_text_fr | t }}{% else %}{{ theme_settings.home_foods_featured_text_en | t }}{% endif %}</h2>
-      </header>
-      <main class="section__main">
-        {% for food in home_foods %}
-          {% include 'food' with food:food %}
-        {% endfor %}
-      </main>
-      <footer class="section__footer foods__footer">
-        <p>
-          <a class="button" href="{{ restaurant.menus_path }}">
-            {{ "Voir toute la carte" | t }}
-          </a>
-        </p>
-      </footer>
-    </div>
-  </section>
-{% endif %}
+<footer class="section__footer foods__footer">
+  <p>
+    <a class="button" href="{{ restaurant.menus_path }}">
+      {{ "Voir toute la carte" | t }}
+    </a>
+  </p>
+</footer>
 
 <div class="wrapper">
   <section class="opening-hours">

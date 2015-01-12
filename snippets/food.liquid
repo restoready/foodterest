@@ -1,4 +1,4 @@
-<div class="food {% if food.featured_in_menu? %}food--featured{% endif %} {{food.auto_css_classes}}" id="food-{{food.id}}">
+<div class="item food {% if food.featured_in_menu? %}food--featured{% endif %} {{food.auto_css_classes}}" id="food-{{food.id}}">
   {% if food.main_image? %}
     {{ food.main_image | custom_image_url:'100x100#' | image_tag:'class:food__image circle' }}
   {% endif %}
@@ -35,5 +35,3 @@
     {% endif %}
   </div>
 </div>
-
-<hr class="food__separator">
