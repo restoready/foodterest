@@ -44,9 +44,17 @@
 
     {{ 'jquery-2.1.1.min.js' | javascript_tag }}
     {{ 'doubletaptogo.min.js' | javascript_tag }}
+    {{ 'masonry.min.js' | javascript_tag }}
     <script type="text/javascript">
       $( function() {
         $( '.has-sub-nav' ).doubleTapToGo();
+
+        var $container = $('#container');
+        // initialize
+        $container.masonry({
+          itemSelector: '.item'
+        });
+        var msnry = $container.data('masonry');
       });
     </script>
   </body>
