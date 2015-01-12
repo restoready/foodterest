@@ -544,7 +544,7 @@ body {
       .logo__image {
         padding: .25em;
         vertical-align: middle;
-        height: 100px;
+        height: 70px;
       }
 
 .main-nav {
@@ -558,7 +558,7 @@ body {
   display: none;
   float: right;
   width: 3.9em;
-  height: 3.9em;
+  height: 5em;
   text-align: left;
   text-indent: -9999px;
   background-color: $accent-color;
@@ -625,45 +625,6 @@ body {
         background-color: scale-color($accent-color, $lightness: -30%);
       }
     }
-
-  .has-sub-nav {
-    span:after {
-      width: 0;
-      height: 0;
-      border: 0.313em solid transparent;
-      border-bottom: none;
-      border-top-color: white;
-      content: '';
-      vertical-align: middle;
-      display: inline-block;
-      position: relative;
-      right: -0.313em;
-    }
-    &:hover > .main-sub-nav__items {
-      display: block;
-    }
-  }
-
-.main-sub-nav__items {
-  background-color: scale-color($accent-color, $lightness: -10%);
-  display: none;
-  margin-bottom: 0;
-}
-  .main-sub-nav__item {
-    @extend .main-nav__item;
-    &:not(:last-child) {
-      border-bottom: 1px solid scale-color($accent-color, $lightness: +5%);
-    }
-  }
-  .main-sub-nav__item--current {
-    background-color: scale-color($accent-color, $lightness: -15%);
-  }
-    .main-sub-nav__link {
-      @extend .main-nav__link;
-      font-weight: 400;
-      padding-left: 1.5em;
-    }
-
 
 .main-content {
   margin-bottom: 1em;
@@ -1360,7 +1321,7 @@ x:-o-prefocus, .lb-overlay img {
 
   .main-nav__toggle {
     width: 3.1em;
-    height: 3.1em;
+    height: 3.9em;
   }
   .main-nav__toggle-link {
     font-size: .85em;
@@ -1395,6 +1356,10 @@ x:-o-prefocus, .lb-overlay img {
   textarea,
   select {
     font-size: 125%;
+  }
+  .main-nav__toggle {
+    width: 3.1em;
+    height: 3.5em;
   }
 
   .footer__subscribe {
@@ -1462,6 +1427,12 @@ x:-o-prefocus, .lb-overlay img {
 
 // > Large
 @include at-query($min, $siteWidth) {
+
+  .logo__image {
+    padding: .25em;
+    vertical-align: middle;
+    height: 100px;
+  }
 
   .main-header {
     overflow: hidden;
