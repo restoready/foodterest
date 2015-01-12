@@ -539,21 +539,7 @@ body {
         vertical-align: middle;
         width: 180px;
       }
-  .restaurant-name {
-    text-align: center;
-  }
-    .slogan {
-      color: scale-color($body-color, $lightness: +25%);
-      font-size: .9em;
-      font-style: italic;
-    }
-    .restaurant-name__link {
-      color: scale-color($body-color, $lightness: -25%);
-      font-family: {{ theme_settings.header-font }};
-      font-size: 2em;
-      line-height: 1;
-      text-decoration: none;
-    }
+
   .phone-number {
     margin: 1em 0;
     text-align: center;
@@ -872,15 +858,22 @@ legend {
   .restaurant-main-image__overlay {
     background-color: rgba(0,0,0, .5);
   }
-.restaurant-summary {
-  color: #fff;
-  padding-top: 4em;
-  padding-bottom: 3em;
+.restaurant-name {
   text-align: center;
-  p {
-    font-size: 1.2em;
-  }
 }
+  .slogan {
+    color: white;
+    font-size: .9em;
+    font-style: italic;
+  }
+  .restaurant-name__link {
+    color: white;
+    font-family: {{ theme_settings.header-font }};
+    font-size: 2em;
+    line-height: 1;
+    text-decoration: none;
+  }
+
 .menus--featured {
   background-color: #fff;
   margin-bottom: 1em;
@@ -1342,11 +1335,7 @@ x:-o-prefocus, .lb-overlay img {
   select {
     font-size: 112.5%;
   }
-  .restaurant-name {
-    @include media-body;
-    padding: 1em 0;
-    text-align: left;
-  }
+
   .main-nav__toggle {
     width: 3.1em;
     height: 3.1em;

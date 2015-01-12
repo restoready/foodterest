@@ -1,13 +1,14 @@
 <div class="restaurant-main-image">
-  {% if restaurant.summary? %}
-    <div class="restaurant-main-image__overlay">
-      <div class="wrapper">
-        <div class="restaurant-summary">
-          {{ restaurant.summary }}
-        </div>
+  <div class="restaurant-name">
+    <a class="restaurant-name__link" href="{{ localized_root_path }}">
+      {{ restaurant.name }}
+    </a>
+    {% if restaurant.slogan? %}
+      <div class="slogan">
+        {{ restaurant.slogan }}
       </div>
-    </div>
-  {% endif %}
+    {% endif %}
+  </div>
 </div>
 
 {% if home_menus.size > 0 %}
