@@ -845,7 +845,7 @@ legend {
       }
 
 .featured {
-  margin-bottom: 1em;
+  margin-bottom: 2.25em;
 }
 
 .menus__footer,
@@ -856,31 +856,47 @@ legend {
 .opening-hours {
   background-color: #fff;
   margin-bottom: 1em;
+}
+.opening-hours__header {
+  text-align: center;
+  background-color: $accent-color;
   .section__title {
-    color: #444;
-    border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
-    margin-bottom: .5em;
+    padding: 1em 0;
+    h2 {
+      color: #FFFFFF;
+    }
   }
 }
+.opening-hours__image {
+  background-image: url({{ 'opening-hours-image.jpg' | asset_url }});
+  background-size: cover;
+  background-position: center center;
+  height: 200px;
+}
+.opening-hours__body {
+  background-color: #212121;
+  padding: 1em;
+  text-align: center;
+  margin-bottom: 1em;
+}
   .opening-days {
-    @extend .clearfix;
-    margin-bottom: 1em;
+
   }
     .opening-day {
-      color: $body-color;
-      clear: left;
-      float: left;
-      font-size: 1em;
-      width: 25%;
+      color: $accent-color;
+      font-size: 1.25em;
     }
     .opening-shifts {
-      color: scale-color($accent-color, $saturation: -75%);
+      color: #FFFFFF;
       font-size: 1em;
-      margin-left: 30%;
+      margin-bottom: .5em;
     }
-  .opening-hours__information {
-    margin-bottom: 1em;
+  .opening-hours__footer {
+    text-align: center;
   }
+    .opening-hours__information {
+      margin-bottom: 1em;
+    }
 
 .directions, .business-view {
   background-color: #fff;
@@ -1340,6 +1356,9 @@ x:-o-prefocus, .lb-overlay img {
   .main-nav__item {
     width: 33.333333%;
   }
+  .opening-hours__image {
+    height: 250px;
+  }
   .menu-child {
     width: 32%;
   }
@@ -1377,6 +1396,21 @@ x:-o-prefocus, .lb-overlay img {
   .main-nav__item {
     width: 25%;
   }
+
+  .opening-hours__header {
+    width: 50%;
+    float: left;
+    .section__title {
+      padding: 4em 0;
+    }
+  }
+  .opening-hours__image {
+    height: 350px;
+  }
+  .opening-hours__body {
+    width: 50%;
+    float: left;
+  }
   .footer__subscribe {
     .input {
       display: inline-block;
@@ -1388,17 +1422,6 @@ x:-o-prefocus, .lb-overlay img {
       vertical-align: top;
       margin-top: 1.65em;
     }
-  }
-
-  .opening-hours,
-  .directions {
-    width: 48%;
-  }
-  .opening-hours {
-    float: left;
-  }
-  .directions {
-    float: right;
   }
 
   .menu-child {
