@@ -28,12 +28,17 @@
                 {{ restaurant.logo_url | image_tag:'class:logo__image' }}
               </a>
             </div>
+            <div class="main-header__hamburger">
+              <p>Menu</p>
+              <div></div>
+              <div></div>
+            </div>
           {% endif %}
         </div>
-        <nav id="nav" class="main-nav" role="navigation">
-          {% include 'nav' %}
-        </nav>
       </header>
+      <nav id="nav" class="main-nav" role="navigation">
+        {% include 'nav' %}
+      </nav>
       <main class="main-content" role="main">
         {{ content_for_layout }}
       </main>
@@ -46,6 +51,9 @@
     {{ 'masonry.min.js' | javascript_tag }}
     <script type="text/javascript">
       $( function() {
+        $('.main-header__hamburger').click(function(){
+          $('.main-nav').slideToggle('fast');
+        });
         var $container = $('#container');
         // initialize
         $container.masonry({
