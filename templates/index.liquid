@@ -44,17 +44,17 @@
           {% include 'food' with food:food %}
         </a>
       {% endfor %}
+      <div class="item see-all-menus">
+        <div class="item-content">
+          <img src="{{ 'see-all-menus.jpg' | asset_url | custom_image_url: "100x100#" }}" alt="all-menus">
+          <a href="{{ restaurant.menus_path }}">
+            {{ "Voir toute la carte" | t }}
+          </a>
+        </div>
+      </div>
     </main>
   </section>
 {% endif %}
-
-<footer class="section__footer foods__footer">
-  <p>
-    <a class="button" href="{{ restaurant.menus_path }}">
-      {{ "Voir toute la carte" | t }}
-    </a>
-  </p>
-</footer>
 
 <div class="wrapper">
   <section class="opening-hours">

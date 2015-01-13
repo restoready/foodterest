@@ -1117,7 +1117,25 @@ legend {
   .item-content {
     padding: .5em;
   }
-
+  .see-all-menus {
+    background-color: #212121;
+    cursor: pointer;
+    padding: 1em 0;
+    transition: background-color .25s;
+    a {
+      color: #FFFFFF;
+      text-decoration: none;
+      font-size: 1.25em;
+      font-weight: bold;
+      display: block;
+    }
+    &:hover {
+      background-color: $accent-color;
+    }
+    img {
+      border-radius: 50%;
+    }
+  }
 /**
  * Pure CSS Lightbox
  * @see http://tympanus.net/codrops/2011/12/26/css3-lightbox/
