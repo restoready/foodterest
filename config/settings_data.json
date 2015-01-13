@@ -1,8 +1,8 @@
 {
   "current":{
-    "google-fonts-link": "<link href='http://fonts.googleapis.com/css?family=Ultra|Fauna+One' rel='stylesheet' type='text/css'>",
+    "google-fonts-link": "<link href='http://fonts.googleapis.com/css?family=Ultra|Lato:400,700' rel='stylesheet' type='text/css'>",
     "header-font": "'Ultra', serif",
-    "body-font": "'Fauna One', serif",
+    "body-font": "'Lato', sans-serif",
     "body-background": "#ffffff",
     "body-color": "#465155",
     "accent-color": "#e5442e",
@@ -19,9 +19,9 @@
   },
   "presets":{
     "Original":{
-      "google-fonts-link": "<link href='http://fonts.googleapis.com/css?family=Ultra|Fauna+One' rel='stylesheet' type='text/css'>",
+      "google-fonts-link": "<link href='http://fonts.googleapis.com/css?family=Ultra|Lato:400,700' rel='stylesheet' type='text/css'>",
       "header-font": "'Ultra', serif",
-      "body-font": "'Fauna One', serif",
+      "body-font": "'Lato', sans-serif",
       "body-background": "#ffffff",
       "body-color": "#465155",
       "accent-color": "#e5442e",
