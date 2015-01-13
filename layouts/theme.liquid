@@ -49,17 +49,23 @@
 
     {{ 'jquery-2.1.1.min.js' | javascript_tag }}
     {{ 'masonry.min.js' | javascript_tag }}
+    {{ 'imagesloaded.min.js' | javascript_tag }}
     <script type="text/javascript">
       $( function() {
+
         $('.main-header__hamburger').click(function(){
           $('.main-nav').slideToggle('fast');
         });
+
         var $container = $('#container');
-        // initialize
-        $container.masonry({
-          itemSelector: '.item'
+        // initialize Masonry after all images have loaded
+        $container.imagesLoaded( function() {
+          $container.masonry({
+            columnWidth: '.item',
+            itemSelector: '.item'
+          });
         });
-        var msnry = $container.data('masonry');
+
       });
     </script>
   </body>
