@@ -66,6 +66,10 @@
           });
         });
 
+        $('.btn-see-location').click(function(e){
+          e.preventDefault();
+          $(this).parents('.map-overlay').fadeOut('slow');
+        });
       });
     </script>
   </body>

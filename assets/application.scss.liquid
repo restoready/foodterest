@@ -496,6 +496,7 @@ form.form-horizontal,
   vertical-align: middle;
   white-space: nowrap;
   -webkit-appearance: none;
+  transition: background-color .25s;
 
   &.button--small {
     font-size: 0.75em;
@@ -862,9 +863,7 @@ legend {
   background-color: $accent-color;
   .section__title {
     padding: 1em 0;
-    h2 {
-      color: #FFFFFF;
-    }
+    color: #FFFFFF;
   }
 }
 .opening-hours__image {
@@ -901,24 +900,42 @@ legend {
 .directions, .business-view {
   background-color: #fff;
   margin-bottom: 1em;
+}
+.directions__header {
+  text-align: center;
+  background-color: $accent-color;
   .section__title {
-    color: #444;
-    border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
-    margin-bottom: 1em;
+    padding: 1em 0;
+    color: #FFFFFF;
   }
+}
+.directions__image {
+  background-image: url({{ 'directions-image.jpg' | asset_url }});
+  background-size: cover;
+  background-position: center center;
+  height: 200px;
+}
+.directions__body {
+  margin-bottom: 1em;
 }
   .map {
     margin-bottom: 1em;
+    position: relative;
+  }
+  .map-overlay {
+    position: absolute;
+    background-color: transparentize(#212121, 0.5);
+    top: 0; left: 0; right: 0; bottom: 0;
   }
     .map__image {
       @extend .auto;
     }
-  .address {
-    color: $body-color;
-    font-size: 1.2em;
-  }
   .directions__footer {
     text-align: center;
+    margin-top: 10em;
+    a {
+      background-color: #212121;
+    }
   }
 
 // Menu item
@@ -1356,7 +1373,8 @@ x:-o-prefocus, .lb-overlay img {
   .main-nav__item {
     width: 33.333333%;
   }
-  .opening-hours__image {
+  .opening-hours__image,
+  .directions__image {
     height: 250px;
   }
   .menu-child {
@@ -1397,17 +1415,20 @@ x:-o-prefocus, .lb-overlay img {
     width: 25%;
   }
 
-  .opening-hours__header {
+  .opening-hours__header,
+  .directions__header {
     width: 50%;
     float: left;
     .section__title {
       padding: 4em 0;
     }
   }
-  .opening-hours__image {
+  .opening-hours__image,
+  .directions__image {
     height: 350px;
   }
-  .opening-hours__body {
+  .opening-hours__body,
+  .directions__body {
     width: 50%;
     float: left;
   }

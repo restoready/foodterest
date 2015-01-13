@@ -84,40 +84,33 @@
   </div>
 </section>
 
-<!-- <section class="directions">
-  <header class="section__header">
-    <h2 class="section__title">{{ "Localisation" | t }}</h2>
+<section class="directions">
+  <header class="section__header directions__header">
+    <div class="section__title">
+      <h2>{{ "Localisation" | t }}</h2>
+    </div>
+    <div class="directions__image"></div>
   </header>
-  <main class="section__main">
+  <main class="section__main directions__body">
     {% if theme_settings.google_map_type != "" %}
       <div class="map">
         {% if theme_settings.google_map_type == "embed" %}
-          {% google_map_embed: "size:100%x320" %}
+          {% google_map_embed: "size:100%x600" %}
         {% elsif theme_settings.google_map_type == "image" %}
           <a class="map__link" href="{% google_map_url %}">
-            <img class="map__image" src="{% google_map_image_url: "size:640x320" %}" />
+            <img class="map__image" src="{% google_map_image_url: "size:1000x1000" %}" />
           </a>
         {% endif %}
+        <div class="map-overlay">
+          <footer class="section__footer directions__footer">
+            <p>
+              <a class="button btn-see-location" href="{% google_map_url %}">
+                {{ "Voir l'itinéraire" | t }}
+              </a>
+            </p>
+          </footer>
+        </div>
       </div>
     {% endif %}
-    {% if restaurant.street_address? || restaurant.zip_code? || restaurant.city? %}
-    <div class="address">
-      <p>
-        {% if restaurant.street_address? %}
-          {{ restaurant.street_address }}
-          <br />
-        {% endif %}
-        {% if restaurant.zip_code? %} {{ restaurant.zip_code }} {% endif %}
-        {% if restaurant.city? %} <strong>{{ restaurant.city }}</strong> {% endif %}
-      </p>
-    </div>
-    {% endif %}
   </main>
-  <footer class="section__footer directions__footer">
-    <p>
-      <a class="button" href="{% google_map_url %}">
-        {{ "Voir l'itinéraire" | t }}
-      </a>
-    </p>
-  </footer>
-</section> -->
+</section>
