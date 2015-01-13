@@ -1325,9 +1325,17 @@ x:-o-prefocus, .lb-overlay img {
   input,
   textarea,
   select {
-    font-size: 112.5%;
+    font-size: 105%;
   }
-
+  .main-header__hamburger {
+    margin-top: 5px;
+    div {
+      width: 52px;
+    }
+  }
+  .main-nav__item {
+    width: 33.333333%;
+  }
   .menu-child {
     width: 32%;
   }
@@ -1354,7 +1362,16 @@ x:-o-prefocus, .lb-overlay img {
   input,
   textarea,
   select {
-    font-size: 125%;
+    font-size: 115%;
+  }
+  .main-header__hamburger {
+    margin-top: 2px;
+    div {
+      width: 58px;
+    }
+  }
+  .main-nav__item {
+    width: 25%;
   }
   .footer__subscribe {
     .input {
@@ -1422,6 +1439,9 @@ x:-o-prefocus, .lb-overlay img {
 // > Large
 @include at-query($min, $siteWidth) {
 
+  .main-nav__item {
+    width: 14.2857143%;
+  }
   .footer__subscribe {
     margin: 0 auto;
     width: 75%;
@@ -1434,5 +1454,12 @@ x:-o-prefocus, .lb-overlay img {
     width: 19.5%;
     background-color: #212121;
     margin: 0.25%;
+  }
+}
+
+// > XLarge
+@include at-query($min, 1300px) {
+  .main-nav__item {
+    width: 11.1111111%;
   }
 }
