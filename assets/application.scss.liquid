@@ -547,52 +547,12 @@ body {
         height: 70px;
       }
 
-.main-nav {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 3;
-}
   float: right;
   }
   }
 }
-.main-nav__items {
-  background-color: $accent-color;
   display: none;
-  height: auto;
-  margin-bottom: 0;
 }
-  .main-nav:target .main-nav__items {
-    display: block;
-    width: 100%;
-  }
-  .main-nav__item {
-    &:not(:last-child) {
-      border-bottom: 1px solid scale-color($accent-color, $lightness: +25%);
-    }
-    display: block;
-    margin: 0;
-  }
-  .main-nav__item--current {
-    background-color: scale-color($accent-color, $lightness: -15%);
-  }
-    .main-nav__link {
-      color: #fff;
-      display: block;
-      height: auto;
-      padding: 0.75em 1em;
-      font-size: 1.3em;
-      font-weight: 700;
-      text-decoration: none;
-      &:hover, &:focus {
-        background-color: scale-color($accent-color, $lightness: -15%);
-      }
-      &:active {
-        background-color: scale-color($accent-color, $lightness: -30%);
-      }
-    }
 
 .main-content {
   margin-bottom: 1em;
@@ -1394,45 +1354,6 @@ x:-o-prefocus, .lb-overlay img {
     width: 15%;
     float: left;
   }
-  .main-nav {
-    position: relative;
-    float: right;
-    width: 85%;
-    height: 100%;
-  }
-    .main-nav__items {
-      display: block;
-      background-color: transparent;
-    }
-      .main-nav__item {
-        display: inline-block;
-        height: 100px;
-        background-color: #353535;
-        margin-bottom: .25em;
-        &:not(:last-child) {
-          border-bottom: none;
-        }
-        &:hover, &:active {
-          background-color: $accent-color;
-        }
-      }
-      .main-nav__item--current {
-        background-color: $accent-color;
-      }
-        .main-nav__link {
-          display: inline-block;
-          height: 100px;
-          &:hover, &:focus {
-            background-color: transparent;
-          }
-          &:active {
-            background-color: transparent;
-          }
-        }
-        .main-nav__title {
-          @include vertical-align;
-        }
-
   .footer__subscribe {
     margin: 0 auto;
     width: 75%;
