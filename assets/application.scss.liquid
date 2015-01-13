@@ -1113,6 +1113,10 @@ legend {
   background-color: #212121;
   margin: 0.5%;
   text-align: center;
+  transition: background-color .25s;
+  &:hover {
+    background-color: #333333;
+  }
 }
   .item-content {
     padding: .5em;
@@ -1130,7 +1134,7 @@ legend {
       display: block;
     }
     &:hover {
-      background-color: $accent-color;
+      background-color: #333333;
     }
     img {
       border-radius: 50%;
