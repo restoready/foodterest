@@ -1,37 +1,39 @@
 <div class="item food {% if food.featured_in_menu? %}food--featured{% endif %} {{food.auto_css_classes}}" id="food-{{food.id}}">
-  {% if food.main_image? %}
-    {{ food.main_image | custom_image_url:'100x100#' | image_tag:'class:food__image circle' }}
-  {% endif %}
-  <div class="food__body">
-    <h5 class="food__title">
-      {% if food.featured_in_menu? %}
-        <i class="icon-star"></i>
-      {% endif %}
-      {{ food.name }}
-    </h3>
-    {% if food.tags? %}
-      <div class="food__tags">
-        {% for tag in food.tags %}
-          <i class="tag tag--{{ tag.css_class }}">{{ tag.name }}</i>
-        {% endfor %}
-      </div>
+  <div class="item-content">
+    {% if food.main_image? %}
+      {{ food.main_image | custom_image_url:'100x100#' | image_tag:'class:food__image circle' }}
     {% endif %}
-    {% if food.summary? %}
-      <div class="food__summary">
-        {{ food.summary }}
-      </div>
-    {% endif %}
-    {% if prices.size > 0 %}
-      <div class="food__prices">
-        <ul class="prices">
-          {% for price in prices %}
-          <li class="price">
-            <span class="price__label">{{ price.title }}</span>
-            <span class="price__value">{{ price.amount | money }}</span>
-          </li>
+    <div class="food__body">
+      <h5 class="food__title">
+        {% if food.featured_in_menu? %}
+          <i class="icon-star"></i>
+        {% endif %}
+        {{ food.name }}
+      </h5>
+      {% if food.tags? %}
+        <div class="food__tags">
+          {% for tag in food.tags %}
+            <i class="tag tag--{{ tag.css_class }}">{{ tag.name }}</i>
           {% endfor %}
-        </ul>
-      </div>
-    {% endif %}
+        </div>
+      {% endif %}
+      {% if food.summary? %}
+        <div class="food__summary">
+          {{ food.summary }}
+        </div>
+      {% endif %}
+      {% if prices.size > 0 %}
+        <div class="food__prices">
+          <ul class="prices">
+            {% for price in prices %}
+            <li class="price">
+              <span class="price__label">{{ price.title }}</span>
+              <span class="price__value">{{ price.amount | money }}</span>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+    </div>
   </div>
 </div>

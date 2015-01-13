@@ -22,16 +22,27 @@
   <section class="featured">
     <main class="section__main" id="container">
       {% for menu in home_menus %}
-        <div class="item">
-          <h6 class="menu-tag">Menu</h6>
-          <h3 class="menu__title">{{ menu.name }}</h3>
-          {% if menu.main_image? %}
-            <img src="{{ menu.main_image | custom_image_url: "100x100#" }}" alt="menu" class="featured__menu-image">
-          {% endif %}
-        </div>
+        {% if menu.parent? %}
+          <a href="{{ menu.root_parent.url }}#menu-{{menu.id}}">
+        {% else %}
+          <a href="{{ menu.url }}">
+        {% endif %}
+          <div class="item">
+            <h6 class="menu-tag">Menu</h6>
+            <div class="item-content">
+              <h3 class="menu__title">{{ menu.name }}</h3>
+              {% if menu.main_image? %}
+                <img src="{{ menu.main_image | custom_image_url: "100x100#" }}" alt="menu" class="featured__menu-image">
+              {% endif %}
+            </div>
+          </div>
+        </a>
       {% endfor %}
       {% for food in home_foods %}
-        {% include 'food' with food:food %}
+        {% assign relative_menu = food.menu %}
+        <a href="{% if relative_menu.parent? %}{{ relative_menu.root_parent.url }}#menu-{{relative_menu.id}}{% else %}{{ relative_menu.url }}{% endif %}">
+          {% include 'food' with food:food %}
+        </a>
       {% endfor %}
     </main>
   </section>

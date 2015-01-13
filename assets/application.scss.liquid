@@ -814,29 +814,12 @@ legend {
     }
       .phone-number__label {
         color: white;
+        font-weight: bold;
       }
 
-// .menus--featured {
-//   background-color: #fff;
-//   margin-bottom: 1em;
-//   padding: 1em 0;
-//   .section__title {
-//     color: #444;
-//     border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
-//     margin-bottom: .5em;
-//   }
-// }
-
-// .foods--featured {
-//   background-color: scale-color($body-color, $lightness: +95%);
-//   margin-bottom: 1em;
-//   padding: 1em 0;
-//   .section__title {
-//     color: #444;
-//     border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
-//     margin-bottom: .5em;
-//   }
-// }
+.featured {
+  margin-bottom: 1em;
+}
 
 .menus__footer,
 .foods__footer {
@@ -903,6 +886,10 @@ legend {
   }
   .menu-tag {
     color: white;
+    text-align: center;
+    padding: .5em 0;
+    font-weight: bold;
+    width: 50%;
     font-family: $bodyFontStack;
     background-color: $accent-color;
   }
@@ -1098,9 +1085,11 @@ legend {
   width: 49%;
   background-color: #212121;
   margin: 0.5%;
-  padding: .5em;
   text-align: center;
 }
+  .item-content {
+    padding: .5em;
+  }
 
 /**
  * Pure CSS Lightbox
