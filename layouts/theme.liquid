@@ -28,10 +28,42 @@
                 {{ restaurant.logo_url | image_tag:'class:logo__image' }}
               </a>
             </div>
+
+            <div class="restaurant-name">
+              <a class="restaurant-name__link" href="{{ localized_root_path }}">
+                {{ restaurant.name }}
+              </a>
+              {% if restaurant.slogan? %}
+                <div class="slogan">
+                  {{ restaurant.slogan }}
+                </div>
+              {% endif %}
+            </div>
+            
+            <div class="phone-large">
+              {% if restaurant.phone? %}
+                <div class="phone-number">
+                  <a class="phone-number__link" href="tel:{{ restaurant.phone_uri }}">
+                    <i class="icon-phone"></i> <span class="phone-number__label">{{ restaurant.phone }}</span>
+                  </a>
+                </div>
+              {% endif %}
+            </div>
+
             <div class="main-header__hamburger">
               <p>Menu</p>
               <div></div>
               <div></div>
+            </div>
+          {% endif %}
+        </div>
+        <div class="clearer"></div>
+        <div class="phone-medium-down">
+          {% if restaurant.phone? %}
+            <div class="phone-number">
+              <a class="phone-number__link" href="tel:{{ restaurant.phone_uri }}">
+                <i class="icon-phone"></i> <span class="phone-number__label">{{ restaurant.phone }}</span>
+              </a>
             </div>
           {% endif %}
         </div>
