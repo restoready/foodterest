@@ -37,8 +37,8 @@
     <div class="section__title">
       <h2>{{ "Horaires" | t }}</h2>
     </div>
-    <div class="opening-hours__image"></div>
   </header>
+  <div class="opening-hours__image"></div>
   <main class="section__main opening-hours__body">
     <dl class="opening-days">
     {% for day in opening_hours %}
@@ -50,14 +50,12 @@
       </dd>
     {% endfor %}
     </dl>
-  </main>
-  <div class="opening-hours__footer">
     {% if restaurant.opening_hours_information? %}
       <div class="opening-hours__information">
         <p>{{ restaurant.opening_hours_information }}</p>
       </div>
     {% endif %}
-  </div>
+  </main>
 </section>
 
 <section class="directions">
@@ -65,25 +63,23 @@
     <div class="section__title">
       <h2>{{ "Localisation" | t }}</h2>
     </div>
-    <div class="directions__image"></div>
   </header>
+  <div class="directions__image"></div>
   <main class="section__main directions__body">
     {% if theme_settings.google_map_type != "" %}
       <div class="map">
         {% if theme_settings.google_map_type == "embed" %}
-          {% google_map_embed: "size:100%x600" %}
+          {% google_map_embed: "size:1000%x600" %}
         {% elsif theme_settings.google_map_type == "image" %}
           <a class="map__link" href="{% google_map_url %}">
-            <img class="map__image" src="{% google_map_image_url: "size:1000x1000" %}" />
+            <img class="map__image" src="{% google_map_image_url: "size:640x520" %}" />
           </a>
         {% endif %}
         <div class="map-overlay">
           <footer class="section__footer directions__footer">
-            <p>
-              <a class="button btn-see-location" href="{% google_map_url %}">
-                {{ "Voir l'itinéraire" | t }}
-              </a>
-            </p>
+            <a class="button btn-see-location" href="{% google_map_url %}">
+              {{ "Voir l'itinéraire" | t }}
+            </a>
           </footer>
         </div>
       </div>

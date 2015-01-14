@@ -672,7 +672,6 @@ body {
       }
 
 .main-content {
-  margin-bottom: 1em;
 }
   .section__header {
   }
@@ -842,7 +841,7 @@ legend {
 // Home page
 
 .featured {
-  margin-bottom: 2.25em;
+  margin-bottom: 1.5em;
 }
 
 .menus__footer,
@@ -851,8 +850,6 @@ legend {
 }
 
 .opening-hours {
-  background-color: #fff;
-  margin-bottom: 1em;
 }
 .opening-hours__header {
   text-align: center;
@@ -872,7 +869,6 @@ legend {
   background-color: #212121;
   padding: 1em;
   text-align: center;
-  margin-bottom: 1em;
 }
   .opening-days {
 
@@ -886,16 +882,12 @@ legend {
       font-size: 1em;
       margin-bottom: .5em;
     }
-  .opening-hours__footer {
-    text-align: center;
-  }
     .opening-hours__information {
-      margin-bottom: 1em;
+      color: #FFFFFF;
+      margin-top: 1.5em;
     }
 
 .directions, .business-view {
-  background-color: #fff;
-  margin-bottom: 1em;
 }
 .directions__header {
   text-align: center;
@@ -912,25 +904,28 @@ legend {
   height: 200px;
 }
 .directions__body {
-  margin-bottom: 1em;
 }
   .map {
-    margin-bottom: 1em;
     position: relative;
   }
   .map-overlay {
     position: absolute;
-    background-color: transparentize(#212121, 0.5);
+    background-color: transparentize(#212121, 0.75);
     top: 0; left: 0; right: 0; bottom: 0;
   }
     .map__image {
       @extend .auto;
     }
   .directions__footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #212121;
     text-align: center;
-    margin-top: 10em;
     a {
       background-color: #212121;
+      width: 100%;
     }
   }
 
@@ -1443,18 +1438,34 @@ x:-o-prefocus, .lb-overlay img {
   .main-nav__item {
     width: 25%;
   }
-
-  .opening-hours__header,
-  .directions__header {
+  .opening-hours,
+  .directions {
+    overflow: hidden;
+    position: relative;
+  }
+  .opening-hours__header {
     width: 50%;
     float: left;
     .section__title {
-      padding: 4em 0;
+      height: 90px;
     }
   }
-  .opening-hours__image,
+  .directions__header {
+    width: 50%;
+    float: right;
+    .section__title {
+      height: 90px;
+    }
+  }
+  .opening-hours__image {
+    position: absolute;
+    top: 90px; left: 0; right: 50%; bottom: 0;
+    height: auto;
+  }
   .directions__image {
-    height: 350px;
+    position: absolute;
+    top: 90px; left: 50%; right: 0; bottom: 0;
+    height: auto;
   }
   .opening-hours__body,
   .directions__body {
