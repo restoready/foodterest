@@ -947,14 +947,17 @@ legend {
   .menu-tag {
     color: white;
     text-align: center;
-    padding: .5em 0;
+    padding: .25em 0;
     font-weight: bold;
-    width: 50%;
     font-family: $bodyFontStack;
     background-color: $accent-color;
+    margin-bottom: .5em;
   }
   .featured__menu-image {
-    border-radius: 50%;
+    width: 100%;
+    display: block;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
   }
     .menu__image {
       @extend .auto;
@@ -965,6 +968,7 @@ legend {
     .menu__title {
       color: white;
       margin-bottom: .5em;
+      padding: 0 .5em;
     }
   .menu__description {
     font-size: 1em;
@@ -1025,10 +1029,15 @@ legend {
 
 }
   .food__image {
-
+    width: 100%;
+    display: block;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-bottom: .5em;
   }
   .food__body {
-
+    margin-bottom: .5em;
+    padding: 0 .5em;
   }
     .food__title {
       color: white;
@@ -1142,22 +1151,21 @@ legend {
  * masonry elements styles
  */
 .item {
-  width: 49%;
+  width: 48%;
   background-color: #212121;
-  margin: 0.5%;
+  margin: 1%;
   text-align: center;
   transition: background-color .25s;
+  border-radius: 5px;
   &:hover {
     background-color: #333333;
   }
 }
-  .item-content {
-    padding: .5em;
-  }
+.item.see-all-menus {
+  background-color: $accent-color;
+}
   .see-all-menus {
-    background-color: #212121;
     cursor: pointer;
-    padding: 1em 0;
     transition: background-color .25s;
     a {
       color: #FFFFFF;
@@ -1165,12 +1173,18 @@ legend {
       font-size: 1.25em;
       font-weight: bold;
       display: block;
+      margin-bottom: .5em;
+      padding: 0 .5em;
     }
     &:hover {
       background-color: #333333;
     }
     img {
-      border-radius: 50%;
+      width: 100%;
+      display: block;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      margin-bottom: .5em;
     }
   }
 /**
@@ -1390,10 +1404,13 @@ x:-o-prefocus, .lb-overlay img {
   /**
    * masonry elements styles
    */
+  #container {
+    margin: 1em;
+  }
   .item {
-    width: 32.333333%;
+    width: 31.333333%;
     background-color: #212121;
-    margin: 0.5%;
+    margin: 1%;
   }
 }
 
@@ -1478,9 +1495,9 @@ x:-o-prefocus, .lb-overlay img {
    * masonry elements styles
    */
   .item {
-    width: 24%;
+    width: 23%;
     background-color: #212121;
-    margin: 0.5%;
+    margin: 1%;
   }
 }
 
@@ -1499,9 +1516,9 @@ x:-o-prefocus, .lb-overlay img {
    * masonry elements styles
    */
   .item {
-    width: 19.5%;
+    width: 19%;
     background-color: #212121;
-    margin: 0.25%;
+    margin: 0.5%;
   }
 }
 
