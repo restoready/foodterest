@@ -558,12 +558,12 @@ ul, li {
   float: left;
 }
   .slogan {
-    color: #333333;
+    color: #282828;
     font-size: .9em;
     font-style: italic;
   }
   .restaurant-name__link {
-    color: #333333;
+    color: #282828;
     font-family: $headerFontStack;
     text-decoration: none;
     font-size: 1.25em;
@@ -581,12 +581,12 @@ ul, li {
     font-size: 1em;
     text-transform: uppercase;
     font-weight: bold;
-    color: #333333;
+    color: #282828;
     margin-bottom: 0;
   }
   div {
     margin-bottom: .5em;
-    background-color: #333333;
+    background-color: #282828;
     height: 6px;
     width: 42px;
     border-radius: 5px;
@@ -610,7 +610,7 @@ ul, li {
       }
     }
       .phone-number__label {
-        color: #333333;
+        color: #282828;
         font-weight: bold;
         transition: color .25s;
       }
@@ -618,7 +618,8 @@ ul, li {
 .main-nav {
   display: none;
   overflow: hidden;
-  margin: .5em 0;
+  margin-top: .5em;
+  border-bottom: 1px solid #EEEEEE;
 }
   .main-nav__items {
     list-style: none;
@@ -676,7 +677,6 @@ ul, li {
       }
 
 .main-content {
-  margin-top: 1em;
 }
   .section__header {
   }
@@ -820,13 +820,13 @@ legend {
  */
 .item {
   width: 48%;
-  background-color: #212121;
+  background-color: #282828;
   margin: 1%;
   text-align: center;
   transition: background-color .25s;
   border-radius: 5px;
   &:hover {
-    background-color: #333333;
+    background-color: #404040;
   }
 }
 .item.see-all-menus {
@@ -845,7 +845,7 @@ legend {
       padding: 0 .5em;
     }
     &:hover {
-      background-color: #333333;
+      background-color: #404040;
     }
     img {
       width: 100%;
@@ -896,10 +896,13 @@ legend {
 }
 
 .opening-hours {
+  padding: 0 .25em;
 }
 .opening-hours__header {
   text-align: center;
   background-color: $accent-color;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   .section__title {
     padding: 1em 0;
     color: #FFFFFF;
@@ -910,9 +913,14 @@ legend {
   background-size: cover;
   background-position: center center;
   height: 200px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-bottom: 1em;
 }
 .opening-hours__body {
-  background-color: #212121;
+  margin-bottom: 1em;
+  border-radius: 5px;
+  background-color: #282828;
   padding: 1em;
   text-align: center;
 }
@@ -934,10 +942,13 @@ legend {
     }
 
 .directions, .business-view {
+  padding: 0 .25em;
 }
 .directions__header {
   text-align: center;
   background-color: $accent-color;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   .section__title {
     padding: 1em 0;
     color: #FFFFFF;
@@ -948,29 +959,38 @@ legend {
   background-size: cover;
   background-position: center center;
   height: 200px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-bottom: 1em;
 }
 .directions__body {
 }
   .map {
     position: relative;
+    border-radius: 5px;
   }
   .map-overlay {
+    border-radius: 5px;
     position: absolute;
-    background-color: transparentize(#212121, 0.75);
+    background-color: transparentize(#282828, 0.75);
     top: 0; left: 0; right: 0; bottom: 0;
   }
     .map__image {
       @extend .auto;
     }
   .directions__footer {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: #212121;
+    background-color: #282828;
     text-align: center;
     a {
-      background-color: #212121;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+      background-color: #282828;
       width: 100%;
     }
   }
@@ -987,6 +1007,7 @@ legend {
 }
 .menus__menu-link {
   color: #FFFFFF;
+  text-decoration: none;
 }
 .menus__menu-image {
   position: relative;
@@ -995,9 +1016,9 @@ legend {
 }
 .menus__body {
   padding: 1em .5em;
-  background-color: #212121;
+  background-color: #282828;
   .item {
-    background-color: #333333;
+    background-color: #404040;
   }
 }
 // Menu item
@@ -1030,6 +1051,9 @@ legend {
       color: white;
       margin-bottom: .5em;
       padding: 0 .5em;
+      font-family: $bodyFontStack;
+      font-size: 1.25em;
+      font-weight: 700;
     }
   .menu__description {
     font-size: 1em;
@@ -1087,14 +1111,8 @@ legend {
     .food__summary {
       font-size: 1em;
       color: #ddd;
+      line-height: 1.35;
     }
-  .food__separator {
-    border: none;
-    border-top: 1px solid $food-separator-color;
-    color: $food-separator-color;
-    margin: 1em 0;
-    padding: 0;
-  }
 .food--featured {
   .icon-star {
     color: $accent-color;
@@ -1409,13 +1427,15 @@ x:-o-prefocus, .lb-overlay img {
   }
   .item {
     width: 31.333333%;
-    background-color: #212121;
     margin: 1%;
   }
 }
 
 // Large
 @include at-query($min, $medium) {
+  .main-header {
+    margin-bottom: .5em;
+  }
   .logo__image {
     height: 65px;
   }
@@ -1436,39 +1456,50 @@ x:-o-prefocus, .lb-overlay img {
   .main-nav__item {
     width: 25%;
   }
+  .opening-hours {
+    margin-bottom: 1em;
+  }
   .opening-hours,
   .directions {
     overflow: hidden;
     position: relative;
+    padding: 0;
   }
   .opening-hours__header {
-    width: 50%;
+    width: 48%;
     float: left;
+    margin: 0 1%;
     .section__title {
       height: 90px;
     }
   }
   .directions__header {
-    width: 50%;
+    width: 48%;
     float: right;
+    margin: 0 1%;
     .section__title {
       height: 90px;
     }
   }
   .opening-hours__image {
     position: absolute;
-    top: 90px; left: 0; right: 50%; bottom: 0;
+    top: 90px; left: 1%; right: 51%; bottom: 0;
     height: auto;
+    box-sizing: border-box;
+    margin-bottom: 0;
   }
   .directions__image {
     position: absolute;
-    top: 90px; left: 50%; right: 0; bottom: 0;
+    top: 90px; left: 51%; right: 1%; bottom: 0;
     height: auto;
+    margin-bottom: 0;
   }
   .opening-hours__body,
   .directions__body {
-    width: 50%;
+    width: 48%;
     float: left;
+    margin: 0 1%;
+    box-sizing: border-box;
   }
   .footer__subscribe {
     .input {
@@ -1552,7 +1583,6 @@ x:-o-prefocus, .lb-overlay img {
    */
   .item {
     width: 23%;
-    background-color: #212121;
     margin: 1%;
   }
   .menus__body {
@@ -1579,7 +1609,6 @@ x:-o-prefocus, .lb-overlay img {
    */
   .item {
     width: 19%;
-    background-color: #212121;
     margin: 0.5%;
   }
 }
