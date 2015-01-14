@@ -1,76 +1,68 @@
-<div class="wrapper">
-  <div class="back-to-top">
-    <a class="back-to-top__link" href="#top">
-      <i class="icon-arrow-up"></i> <span class="back-to-top__label">{{ "Haut de la page" | t }}</span>
-    </a>
+<!-- {% if theme_settings.footer_display_newsletter %}
+  <div class="footer__subscribe">
+    {% newsletter_subscribe_form %}
+      <fieldset class="field-group">
+        <div class="input">
+          <label class="subscribe__label" for="subscriberEmail">{{ "Entrez votre email pour recevoir notre newsletter&nbsp;:" | t }}</label>
+          <input id="subscriberEmail" name="subscriber[email]" type="email" required>
+        </div>
+        <div class="submit">
+          <button class="button" type="submit">
+            <i class="icon-check"></i> {{ "Valider" | t }}
+          </button>
+        </div>
+      </fieldset>
+    {% endnewsletter_subscribe_form %}
   </div>
+{% endif %} -->
 
-  {% if theme_settings.footer_display_newsletter %}
-    <div class="footer__subscribe">
-      {% newsletter_subscribe_form %}
-        <fieldset class="field-group">
-          <div class="input">
-            <label class="subscribe__label" for="subscriberEmail">{{ "Entrez votre email pour recevoir notre newsletter&nbsp;:" | t }}</label>
-            <input id="subscriberEmail" name="subscriber[email]" type="email" required>
-          </div>
-          <div class="submit">
-            <button class="button" type="submit">
-              <i class="icon-check"></i> {{ "Valider" | t }}
-            </button>
-          </div>
-        </fieldset>
-      {% endnewsletter_subscribe_form %}
-    </div>
-  {% endif %}
-
-  <div class="footer__social">
-    <ul class="social__items">
-      {% if restaurant.phone? %}
+<div class="footer__social">
+  <ul class="social__items">
+    {% if restaurant.phone? %}
+    <li class="social__item">
+      <a class="social__link" href="tel:{{ restaurant.phone_uri }}">
+        <i class="icon-phone"></i>
+        <span class="social__label">{{ restaurant.phone }}</span>
+      </a>
+    </li>
+    {% endif %}
+    {% if restaurant.email? %}
       <li class="social__item">
-        <a class="social__link" href="tel:{{ restaurant.phone_uri }}">
-          <i class="icon-phone"></i>
-          <span class="social__label">{{ restaurant.phone }}</span>
+        <a class="social__link" href="mailto:#{{restaurant.email}}">
+          <i class="icon-envelope"></i>
+          <span class="social__label">{{ "Envoyer un email" | t }}</span>
         </a>
       </li>
-      {% endif %}
-      {% if restaurant.email? %}
-        <li class="social__item">
-          <a class="social__link" href="mailto:#{{restaurant.email}}">
-            <i class="icon-envelope"></i>
-            <span class="social__label">{{ "Envoyer un email" | t }}</span>
-          </a>
-        </li>
-      {% endif %}
-      {% if restaurant.facebook_url? %}
-        <li class="social__item">
-          <a class="social__link" href="{{restaurant.facebook_url}}">
-            <i class="icon-social-facebook"></i>
-            <span class="social__label">{{ "Notre page Facebook" | t }}</span>
-          </a>
-        </li>
-      {% endif %}
-      {% if restaurant.twitter_url? %}
-        <li class="social__item">
-          <a class="social__link" href="{{restaurant.twitter_url}}">
-            <i class="icon-social-twitter"></i>
-            <span class="social__label">{{ "Notre compte Twitter" | t }}</span>
-          </a>
-        </li>
-      {% endif %}
-      {% if restaurant.tripadvisor_url? %}
-        <li class="social__item">
-          <a class="social__link" href="{{restaurant.tripadvisor_url}}">
-            <i class="icon-tripadvisor"></i>
-            <span class="social__label">{{ "Notre page TripAdvisor" | t }}</span>
-          </a>
-        </li>
-      {% endif %}
-    </ul>
-  </div>
-
-  <div class="footer__legal">
-    <a class="legal__link" href="{{ restaurant.terms_of_use_url }}">
-      {{ "Mentions légales" | t }}
-    </a>
-  </div>
+    {% endif %}
+    {% if restaurant.facebook_url? %}
+      <li class="social__item">
+        <a class="social__link" href="{{restaurant.facebook_url}}">
+          <i class="icon-social-facebook"></i>
+          <span class="social__label">{{ "Notre page Facebook" | t }}</span>
+        </a>
+      </li>
+    {% endif %}
+    {% if restaurant.twitter_url? %}
+      <li class="social__item">
+        <a class="social__link" href="{{restaurant.twitter_url}}">
+          <i class="icon-social-twitter"></i>
+          <span class="social__label">{{ "Notre compte Twitter" | t }}</span>
+        </a>
+      </li>
+    {% endif %}
+    {% if restaurant.tripadvisor_url? %}
+      <li class="social__item">
+        <a class="social__link" href="{{restaurant.tripadvisor_url}}">
+          <i class="icon-tripadvisor"></i>
+          <span class="social__label">{{ "Notre page TripAdvisor" | t }}</span>
+        </a>
+      </li>
+    {% endif %}
+  </ul>
 </div>
+
+<!-- <div class="footer__legal">
+  <a class="legal__link" href="{{ restaurant.terms_of_use_url }}">
+    {{ "Mentions légales" | t }}
+  </a>
+</div> -->
