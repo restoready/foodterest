@@ -530,6 +530,9 @@ body {
 .clearer {
   clear: both;
 }
+ul, li {
+  margin-bottom: 0;
+}
 .page {
   @extend .clearfix;
 }
@@ -673,6 +676,7 @@ body {
       }
 
 .main-content {
+  margin-top: 1em;
 }
   .section__header {
   }
@@ -811,6 +815,46 @@ legend {
   color: #fff;
 }
 
+/**
+ * masonry elements styles
+ */
+.item {
+  width: 48%;
+  background-color: #212121;
+  margin: 1%;
+  text-align: center;
+  transition: background-color .25s;
+  border-radius: 5px;
+  &:hover {
+    background-color: #333333;
+  }
+}
+.item.see-all-menus {
+  background-color: $accent-color;
+}
+  .see-all-menus {
+    cursor: pointer;
+    transition: background-color .25s;
+    a {
+      color: #FFFFFF;
+      text-decoration: none;
+      font-size: 1.25em;
+      font-weight: bold;
+      display: block;
+      margin-bottom: .5em;
+      padding: 0 .5em;
+    }
+    &:hover {
+      background-color: #333333;
+    }
+    img {
+      width: 100%;
+      display: block;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      margin-bottom: .5em;
+    }
+  }
 
 // ===========================================================================
 // #Modules
@@ -931,6 +975,31 @@ legend {
     }
   }
 
+// all menus
+
+.menus__header {
+  text-align: center;
+  background-color: $accent-color;
+  .section__title {
+    padding: .5em 0;
+    color: #FFFFFF;
+  }
+}
+.menus__menu-link {
+  color: #FFFFFF;
+}
+.menus__menu-image {
+  position: relative;
+  background-position: center center;
+  height: 200px;
+}
+.menus__body {
+  padding: 1em .5em;
+  background-color: #212121;
+  .item {
+    background-color: #333333;
+  }
+}
 // Menu item
 .menu {
   padding-bottom: 1em;
@@ -956,7 +1025,6 @@ legend {
       @extend .auto;
     }
   .menu__header {
-
   }
     .menu__title {
       color: white;
@@ -968,33 +1036,13 @@ legend {
     margin-bottom: 1em;
   }
 
-.menus__menu-link {
-    color: scale-color($accent-color, $saturation: -75%);
-    &:hover, &:focus {
-      color: $accent-color;
-    }
-  }
-  .menus__separator {
-    border: none;
-    border-top: medium solid $food-separator-color;
-    color: $food-separator-color;
-    margin: 1em 0;
-    padding: 0;
-  }
-
 // Menu children
 .menu-children {
 }
   .menu-child {
-    display: inline-block;
-    margin-bottom: .5em;
-    text-align: center;
-    vertical-align: top;
-    width: 49%;
   }
     .menu-child__link {
       display: block;
-      padding: .5em;
       text-decoration: none;
       &:hover, &:focus {
         .menu-child__title {
@@ -1003,18 +1051,16 @@ legend {
       }
     }
       .menu-child__image {
-        @extend .auto;
-        border-radius: 50%;
-        margin-bottom: .5em;
-        vertical-align: middle;
+        width: 100%;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
       }
-      .anchor-image {
-        width: 100px;
-        border-radius: 50%;
-      }
+
       .menu-child__title {
-        color: scale-color($accent-color, $saturation: -75%);
+        color: #FFFFFF;
         display: block;
+        transition: color .25s;
+        padding: .5em;
       }
 
 // Food item
@@ -1139,46 +1185,6 @@ legend {
           background-color: rgba($body-color, .75);
         }
 
-/**
- * masonry elements styles
- */
-.item {
-  width: 48%;
-  background-color: #212121;
-  margin: 1%;
-  text-align: center;
-  transition: background-color .25s;
-  border-radius: 5px;
-  &:hover {
-    background-color: #333333;
-  }
-}
-.item.see-all-menus {
-  background-color: $accent-color;
-}
-  .see-all-menus {
-    cursor: pointer;
-    transition: background-color .25s;
-    a {
-      color: #FFFFFF;
-      text-decoration: none;
-      font-size: 1.25em;
-      font-weight: bold;
-      display: block;
-      margin-bottom: .5em;
-      padding: 0 .5em;
-    }
-    &:hover {
-      background-color: #333333;
-    }
-    img {
-      width: 100%;
-      display: block;
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
-      margin-bottom: .5em;
-    }
-  }
 /**
  * Pure CSS Lightbox
  * @see http://tympanus.net/codrops/2011/12/26/css3-lightbox/
@@ -1388,9 +1394,6 @@ x:-o-prefocus, .lb-overlay img {
   .directions__image {
     height: 250px;
   }
-  .menu-child {
-    width: 32%;
-  }
 
   .gallery__item {
     display: inline-block;
@@ -1480,8 +1483,43 @@ x:-o-prefocus, .lb-overlay img {
     }
   }
 
-  .menu-child {
-    width: 19%;
+  // all menus
+  .menus-wrapper {
+    &>.menus {
+      position: relative;
+      overflow:hidden;
+      &:nth-of-type(odd) {
+        .menus__header {
+          float: left;
+        }
+        .menus__menu-image {
+          top:90px; left: 0; right: 50%; bottom: 0;
+        }
+      }
+      &:nth-of-type(even) {
+        .menus__header {
+          float: right;
+        }
+        .menus__menu-image {
+          top: 90px; left: 50%; right: 0; bottom: 0;
+        }
+      }
+    }
+  }
+  .menus__header {
+    width: 50%;
+    .section__title {
+      height: 90px;
+    }
+  }
+  .menus__menu-image {
+    height: auto;
+    position: absolute;
+  }
+  .menus__body {
+    width: 50%;
+    float: left;
+    padding: 1em;
   }
 
   .gallery__item {
@@ -1516,6 +1554,12 @@ x:-o-prefocus, .lb-overlay img {
     width: 23%;
     background-color: #212121;
     margin: 1%;
+  }
+  .menus__body {
+    .item {
+      width: 31.333333%;
+      margin: 1%;
+    }
   }
 }
 

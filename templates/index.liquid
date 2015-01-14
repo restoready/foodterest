@@ -1,6 +1,6 @@
 {% if home_menus.size > 0 or if home_foods.size > 0 %}
   <section class="featured">
-    <main class="section__main" id="container">
+    <main class="section__main container">
       {% for menu in home_menus %}
         {% if menu.parent? %}
           <a href="{{ menu.root_parent.url }}#menu-{{menu.id}}">

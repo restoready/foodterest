@@ -39,7 +39,7 @@
                 </div>
               {% endif %}
             </div>
-            
+
             <div class="phone-large">
               {% if restaurant.phone? %}
                 <div class="phone-number">
@@ -89,7 +89,7 @@
           $('.main-nav').slideToggle('fast');
         });
 
-        var $container = $('#container');
+        var $container = $('.container');
         // initialize Masonry after all images have loaded
         $container.imagesLoaded( function() {
           $container.masonry({

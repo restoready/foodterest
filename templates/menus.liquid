@@ -1,28 +1,21 @@
-<section class="page-header page-header--menus">
-  <div class="wrapper">
-    <header class="section__header page-header__header">
-      <h1 class="section__title page-header__title">{{ "Notre carte" | t }}</h1>
-    </header>
-  </div>
-</section>
-
-<section class="menus">
-  <div class="wrapper">
-    {% for menu in menus %}
-      <header class="section__header">
-        <h2 class="section__title">
-          <a class="menus__menu-link" href="{{ menu.url }}">{{ menu.name }}</a>
-        </h2>
-      </header>
-      <main class="section__main">
-        <ul class="menu-children">
+<section class="menus-wrapper">
+  {% for menu in menus %}
+    <section class="menus">
+      <a class="menus__menu-link" href="{{ menu.url }}">
+        <header class="section__header menus__header">
+          <h2 class="section__title">
+            {{ menu.name }}
+          </h2>
+        </header>
+        <div class="menus__menu-image" style="background:url('{{ menu.main_image | custom_image_url: '1000x1000#' }}');background-size:cover;"></div>
+      </a>
+      <main class="section__main menus__body">
+        <ul class="menu-children container">
           {% for child in menu.children %}
-            <li class="menu-child">
+            <li class="menu-child item">
               <a href="{{ menu.url }}#menu-{{child.id}}" class="menu-child__link">
                 {% if child.main_image? %}
-                  {{ child.main_image | custom_image_url: "100x100#" | image_tag: "class:menu-child__image" }}
-                {% else %}
-                  {{ 'fallback-image.gif' | asset_url | image_tag: 'alt:menus', 'class:anchor-image', 'width:100' }}
+                  {{ child.main_image | custom_image_url: "370x200#" | image_tag: "class:menu-child__image" }}
                 {% endif %}
                 <span class="menu-child__title">{{ child.name}}</span>
               </a>
@@ -30,12 +23,6 @@
           {% endfor %}
         </ul>
       </main>
-      <footer class="section__main menus__footer">
-        <p>
-          <a class="button" href="{{ menu.url }}">{{ "Voir les plats" | t }}</a>
-        </p>
-      </footer>
-      <hr class="menus__separator">
-    {% endfor %}
-  </div>
+    </section>
+  {% endfor %}
 </section>
