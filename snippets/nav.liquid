@@ -1,15 +1,11 @@
 <ul class="main-nav__items">
   {% for link in linklists.navigation-primaire.links %}
     <li class="main-nav__item {{ link.url | current_path: 'class:main-nav__item--current' }}">
-      <a class="main-nav__link" href="{{ link.url }}">
-        <p class="main-nav__title">{{ link.title }}</p>
-      </a>
+      <a class="main-nav__link" href="{{ link.url }}">{{ link.title }}</a>
     </li>
     {% for l in linklists[link.linklist_handle].links %}
       <li class="main-nav__item {{ l.url | current_path: 'class:main-nav__item--current' }}">
-        <a class="main-nav__link" href="{{ l.url }}">
-          <p class="main-nav__title">{{ l.title }}</p>
-        </a>
+        <a class="main-nav__link" href="{{ l.url }}">{{ l.title }}</a>
       </li>
     {% endfor %}
   {% endfor %}
@@ -17,9 +13,7 @@
   {% if localized_page_paths.size > 0 %}
     {% for path in localized_page_paths %}
       <li class="main-nav__item">
-        <a class="main-nav__link" href="{{ path.url }}">
-          <p class="main-nav__title">{{ path.locale_name }}</p>
-        </a>
+        <a class="main-nav__link" href="{{ path.url }}">{{ path.locale_name }}</a>
       </li>
     {% endfor %}
   {% endif %}
