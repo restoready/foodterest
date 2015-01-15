@@ -677,7 +677,7 @@ ul, li {
       }
 
 .main-content {
-  padding-bottom: 4.5em;
+  padding-bottom: 5.5em;
 }
   .section__header {
   }
@@ -686,40 +686,28 @@ ul, li {
 
 .main-footer {
 }
-  .back-to-top {
-    padding: 1em 0;
-    text-align: center;
-  }
-    .back-to-top__link {
-      color: scale-color($body-color, $lightness: +25%);
-      text-decoration: none;
-      transition: color .25s;
-      &:hover, &:focus {
-        color: $body-color;
-      }
-    }
-      .back-to-top__label {
-      }
   .footer__subscribe {
   }
   .footer__social {
     position: fixed;
     bottom: 0;
+    width: 100%;
+    background-color: #282828;
+    border-top: 4px solid $accent-color;
   }
     .social__items {
-      margin: 0;
       text-align: center;
     }
       .social__item {
+        margin: 0 .5em;
         display: inline-block;
       }
         .social__link {
-          color: #282828;
-          display: inline-block;
+          color: #FFFFFF;
           font-size: 2em;
           padding: .25em;
           text-decoration: none;
-          vertical-align: middle;
+          vertical-align: bottom;
           transition: color .25s;
           &:hover, &:focus {
             color: $accent-color;
@@ -1318,68 +1306,67 @@ x:-o-prefocus, .lb-overlay img {
   }
 
 
-// ===========================================================================
-// #Icomoon font
-// https://icomoon.io/app/
-// ===========================================================================
+/*
+  Icon Font: fontcustom
+*/
+
 @font-face {
-  font-family: 'restoready-starter';
-  src:url("{{ 'restoready-starter.eot?g9q59m' | asset_url }}");
-  src:url("{{ 'restoready-starter.eot?#iefixg9q59m' | asset_url }}") format('embedded-opentype'),
-    url("{{ 'restoready-starter.woff?g9q59m' | asset_url }}") format('woff'),
-    url("{{ 'restoready-starter.ttf?g9q59m' | asset_url }}") format('truetype'),
-    url("{{ 'restoready-starter.svg?g9q59m#restoready-starter' | asset_url }}") format('svg');
+  font-family: "fontcustom";
+  src: url("./fontcustom_f39498c6e7958f234c302eab6e23e142.eot");
+  src: url("./fontcustom_f39498c6e7958f234c302eab6e23e142.eot?#iefix") format("embedded-opentype"),
+       url("./fontcustom_f39498c6e7958f234c302eab6e23e142.woff") format("woff"),
+       url("./fontcustom_f39498c6e7958f234c302eab6e23e142.ttf") format("truetype"),
+       url("./fontcustom_f39498c6e7958f234c302eab6e23e142.svg#fontcustom") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
-[class^="icon-"], [class*=" icon-"] {
-  font-family: 'restoready-starter';
-  speak: none;
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "fontcustom";
+    src: url("./fontcustom_f39498c6e7958f234c302eab6e23e142.svg#fontcustom") format("svg");
+  }
+}
+
+[data-icon]:before { content: attr(data-icon); }
+
+[data-icon]:before,
+.icon-arrow-left:before,
+.icon-arrow-right:before,
+.icon-check:before,
+.icon-close:before,
+.icon-envelop:before,
+.icon-error:before,
+.icon-facebook:before,
+.icon-phone:before,
+.icon-star:before,
+.icon-trip:before,
+.icon-twitter:before {
+  display: inline-block;
+  font-family: "fontcustom";
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
-  text-transform: none;
   line-height: 1;
-
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
 }
 
-.icon-tripadvisor:before {
-  content: "\e600";
-}
-.icon-times:before {
-  content: "\e601";
-}
-.icon-chevron-right:before {
-  content: "\e602";
-}
-.icon-chevron-left:before {
-  content: "\e603";
-}
-.icon-star:before {
-  content: "\e604";
-}
-.icon-warning:before {
-  content: "\e605";
-}
-.icon-input-checked:before {
-  content: "\e606";
-}
-.icon-social-twitter:before {
-  content: "\e607";
-}
-.icon-social-facebook:before {
-  content: "\e608";
-}
-.icon-phone:before {
-  content: "\e609";
-}
-.icon-envelope:before {
-  content: "\f0e0";
-}
+.icon-arrow-left:before { content: "\f100"; }
+.icon-arrow-right:before { content: "\f101"; }
+.icon-check:before { content: "\f102"; }
+.icon-close:before { content: "\f103"; }
+.icon-envelop:before { content: "\f104"; }
+.icon-error:before { content: "\f105"; }
+.icon-facebook:before { content: "\f106"; }
+.icon-phone:before { content: "\f107"; }
+.icon-star:before { content: "\f108"; }
+.icon-trip:before { content: "\f109"; }
+.icon-twitter:before { content: "\f10a"; }
 
 
 // ===========================================================================
@@ -1408,6 +1395,7 @@ x:-o-prefocus, .lb-overlay img {
   .main-nav__item {
     width: 33.333333%;
   }
+
   .opening-hours__image,
   .directions__image {
     height: 250px;
@@ -1456,7 +1444,38 @@ x:-o-prefocus, .lb-overlay img {
   .main-nav__item {
     width: 25%;
   }
-
+  .footer__social {
+    position: fixed;
+    right: .5em;
+    bottom: 5em;
+    width: 8%;
+    background-color: transparent;
+    border-top: none;
+  }
+    .social__items {
+      text-align: center;
+    }
+      .social__item {
+        width: 50px;
+        height: 50px;
+        background-color: #282828;
+        border-radius: 50%;
+        margin: .5em 0;
+        transition: background-color .25s;
+        &:hover {
+          background-color: $accent-color;
+        }
+      }
+        .social__link {
+          font-size: 1.5em;
+          &:hover {
+            color: #FFFFFF;
+          }
+        }
+  .main-content {
+    overflow: hidden;
+    padding: 1em 5em 1.5em 1em;
+  }
   .opening-hours,
   .directions {
     overflow: hidden;
