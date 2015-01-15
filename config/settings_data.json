@@ -10,6 +10,10 @@
     "home_menus_featured_text_en": "This week",
     "home_foods_featured_text_fr": "Suggestions",
     "home_foods_featured_text_en": "Suggestions",
+
+    "home-image-opening-hours": true,
+    "home-image-directions": true,
+
     "google_business_view_url": "",
     "display_google_business_view_url": false,
     "google_business_view_embed": "",
@@ -29,6 +33,11 @@
       "home_menus_featured_text_en": "This week",
       "home_foods_featured_text_fr": "Suggestions",
       "home_foods_featured_text_en": "Suggestions",
+
+      "home-image-opening-hours": true,
+      "home-image-directions": true,
+
+
       "google_business_view_url": "",
       "display_google_business_view_url": false,
       "google_business_view_embed": "",

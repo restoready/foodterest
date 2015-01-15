@@ -921,14 +921,13 @@ legend {
   margin-bottom: 1em;
 }
 .opening-hours__body {
-  margin-bottom: 1em;
-  border-radius: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   background-color: #282828;
-  padding: 1em;
   text-align: center;
 }
   .opening-days {
-
+    padding: 1em;
   }
     .opening-day {
       color: $accent-color;
@@ -940,8 +939,8 @@ legend {
       margin-bottom: .5em;
     }
     .opening-hours__information {
+      padding: 1em;
       color: #FFFFFF;
-      margin-top: 1.5em;
     }
 
 .directions, .business-view {
@@ -970,10 +969,8 @@ legend {
 }
   .map {
     position: relative;
-    border-radius: 5px;
   }
   .map-overlay {
-    border-radius: 5px;
     position: absolute;
     background-color: transparentize(#282828, 0.75);
     top: 0; left: 0; right: 0; bottom: 0;
@@ -982,19 +979,19 @@ legend {
       @extend .auto;
     }
   .directions__footer {
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     background-color: #282828;
     text-align: center;
-    a {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+    a {
       background-color: #282828;
       width: 100%;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
     }
   }
 
@@ -1459,51 +1456,101 @@ x:-o-prefocus, .lb-overlay img {
   .main-nav__item {
     width: 25%;
   }
-  .opening-hours {
-    margin-bottom: 1em;
-  }
+
   .opening-hours,
   .directions {
     overflow: hidden;
     position: relative;
     padding: 0;
+    margin: 1%;
+  }
+
+  .opening-hours {
+    {% if theme_settings.home-image-opening-hours %}
+      width: 98%;
+    {% else %}
+      width: 48%;
+      float: left;
+    {% endif %}
+
+    {% if theme_settings.home-image-directions %}
+      width: 98%;
+    {% endif %}
+  }
+  .opening-hours__body {
+    {% if theme_settings.home-image-opening-hours %}
+      width: 50%;
+      float: left;
+    {% else %}
+      width: 100%;
+      border-bottom-right-radius: 5px;
+    {% endif %}
+    border-bottom-left-radius: 5px;
+    margin: 0;
   }
   .opening-hours__header {
-    width: 48%;
-    float: left;
-    margin: 0 1%;
-    .section__title {
-      height: 90px;
-    }
-  }
-  .directions__header {
-    width: 48%;
-    float: right;
-    margin: 0 1%;
-    .section__title {
-      height: 90px;
-    }
+    {% if theme_settings.home-image-opening-hours %}
+      border-top-right-radius: 0;
+    {% endif %}
   }
   .opening-hours__image {
     position: absolute;
-    top: 90px; left: 1%; right: 51%; bottom: 0;
+    width: 50%;
+    top: 0; left: 50%; right: 0; bottom: 0;
     height: auto;
-    box-sizing: border-box;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 0;
     margin-bottom: 0;
+  }
+
+  .directions {
+    {% if theme_settings.home-image-directions %}
+      width: 98%;
+    {% else %}
+      width: 48%;
+      float: right;
+    {% endif %}
+
+    {% if theme_settings.home-image-opening-hours %}
+      width: 98%;
+    {% endif %}
+  }
+  .directions__body {
+    {% if theme_settings.home-image-directions %}
+      width: 50%;
+      float: right;
+    {% else %}
+      width: 100%;
+    {% endif %}
+    margin: 0;
+  }
+  .directions__header {
+    {% if theme_settings.home-image-directions %}
+      border-top-left-radius: 0;
+    {% endif %}
   }
   .directions__image {
     position: absolute;
-    top: 90px; left: 51%; right: 1%; bottom: 0;
+    width: 50%;
+    top: 0; left: 0; right: 50%; bottom: 0;
     height: auto;
     margin-bottom: 0;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 0;
   }
-  .opening-hours__body,
-  .directions__body {
-    width: 48%;
-    float: left;
-    margin: 0 1%;
-    box-sizing: border-box;
+  .directions__footer {
+    border-bottom-right-radius: 5px;
+    {% unless theme_settings.home-image-directions %}
+      border-bottom-left-radius: 5px;
+    {% endunless %}
+    a {
+      border-bottom-right-radius: 5px;
+      {% unless theme_settings.home-image-directions %}
+        border-bottom-left-radius: 5px;
+      {% endunless %}
+    }
   }
+
   .footer__subscribe {
     .input {
       display: inline-block;

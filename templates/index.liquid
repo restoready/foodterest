@@ -33,13 +33,12 @@
 {% endif %}
 
 <section class="opening-hours">
-  <header class="section__header opening-hours__header">
-    <div class="section__title">
-      <h2>{{ "Horaires" | t }}</h2>
-    </div>
-  </header>
-  <div class="opening-hours__image"></div>
   <main class="section__main opening-hours__body">
+    <header class="section__header opening-hours__header">
+    <div class="section__title">
+        <h2>{{ "Horaires" | t }}</h2>
+      </div>
+    </header>
     <dl class="opening-days">
     {% for day in opening_hours %}
       <dt class="opening-day">
@@ -56,16 +55,18 @@
       </div>
     {% endif %}
   </main>
+  {% if theme_settings.home-image-opening-hours %}
+    <div class="opening-hours__image"></div>
+  {% endif %}
 </section>
 
 <section class="directions">
-  <header class="section__header directions__header">
-    <div class="section__title">
-      <h2>{{ "Localisation" | t }}</h2>
-    </div>
-  </header>
-  <div class="directions__image"></div>
   <main class="section__main directions__body">
+    <header class="section__header directions__header">
+      <div class="section__title">
+        <h2>{{ "Localisation" | t }}</h2>
+      </div>
+    </header>
     {% if theme_settings.google_map_type != "" %}
       <div class="map">
         {% if theme_settings.google_map_type == "embed" %}
@@ -85,4 +86,7 @@
       </div>
     {% endif %}
   </main>
+  {% if theme_settings.home-image-directions %}
+    <div class="directions__image"></div>
+  {% endif %}
 </section>
