@@ -20,8 +20,8 @@
       {% endfor %}
       {% for food in home_foods %}
         {% assign relative_menu = food.menu %}
-        <a href="{% if relative_menu.parent? %}{{ relative_menu.root_parent.url }}#menu-{{relative_menu.id}}{% else %}{{ relative_menu.url }}{% endif %}">
-          {% include 'food' with food:food %}
+        <a href="{{ relative_menu.url }}">
+          {% include 'food' with food:food, menu:relative_menu %}
         </a>
       {% endfor %}
       <div class="item see-all-menus">

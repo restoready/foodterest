@@ -1,36 +1,62 @@
 <section class="page-header page-header--menu">
-  <div class="wrapper">
-    <header class="section__header page-header__header">
-      <h1 class="section__title page-header__title">{{ menu.name }}</h1>
-      {% if menu.children? %}
-        <ul class="menu-children">
-          {% for child in menu.children %}
-            <li class="menu-child">
-              <a href="#menu-{{child.id}}" class="menu-child__link">
-                {% if child.main_image? %}
-                  {{ child.main_image | custom_image_url: "100x100#" | image_tag: "class:menu-child__image" }}
-                {% else %}
-                  {{ 'fallback-image.gif' | asset_url | image_tag: 'alt:menus', 'class:anchor-image', 'width:100' }}
-                {% endif %}
-                <span class="menu-child__title">{{ child.name}}</span>
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-    </header>
-    {% if menu.summary? %}
-      <main class="section__main page-header__description">
-        {{ menu.summary }}
-      </main>
+  <header class="section__header page-header__header">
+    <h1 class="section__title page-header__title">{{ menu.name }}</h1>
+    {% if menu.children? %}
+      <ul class="menus-wrapper">
+        {% for child in menu.children %}
+          <li class="menus" style="background:url('{{ child.main_image | custom_image_url: '200x200#' }}');background-size:cover;">
+            <div class="menus-overlay"></div>
+            <a href="{{ child.url }}" class="menus__menu-link">
+              <div class="section__header menus__header">
+                <h2 class="section__title">
+                  {{ child.name }}
+                </h2>
+              </div>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
     {% endif %}
-  </div>
+  </header>
+  {% if menu.summary? %}
+    <main class="section__main page-header__description">
+      {{ menu.summary }}
+    </main>
+  {% endif %}
 </section>
+<section class="section__main container">
+  {% if menu.foods? %}
+    {% for food in menu.foods %}
+      {% assign_prices_to prices for food in menu %}
+      {% include 'food' with food:food, menu:menu %}
+    {% endfor %}
+  {% endif %}
 
-{% if menu.children? %}
-  {% for child in menu.children %}
-    {% include 'menu' with menu:child, title:true %}
-  {% endfor %}
-{% else %}
-  {% include 'menu' with menu:menu, title:true %}
-{% endif %}
+  {% if menu.children? %}
+    {% for child in menu.children %}
+      {% if child.foods? %}
+        {% for food in child.foods %}
+          {% assign relative_menu = food.menu %}
+          {% assign_prices_to prices for food in relative_menu %}
+          <a href="{{ relative_menu.url }}">
+            {% include 'food' with food:food, menu:relative_menu %}
+          </a>
+        {% endfor %}
+      {% endif %}
+
+      {% if child.children? %}
+        {% for child in child.children %}
+          {% if child.foods? %}
+            {% for food in child.foods %}
+              {% assign relative_menu = food.menu %}
+              {% assign_prices_to prices for food in relative_menu %}
+              <a href="{{ relative_menu.url }}">
+                {% include 'food' with food:food, menu:relative_menu %}
+              </a>
+            {% endfor %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+</section>

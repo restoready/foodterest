@@ -825,9 +825,19 @@ legend {
 // #Modules
 // ===========================================================================
 
+.page-header__header {
+  margin-bottom: 1em;
+}
+.page-header__title {
+  text-align: center;
+}
+.page-header__description {
+  text-align: center;
+  padding: 0 .75em;
+}
 // Default page
 .page-header {
-  padding: 1em 0;
+  padding: 0;
 }
 .page-body {
   ol, ul, dl {
@@ -960,7 +970,7 @@ legend {
 // all menus
 .menus-wrapper {
   text-align: center;
-  margin: 2em 0;
+  margin: 0 0 1.25em 0;
 }
 .menus {
   position: relative;
@@ -1039,36 +1049,8 @@ legend {
     margin-bottom: 1em;
   }
 
-// Menu children
-.menu-children {
-}
-  .menu-child {
-  }
-    .menu-child__link {
-      display: block;
-      text-decoration: none;
-      &:hover, &:focus {
-        .menu-child__title {
-          color: $accent-color;
-        }
-      }
-    }
-      .menu-child__image {
-        width: 100%;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-      }
-
-      .menu-child__title {
-        color: #FFFFFF;
-        display: block;
-        transition: color .25s;
-        padding: .5em;
-      }
-
 // Food item
 .food {
-
 }
   .food__image {
     width: 100%;
@@ -1099,18 +1081,22 @@ legend {
 }
 
 // Food prices
+.food__prices {
+  margin-top: 1em;
+}
 .prices {
 }
   .price {
     @include clearfix;
   }
   .price__label {
-    color: scale-color($body-color, $lightness: +25%);
+    color: #FFFFFF;
     float: left;
   }
   .price__value {
     font-weight: 700;
     float: right;
+    color: #DDDDDD
   }
 
 // Back to menu

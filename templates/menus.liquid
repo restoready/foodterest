@@ -1,20 +1,25 @@
+<section class="page-header page-header--menus">
+  <div class="wrapper">
+    <header class="section__header page-header__header">
+      <h1 class="section__title page-header__title">{{ "Notre carte" | t }}</h1>
+    </header>
+  </div>
+</section>
 <ul class="menus-wrapper">
   {% for menu in menus %}
     <li class="menus" style="background:url('{{ menu.main_image | custom_image_url: '200x200#' }}');background-size:cover;">
       <div class="menus-overlay"></div>
       <a class="menus__menu-link" href="{{ menu.url }}">
-        <header class="section__header menus__header">
+        <div class="section__header menus__header">
           <h2 class="section__title">
             {{ menu.name }}
           </h2>
-        </header>
+        </div>
       </a>
     </li>
   {% endfor %}
 </ul>
-
-<main class="section__main container">
-
+<section class="section__main container">
   {% for menu in featured_menus %}
     <a href="{{ menu.url }}">
       <div class="item">
@@ -28,12 +33,10 @@
       </div>
     </a>
   {% endfor %}
-
   {% for food in featured_foods %}
     {% assign relative_menu = food.menu %}
-    <a href="{% if relative_menu.parent? %}{{ relative_menu.root_parent.url }}#menu-{{relative_menu.id}}{% else %}{{ relative_menu.url }}{% endif %}">
-      {% include 'food' with food:food %}
+    <a href="{{ relative_menu.url }}">
+      {% include 'food' with food:food, menu:relative_menu %}
     </a>
   {% endfor %}
-
-</main>
+</section>
