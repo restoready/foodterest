@@ -1,28 +1,39 @@
-<section class="menus-wrapper">
+<ul class="menus-wrapper">
   {% for menu in menus %}
-    <section class="menus">
+    <li class="menus" style="background:url('{{ menu.main_image | custom_image_url: '200x200#' }}');background-size:cover;">
+      <div class="menus-overlay"></div>
       <a class="menus__menu-link" href="{{ menu.url }}">
         <header class="section__header menus__header">
           <h2 class="section__title">
             {{ menu.name }}
           </h2>
         </header>
-        <div class="menus__menu-image" style="background:url('{{ menu.main_image | custom_image_url: '1000x1000#' }}');background-size:cover;"></div>
       </a>
-      <main class="section__main menus__body">
-        <ul class="menu-children container">
-          {% for child in menu.children %}
-            <li class="menu-child item">
-              <a href="{{ menu.url }}#menu-{{child.id}}" class="menu-child__link">
-                {% if child.main_image? %}
-                  {{ child.main_image | custom_image_url: "370x200#" | image_tag: "class:menu-child__image" }}
-                {% endif %}
-                <span class="menu-child__title">{{ child.name}}</span>
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
-      </main>
-    </section>
+    </li>
   {% endfor %}
-</section>
+</ul>
+
+<main class="section__main container">
+
+  {% for menu in featured_menus %}
+    <a href="{{ menu.url }}">
+      <div class="item">
+        {% if menu.main_image? %}
+          <img src="{{ menu.main_image | custom_image_url: "370x200#" }}" alt="menu" class="featured__menu-image">
+          <h6 class="menu-tag">Menu</h6>
+        {% else %}
+          <h6 class="menu-tag menu-tag--no-img">Menu</h6>
+        {% endif %}
+        <h3 class="menu__title">{{ menu.name }}</h3>
+      </div>
+    </a>
+  {% endfor %}
+
+  {% for food in featured_foods %}
+    {% assign relative_menu = food.menu %}
+    <a href="{% if relative_menu.parent? %}{{ relative_menu.root_parent.url }}#menu-{{relative_menu.id}}{% else %}{{ relative_menu.url }}{% endif %}">
+      {% include 'food' with food:food %}
+    </a>
+  {% endfor %}
+
+</main>

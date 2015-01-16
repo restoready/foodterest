@@ -958,30 +958,43 @@ legend {
   }
 
 // all menus
-
+.menus-wrapper {
+  text-align: center;
+  margin: 2em 0;
+}
+.menus {
+  position: relative;
+  display: inline-block;
+  margin: .5em .25em;
+  width: 80px;
+  height: 80px;
+  border-radius: 5px;
+  background-color: $accent-color;
+}
+.menus-overlay {
+  position: absolute;
+  border-radius: 5px;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #282828;
+  opacity: 0.25;
+}
 .menus__header {
   text-align: center;
-  background-color: $accent-color;
+  position: absolute;
+  bottom: .25em;
+  left: 0;
+  right: 0;
   .section__title {
-    padding: .5em 0;
-    color: #FFFFFF;
+    font-size: 1em;
+    font-family: $bodyFontStack;
+    font-weight: bold;
   }
 }
 .menus__menu-link {
-  color: #FFFFFF;
   text-decoration: none;
-}
-.menus__menu-image {
-  position: relative;
-  background-position: center center;
-  height: 200px;
-}
-.menus__body {
-  padding: 1em .5em;
-  background-color: #282828;
-  .item {
-    background-color: #404040;
-  }
+  color: #FFFFFF;
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
 }
 // Menu item
 .menu {
@@ -997,6 +1010,10 @@ legend {
     font-family: $bodyFontStack;
     background-color: $accent-color;
     margin-bottom: .5em;
+  }
+  .menu-tag--no-img {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
   }
   .featured__menu-image {
     width: 100%;
@@ -1549,45 +1566,6 @@ x:-o-prefocus, .lb-overlay img {
       vertical-align: top;
       margin-top: 1.55em;
     }
-  }
-
-  // all menus
-  .menus-wrapper {
-    &>.menus {
-      position: relative;
-      overflow:hidden;
-      &:nth-of-type(odd) {
-        .menus__header {
-          float: left;
-        }
-        .menus__menu-image {
-          top:90px; left: 0; right: 50%; bottom: 0;
-        }
-      }
-      &:nth-of-type(even) {
-        .menus__header {
-          float: right;
-        }
-        .menus__menu-image {
-          top: 90px; left: 50%; right: 0; bottom: 0;
-        }
-      }
-    }
-  }
-  .menus__header {
-    width: 50%;
-    .section__title {
-      height: 90px;
-    }
-  }
-  .menus__menu-image {
-    height: auto;
-    position: absolute;
-  }
-  .menus__body {
-    width: 50%;
-    float: left;
-    padding: 1em;
   }
 
   .gallery__item {
