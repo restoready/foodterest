@@ -869,6 +869,10 @@ legend {
 
 .opening-hours {
   padding: 0 .25em;
+  margin-bottom: 1em;
+  {% if theme_settings.home-image-opening-hours %}
+    margin-bottom: 0;
+  {% endif %}
 }
 .opening-hours__header {
   text-align: center;
@@ -890,8 +894,11 @@ legend {
   margin-bottom: 1em;
 }
 .opening-hours__body {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border-radius: 5px;
+  {% if theme_settings.home-image-opening-hours %}
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  {% endif %}
   background-color: #282828;
   text-align: center;
 }
@@ -932,7 +939,6 @@ legend {
   height: 200px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  margin-bottom: 1em;
 }
 .directions__body {
 }
@@ -945,7 +951,8 @@ legend {
     top: 0; left: 0; right: 0; bottom: 0;
   }
     .map__image {
-      @extend .auto;
+      width: 100%;
+      height: auto;
     }
   .directions__footer {
     position: absolute;
@@ -956,11 +963,19 @@ legend {
     text-align: center;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+    {% if theme_settings.home-image-directions %}
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+    {% endif %}
     a {
       background-color: #282828;
       width: 100%;
       border-bottom-left-radius: 5px;
       border-bottom-right-radius: 5px;
+      {% if theme_settings.home-image-directions %}
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+      {% endif %}
     }
   }
 
@@ -1028,9 +1043,6 @@ legend {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
   }
-    .menu__image {
-      @extend .auto;
-    }
   .menu__header {
   }
     .menu__title {

@@ -72,10 +72,10 @@
     {% if theme_settings.google_map_type != "" %}
       <div class="map">
         {% if theme_settings.google_map_type == "embed" %}
-          {% google_map_embed: "size:1000%x600" %}
+          {% google_map_embed: "size:100%x600" %}
         {% elsif theme_settings.google_map_type == "image" %}
           <a class="map__link" href="{% google_map_url %}">
-            <img class="map__image" src="{% google_map_image_url: "size:640x520" %}" />
+            <img class="map__image" src="{% google_map_image_url: "size:1000x520" %}" />
           </a>
         {% endif %}
         <div class="map-overlay">
