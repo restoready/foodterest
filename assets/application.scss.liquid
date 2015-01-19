@@ -273,7 +273,6 @@ $class-type: unquote(".");
   padding: 0 $gutter;
 }
 
-
 // ===========================================================================
 // #Helper Classes
 // ===========================================================================
@@ -1274,6 +1273,11 @@ x:-o-prefocus, .lb-overlay img {
 
 
 // Contact page
+.aside--contact,
+.page-header--contact,
+.page-body--contact {
+  padding: 0 .5em;
+}
 .contact-item {
   a {
     color: $accent-color;
@@ -1284,14 +1288,58 @@ x:-o-prefocus, .lb-overlay img {
   }
 }
   .contact-item__name {
-    border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
-    color: #444;
+    color: #FFFFFF;
     margin-bottom: .5em;
   }
   .contact-item__label {
     font-weight: 700;
   }
 
+  .restaurant-informations {
+    background-color: #282828;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  .restaurant-informations__header {
+    background-color: $accent-color;
+    width: 100%;
+    text-align: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    .section__title {
+      color: #FFFFFF;
+      padding: 1em;
+    }
+  }
+  .restaurant-informations__body {
+    padding: 1em;
+    color: #FFFFFF;
+  }
+  .opening-hours--contact {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 1em;
+  }
+  .opening-hours__body--contact {
+    border-radius: 5px;
+  }
+  .page-body--contact {
+    margin: 1.5em 0;
+    input {
+      margin-bottom: 1.5em;
+    }
+    input, textarea {
+      outline: none;
+    }
+  }
+  .textarea--message {
+    margin-bottom: 0;
+  }
+  input.submit-contact {
+    width: 100%;
+    margin-bottom: 0;
+  }
 /*
   Icon Font: fontcustom
 */
@@ -1563,19 +1611,32 @@ x:-o-prefocus, .lb-overlay img {
     padding: 80px 100px 120px 100px;
   }
 
-  .aside--contact {
-    float: left;
-    font-size: 75%;
-    width: floor($siteWidth / 3);
-  }
+  .aside--contact,
   .page-header--contact,
   .page-body--contact {
-    margin-left: ceil($siteWidth / 3) + $gutter;
+    padding: 0;
   }
-    .contact-item__name {
-      margin-top: 2.15em;
-    }
-
+  // .aside--contact {
+  //   float: left;
+  //   width: floor($siteWidth / 3);
+  // }
+  // .page-header--contact,
+  // .page-body--contact {
+  //   margin-left: ceil($siteWidth / 3) + $gutter;
+  // }
+  .restaurant-informations,
+  .opening-hours--contact {
+    float: left;
+    width:48%;
+    margin: 1%
+  }
+  .opening-hours__body--contact {
+    width: 100%;
+    margin: 0;
+  }
+  .opening-hours__header--contact {
+    border-top-right-radius: 5px;
+  }
   /**
    * masonry elements styles
    */
@@ -1596,6 +1657,7 @@ x:-o-prefocus, .lb-overlay img {
   .footer__social {
     width: 6%;
   }
+
   /**
    * masonry elements styles
    */

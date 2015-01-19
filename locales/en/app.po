@@ -74,6 +74,9 @@ msgstr "Newsletter Subscription"
 msgid "S'abonner"
 msgstr "Subscribe"
 
+msgid "Infos"
+msgstr "Infos"
+
 msgid "Mentions légales"
 msgstr "Terms of use"
 
