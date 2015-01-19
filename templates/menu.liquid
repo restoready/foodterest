@@ -1,4 +1,7 @@
 <section class="page-header page-header--menu">
+  {% for ancestor in menu.ancestors %}
+    <p>{{ ancestor.name }}</p>
+  {% endfor %}
   <header class="section__header page-header__header">
     <h1 class="section__title page-header__title">{{ menu.name }}</h1>
     {% if menu.children? %}
