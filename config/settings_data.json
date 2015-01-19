@@ -19,7 +19,7 @@
     "google_business_view_embed": "",
     "display_google_business_view_embed": false,
     "google_map_type": "image",
-    "footer_display_newsletter": true
+    "display_newsletter": true
   },
   "presets":{
     "Original":{
@@ -43,7 +43,7 @@
       "google_business_view_embed": "",
       "display_google_business_view_embed": false,
       "google_map_type": "image",
-      "footer_display_newsletter": true
+      "display_newsletter": true
     }
   }
 }
