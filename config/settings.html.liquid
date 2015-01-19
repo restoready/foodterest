@@ -13,10 +13,6 @@
   </label>
   <input class="tab-head" id="tab4" name="tab" type="radio">
   <label for="tab4">
-    Titres
-  </label>
-  <input class="tab-head" id="tab5" name="tab" type="radio">
-  <label for="tab5">
     Images
   </label>
 
@@ -33,9 +29,100 @@
             <label for="body-color">Couleur par défaut du texte</label>
             <input name="admin_theme_settings[body-color]" id="body-color" value="{{ theme_settings.body-color }}" type="text" class="minicolors">
           </div>
-          <div class="columns medium-4 large-3 end">
+          <div class="columns medium-4 large-3">
             <label for="accent-color">Couleur d'accent</label>
             <input name="admin_theme_settings[accent-color]" id="accent-color" value="{{ theme_settings.accent-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="font-color-on-accent-background">Texte sur fond couleur accent</label>
+            <input name="admin_theme_settings[font-color-on-accent-background]" id="font-color-on-accent-background" value="{{ theme_settings.font-color-on-accent-background }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3 end">
+            <label for="font-color-on-photo">Texte sur photo</label>
+            <input name="admin_theme_settings[font-color-on-photo]" id="font-color-on-photo" value="{{ theme_settings.font-color-on-photo }}" type="text" class="minicolors">
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Navigation</legend>
+        <div class="row">
+          <div class="columns medium-4 large-3">
+            <label for="nav-background">Fond</label>
+            <input name="admin_theme_settings[nav-background]" id="nav-background" value="{{ theme_settings.nav-background }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3 end">
+            <label for="nav-font-color">Texte</label>
+            <input name="admin_theme_settings[nav-font-color]" id="nav-font-color" value="{{ theme_settings.nav-font-color }}" type="text" class="minicolors">
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Cartes</legend>
+        <div class="row">
+          <div class="columns medium-4 large-3">
+            <label for="card-background">Fond</label>
+            <input name="admin_theme_settings[card-background]" id="card-background" value="{{ theme_settings.card-background }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="card-font-color">Texte</label>
+            <input name="admin_theme_settings[card-font-color]" id="card-font-color" value="{{ theme_settings.card-font-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="card-background-hover">Survol carte fond</label>
+            <input name="admin_theme_settings[card-background-hover]" id="card-background-hover" value="{{ theme_settings.card-background-hover }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="food-summary-color">Texte description des plats</label>
+            <input name="admin_theme_settings[food-summary-color]" id="food-summary-color" value="{{ theme_settings.food-summary-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3 end">
+            <label for="food-price-value-color">Texte valeur prix</label>
+            <input name="admin_theme_settings[food-price-value-color]" id="food-price-value-color" value="{{ theme_settings.food-price-value-color }}" type="text" class="minicolors">
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Tags</legend>
+        <div class="row">
+          <div class="columns medium-4 large-3">
+            <label for="tag-vegetarian-background">Végétarien : fond</label>
+            <input name="admin_theme_settings[tag-vegetarian-background]" id="tag-vegetarian-background" value="{{ theme_settings.tag-vegetarian-background }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="tag-vegetarian-font-color">Végétarien : texte</label>
+            <input name="admin_theme_settings[tag-vegetarian-font-color]" id="tag-vegetarian-font-color" value="{{ theme_settings.tag-vegetarian-font-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="tag-news-background">Nouveauté : fond</label>
+            <input name="admin_theme_settings[tag-news-background]" id="tag-news-background" value="{{ theme_settings.tag-news-background }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="tag-news-font-color">Nouveauté : texte</label>
+            <input name="admin_theme_settings[tag-news-font-color]" id="tag-news-font-color" value="{{ theme_settings.tag-news-font-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="tag-no-meat-background">Sans-viandes : fond</label>
+            <input name="admin_theme_settings[tag-no-meat-background]" id="tag-no-meat-background" value="{{ theme_settings.tag-no-meat-background }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="tag-no-meat-font-color">Sans-viandes : texte</label>
+            <input name="admin_theme_settings[tag-no-meat-font-color]" id="tag-no-meat-font-color" value="{{ theme_settings.tag-no-meat-font-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="tag-no-pork-background">Sans-porc : fond</label>
+            <input name="admin_theme_settings[tag-no-pork-background]" id="tag-no-pork-background" value="{{ theme_settings.tag-no-pork-background }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="tag-no-pork-font-color">Sans-porc : texte</label>
+            <input name="admin_theme_settings[tag-no-pork-font-color]" id="tag-no-pork-font-color" value="{{ theme_settings.tag-no-pork-font-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="tag-no-alcohol-background">Sans-alcool : fond</label>
+            <input name="admin_theme_settings[tag-no-alcohol-background]" id="tag-no-alcohol-background" value="{{ theme_settings.tag-no-alcohol-background }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3 end">
+            <label for="tag-no-alcohol-font-color">Sans-alcool : texte</label>
+            <input name="admin_theme_settings[tag-no-alcohol-font-color]" id="tag-no-alcohol-font-color" value="{{ theme_settings.tag-no-alcohol-font-color }}" type="text" class="minicolors">
           </div>
         </div>
       </fieldset>
@@ -133,33 +220,8 @@
         </div>
       </fieldset>
     </div>
+
     <div class="tab-body" id="tab-body-4">
-      <fieldset>
-        <legend>Page d'accueil</legend>
-        <div class="row">
-          <div class="columns medium-4 large-3">
-
-            <label for="home-menus-featured-text_fr">Titre menus en avant (fr)</label>
-            <input name="admin_theme_settings[home_menus_featured_text_fr]" id="home_menus_featured_text_fr" value="{{ theme_settings.home_menus_featured_text_fr }}" type="text">
-
-            <label for="home-menus-featured-text_en">Titre menus en avant (en)</label>
-            <input name="admin_theme_settings[home_menus_featured_text_en]" id="home_menus_featured_text_en" value="{{ theme_settings.home_menus_featured_text_en }}" type="text">
-
-          </div>
-          <div class="columns medium-4 large-3 end">
-
-            <label for="home-foods-featured-text_fr">Titre plats en avant (fr)</label>
-            <input name="admin_theme_settings[home_foods_featured_text_fr]" id="home_foods_featured_text_fr" value="{{ theme_settings.home_foods_featured_text_fr }}" type="text">
-
-             <label for="home-foods-featured-text_en">Titre plats en avant (en)</label>
-            <input name="admin_theme_settings[home_foods_featured_text_en]" id="home_foods_featured_text_en" value="{{ theme_settings.home_foods_featured_text_en }}" type="text">
-
-          </div>
-        </div>
-      </fieldset>
-    </div>
-
-    <div class="tab-body" id="tab-body-5">
       <fieldset>
         <legend>Page d'accueil</legend>
         <div class="row">

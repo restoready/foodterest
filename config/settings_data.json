@@ -4,12 +4,9 @@
     "header-font": "'Ultra', serif",
     "body-font": "'Lato', sans-serif",
     "body-background": "#eeeeee",
-    "body-color": "#465155",
+    "body-color": "#282828",
     "accent-color": "#3e97d3",
-    "home_menus_featured_text_fr": "Cette semaine",
-    "home_menus_featured_text_en": "This week",
-    "home_foods_featured_text_fr": "Suggestions",
-    "home_foods_featured_text_en": "Suggestions",
+    "font-color-on-accent-background": "#FFFFFF",
 
     "home-image-opening-hours": true,
     "home-image-directions": true,
@@ -19,7 +16,30 @@
     "google_business_view_embed": "",
     "display_google_business_view_embed": false,
     "google_map_type": "image",
-    "display_newsletter": true
+    "display_newsletter": true,
+
+    "card-background": "#282828",
+    "card-font-color": "#FFFFFF",
+    "card-background-hover": "#404040",
+    "food-summary-color": "#DDDDDD",
+    "food-price-value-color": "#DDDDDD",
+
+    "nav-background": "#FFFFFF",
+    "nav-font-color": "#282828",
+
+    "tag-vegetarian-background": "#8a9e6c",
+    "tag-no-meat-background": "#c34d18",
+    "tag-news-background": "#d8c061",
+    "tag-no-pork-background": "#c36b80",
+    "tag-no-alcohol-background": "#66a0c3",
+
+    "tag-vegetarian-font-color": "#FFFFFF",
+    "tag-no-meat-font-color": "#FFFFFF",
+    "tag-news-font-color": "#FFFFFF",
+    "tag-no-pork-font-color": "#FFFFFF",
+    "tag-no-alcohol-font-color": "#FFFFFF",
+
+    "font-color-on-photo": "#FFFFFF"
   },
   "presets":{
     "Original":{
@@ -27,12 +47,9 @@
       "header-font": "'Ultra', serif",
       "body-font": "'Lato', sans-serif",
       "body-background": "#eeeeee",
-      "body-color": "#465155",
+      "body-color": "#282828",
       "accent-color": "#3e97d3",
-      "home_menus_featured_text_fr": "Cette semaine",
-      "home_menus_featured_text_en": "This week",
-      "home_foods_featured_text_fr": "Suggestions",
-      "home_foods_featured_text_en": "Suggestions",
+      "font-color-on-accent-background": "#FFFFFF",
 
       "home-image-opening-hours": true,
       "home-image-directions": true,
@@ -43,7 +60,29 @@
       "google_business_view_embed": "",
       "display_google_business_view_embed": false,
       "google_map_type": "image",
-      "display_newsletter": true
+      "display_newsletter": true,
+
+      "card-background": "#282828",
+      "card-font-color": "#FFFFFF",
+      "card-background-hover": "#404040",
+      "food-summary-color": "#DDDDDD",
+      "food-price-value-color": "#DDDDDD",
+
+      "nav-background": "#FFFFFF",
+      "nav-font-color": "#282828",
+
+      "tag-vegetarian-background": "#8a9e6c",
+      "tag-no-meat-background": "#c34d18",
+      "tag-news-background": "#d8c061",
+      "tag-no-pork-background": "#c36b80",
+      "tag-no-alcohol-background": "#66a0c3",
+      "tag-vegetarian-font-color": "#FFFFFF",
+      "tag-no-meat-font-color": "#FFFFFF",
+      "tag-news-font-color": "#FFFFFF",
+      "tag-no-pork-font-color": "#FFFFFF",
+      "tag-no-alcohol-font-color": "#FFFFFF",
+
+      "font-color-on-photo": "#FFFFFF"
     }
   }
 }

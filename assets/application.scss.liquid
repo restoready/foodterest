@@ -41,9 +41,30 @@
 $body-background: {{ theme_settings.body-background }};
 $body-color: {{ theme_settings.body-color }};
 $accent-color: {{ theme_settings.accent-color }};
+$font-color-on-accent-background: {{ theme_settings.font-color-on-accent-background }};
 
-// Foods
-$food-separator-color: #f0f0f0;
+$nav-background: {{ theme_settings.nav-background }};
+$nav-font-color: {{ theme_settings.nav-font-color }};
+
+$card-background: {{ theme_settings.card-background }};
+$card-font-color: {{ theme_settings.card-font-color }};
+$card-background-hover: {{ theme_settings.card-background-hover }};
+$food-summary-color: {{  theme_settings.food-summary-color }};
+$food-price-value-color: {{ theme_settings.food-price-value-color }};
+
+$tag-vegetarian-background: {{ theme_settings.tag-vegetarian-background }};
+$tag-no-meat-background: {{ theme_settings.tag-no-meat-background }};
+$tag-news-background: {{ theme_settings.tag-news-background }};
+$tag-no-pork-background: {{ theme_settings.tag-no-pork-background }};
+$tag-no-alcohol-background: {{ theme_settings.tag-no-alcohol-background }};
+
+$tag-vegetarian-font-color: {{ theme_settings.tag-vegetarian-font-color }};
+$tag-no-meat-font-color: {{ theme_settings.tag-no-meat-font-color }};
+$tag-news-font-color: {{ theme_settings.tag-news-font-color }};
+$tag-no-pork-font-color: {{ theme_settings.tag-no-pork-font-color }};
+$tag-no-alcohol-font-color: {{ theme_settings.tag-no-alcohol-font-color }};
+
+$font-color-on-photo: {{ theme_settings.font-color-on-photo }};
 
 // ===========================================================================
 // #Box model
@@ -478,226 +499,6 @@ form.form-horizontal,
   }
 }
 
-
-// ===========================================================================
-// #Links and Buttons
-// ===========================================================================
-.button {
-  background-color: $accent-color;
-  border: 0;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  margin: 0;
-  padding: .5em 2em;
-  text-align: center;
-  text-decoration: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  -webkit-appearance: none;
-  transition: background-color .25s;
-
-  &.button--small {
-    font-size: 0.75em;
-    padding: .25em .5em;
-  }
-
-  &.button--full {
-    width: 100%;
-  }
-
-  &:hover,
-  &:active,
-  &:focus {
-    background-color: scale-color($accent-color, $lightness: -15%);
-  }
-
-  &[disabled],
-  &.disabled {
-    cursor: default;
-  }
-}
-
-
-// ===========================================================================
-// #Layout
-// ===========================================================================
-body {
-  color: $body-color;
-  background-color: $body-background;
-}
-.clearer {
-  clear: both;
-}
-ul, li {
-  margin-bottom: 0;
-}
-.page {
-  @extend .clearfix;
-}
-
-.main-header {
-  overflow: hidden;
-}
-  .logo {
-    float: left;
-    margin-right: .5em;
-  }
-    .logo__link {
-      text-decoration: none;
-    }
-      .logo__image {
-        padding: .25em;
-        vertical-align: middle;
-        height: 50px;
-      }
-
-.restaurant-name {
-  float: left;
-}
-  .slogan {
-    color: #282828;
-    font-size: .9em;
-    font-style: italic;
-  }
-  .restaurant-name__link {
-    color: #282828;
-    font-family: $headerFontStack;
-    text-decoration: none;
-    font-size: 1.25em;
-  }
-
-.phone-large {
-  display: none;
-}
-
-.main-header__hamburger {
-  float: right;
-  margin-right: 5px;
-  cursor: pointer;
-  p {
-    font-size: 1em;
-    text-transform: uppercase;
-    font-weight: bold;
-    color: #282828;
-    margin-bottom: 0;
-  }
-  div {
-    margin-bottom: .5em;
-    background-color: #282828;
-    height: 6px;
-    width: 42px;
-    border-radius: 5px;
-  }
-}
-
-.phone-medium-down {
-  text-align: center;
-  margin: .5em 0;
-}
-  .phone-number {
-  }
-    .phone-number__link {
-      color: $accent-color;
-      font-size: 1.5em;
-      text-decoration: none;
-      &:hover, &:focus {
-        .phone-number__label {
-          color: $accent-color;
-        }
-      }
-    }
-      .phone-number__label {
-        color: #282828;
-        font-weight: bold;
-        transition: color .25s;
-      }
-
-.main-nav {
-  display: none;
-  position: absolute;
-  z-index: 99;
-  right: 1em;
-  top: 4.5em;
-  border-radius: 5px;
-  background-color: #FFFFFF;
-}
-  .main-nav__triangle {
-    top: -1em;
-    right: 0;
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 20px 20px 20px;
-    border-color: transparent transparent #FFFFFF transparent;
-  }
-    .main-nav__items {
-      padding: 1em 2.5em;
-    }
-      .main-nav__item {
-        margin: .5em 0;
-      }
-      .main-nav__link {
-        text-decoration: none;
-        color: #282828;
-        font-size: 1.5em;
-        transition: color .25s;
-        &:hover {
-          color: $accent-color;
-        }
-      }
-
-.main-content {
-  padding-bottom: 5.5em;
-}
-
-.main-footer {
-}
-  .footer__social {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #282828;
-    border-top: 4px solid $accent-color;
-  }
-    .social__items {
-      text-align: center;
-    }
-      .social__item {
-        margin: 0 .5em;
-        display: inline-block;
-      }
-        .social__link {
-          color: #FFFFFF;
-          padding: .25em;
-          font-size: 2em;
-          text-decoration: none;
-          vertical-align: bottom;
-          transition: color .25s;
-          display: block;
-          &:hover, &:focus {
-            color: $accent-color;
-          }
-        }
-          .social__label {
-            @extend .hide-text;
-          }
-
-  .footer__legal {
-    margin-bottom: 1em;
-    text-align: center;
-  }
-    .legal__link {
-      color: scale-color($body-color, $lightness: +25%);
-      text-decoration: none;
-      transition: color .25s;
-      &:hover, &:focus {
-        color: $body-color;
-      }
-    }
-
-
 // Forms
 input[type="text"],
 input[type="search"],
@@ -769,18 +570,238 @@ legend {
   color: #fff;
 }
 
+
+// ===========================================================================
+// #Links and Buttons
+// ===========================================================================
+.button {
+  background-color: $accent-color;
+  border: 0;
+  color: $font-color-on-accent-background;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0;
+  padding: .5em 2em;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  -webkit-appearance: none;
+  transition: background-color .25s;
+
+  &.button--small {
+    font-size: 0.75em;
+    padding: .25em .5em;
+  }
+
+  &.button--full {
+    width: 100%;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: scale-color($accent-color, $lightness: -15%);
+  }
+
+  &[disabled],
+  &.disabled {
+    cursor: default;
+  }
+}
+
+
+// ===========================================================================
+// #Layout
+// ===========================================================================
+body {
+  color: $body-color;
+  background-color: $body-background;
+}
+.clearer {
+  clear: both;
+}
+ul, li {
+  margin-bottom: 0;
+}
+.page {
+  @extend .clearfix;
+}
+
+.main-header {
+  overflow: hidden;
+}
+  .logo {
+    float: left;
+    margin-right: .5em;
+  }
+    .logo__link {
+      text-decoration: none;
+    }
+      .logo__image {
+        padding: .25em;
+        vertical-align: middle;
+        height: 50px;
+      }
+
+.restaurant-name {
+  float: left;
+}
+  .slogan {
+    color: $body-color;
+    font-size: .9em;
+    font-style: italic;
+  }
+  .restaurant-name__link {
+    color: $body-color;
+    font-family: $headerFontStack;
+    text-decoration: none;
+    font-size: 1.25em;
+  }
+
+.phone-large {
+  display: none;
+}
+
+.main-header__hamburger {
+  float: right;
+  margin-right: 5px;
+  cursor: pointer;
+  p {
+    font-size: 1em;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $body-color;
+    margin-bottom: 0;
+  }
+  div {
+    margin-bottom: .5em;
+    background-color: $body-color;
+    height: 6px;
+    width: 42px;
+    border-radius: 5px;
+  }
+}
+
+.phone-medium-down {
+  text-align: center;
+  margin: .5em 0;
+}
+  .phone-number {
+  }
+    .phone-number__link {
+      color: $accent-color;
+      font-size: 1.5em;
+      text-decoration: none;
+      &:hover, &:focus {
+        .phone-number__label {
+          color: $accent-color;
+        }
+      }
+    }
+      .phone-number__label {
+        color: $body-color;
+        font-weight: bold;
+        transition: color .25s;
+      }
+
+.main-nav {
+  display: none;
+  position: absolute;
+  z-index: 99;
+  right: 1em;
+  top: 4.5em;
+  border-radius: 5px;
+  background-color: $nav-background;
+}
+  .main-nav__triangle {
+    top: -1em;
+    right: 0;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 20px 20px 20px;
+    border-color: transparent transparent $nav-background transparent;
+  }
+    .main-nav__items {
+      padding: 1em 2.5em;
+    }
+      .main-nav__item {
+        margin: .5em 0;
+      }
+      .main-nav__link {
+        text-decoration: none;
+        color: $nav-font-color;
+        font-size: 1.5em;
+        transition: color .25s;
+        &:hover {
+          color: $accent-color;
+        }
+      }
+
+.main-content {
+  padding-bottom: 5.5em;
+}
+
+.main-footer {
+}
+  .footer__social {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: $card-background;
+    border-top: 4px solid $accent-color;
+  }
+    .social__items {
+      text-align: center;
+    }
+      .social__item {
+        margin: 0 .5em;
+        display: inline-block;
+      }
+        .social__link {
+          color: $card-font-color;
+          padding: .25em;
+          font-size: 2em;
+          text-decoration: none;
+          vertical-align: bottom;
+          transition: color .25s;
+          display: block;
+          &:hover, &:focus {
+            color: $accent-color;
+          }
+        }
+          .social__label {
+            @extend .hide-text;
+          }
+
+  .footer__legal {
+    margin-bottom: 1em;
+    text-align: center;
+  }
+    .legal__link {
+      color: scale-color($body-color, $lightness: +25%);
+      text-decoration: none;
+      transition: color .25s;
+      &:hover, &:focus {
+        color: $body-color;
+      }
+    }
+
+
 /**
  * masonry elements styles
  */
 .item {
   width: 48%;
-  background-color: #282828;
+  background-color: $card-background;
   margin: 1%;
   text-align: center;
   transition: background-color .25s;
   border-radius: 5px;
   &:hover {
-    background-color: #404040;
+    background-color: $card-background-hover;
   }
 }
 .item.see-all-menus {
@@ -790,7 +811,7 @@ legend {
     cursor: pointer;
     transition: background-color .25s;
     a {
-      color: #FFFFFF;
+      color: $font-color-on-accent-background;
       text-decoration: none;
       font-size: 1.25em;
       font-weight: bold;
@@ -799,7 +820,7 @@ legend {
       padding: 0 .5em;
     }
     &:hover {
-      background-color: #404040;
+      background-color: $card-background-hover;
     }
     img {
       width: 100%;
@@ -822,6 +843,7 @@ legend {
 .page-header__description {
   text-align: center;
   padding: 0 .75em;
+  color: $body-color;
 }
 // Default page
 .page-header {
@@ -845,7 +867,7 @@ legend {
     color: $accent-color;
     text-decoration: none;
     &:hover, &:focus {
-      color: #999;
+      color: scale-color($accent-color, $lightness:  -25%);
     }
   }
 }
@@ -875,7 +897,7 @@ legend {
   border-top-right-radius: 5px;
   .section__title {
     padding: 1em 0;
-    color: #FFFFFF;
+    color: $font-color-on-accent-background;
   }
 }
 .opening-hours__image {
@@ -893,7 +915,7 @@ legend {
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
   {% endif %}
-  background-color: #282828;
+  background-color: $card-background;
   text-align: center;
 }
   .opening-days {
@@ -904,13 +926,13 @@ legend {
       font-size: 1.25em;
     }
     .opening-shifts {
-      color: #FFFFFF;
+      color: $card-font-color;
       font-size: 1em;
       margin-bottom: .5em;
     }
     .opening-hours__information {
       padding: 1em;
-      color: #FFFFFF;
+      color: $card-font-color;
     }
 
 .directions, .business-view {
@@ -923,7 +945,7 @@ legend {
   border-top-right-radius: 5px;
   .section__title {
     padding: 1em 0;
-    color: #FFFFFF;
+    color: $font-color-on-accent-background;
   }
 }
 .directions__image {
@@ -941,7 +963,7 @@ legend {
   }
   .map-overlay {
     position: absolute;
-    background-color: transparentize(#282828, 0.75);
+    background-color: transparentize($card-background, 0.75);
     top: 0; left: 0; right: 0; bottom: 0;
   }
     .map__image {
@@ -953,7 +975,7 @@ legend {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: #282828;
+    background-color: $card-background;
     text-align: center;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -962,7 +984,7 @@ legend {
       border-bottom-right-radius: 0px;
     {% endif %}
     a {
-      background-color: #282828;
+      background-color: $card-background;
       width: 100%;
       border-bottom-left-radius: 5px;
       border-bottom-right-radius: 5px;
@@ -1012,7 +1034,7 @@ legend {
   position: absolute;
   border-radius: 5px;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-color: #282828;
+  background-color: $card-background;
   opacity: 0.25;
   transition: opacity .25s;
 }
@@ -1030,7 +1052,7 @@ legend {
 }
 .menus__menu-link {
   text-decoration: none;
-  color: #FFFFFF;
+  color: $font-color-on-photo;
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
 }
@@ -1041,7 +1063,7 @@ legend {
   .menu--featured {
   }
   .menu-tag {
-    color: white;
+    color: $font-color-on-accent-background;
     text-align: center;
     padding: .25em 0;
     font-weight: bold;
@@ -1062,7 +1084,7 @@ legend {
   .menu__header {
   }
     .menu__title {
-      color: white;
+      color: $card-font-color;
       margin-bottom: .5em;
       padding: 0 .5em;
       font-family: $bodyFontStack;
@@ -1088,7 +1110,7 @@ legend {
     padding: 0 .5em;
   }
     .food__title {
-      color: white;
+      color: $card-font-color;
       font-family: $bodyFontStack;
       font-size: 1.25em;
       font-weight: 700;
@@ -1096,7 +1118,7 @@ legend {
     }
     .food__summary {
       font-size: 1em;
-      color: #ddd;
+      color: $food-summary-color;
       line-height: 1.35;
     }
 .food--featured {
@@ -1115,32 +1137,14 @@ legend {
     @include clearfix;
   }
   .price__label {
-    color: #FFFFFF;
+    color: $card-font-color;
     float: left;
   }
   .price__value {
     font-weight: 700;
     float: right;
-    color: #DDDDDD
+    color: $food-price-value-color;
   }
-
-// Back to menu
-.back-to-menu {
-    text-align: center;
-    &:before {
-      color: #727272;
-      content: "\2191";
-      display: inline-block;
-    }
-  }
-    .back-to-menu__link {
-      color: #727272;
-      text-decoration: none;
-      &:hover, &:focus {
-        color: #000;
-      }
-    }
-
 
 // Tags
 .food__tags {
@@ -1151,12 +1155,24 @@ legend {
     padding: .2em .4em;
   }
     .tag--vegan, .tag--vegetarian {
-      background-color: #8a9e6c;
-      color: #fff;
+      background-color: $tag-vegetarian-background;
+      color: $tag-vegetarian-font-color;
     }
     .tag--new {
-      background-color: #d8c061;
-      color: #fff;
+      background-color: $tag-news-background;
+      color: $tag-news-font-color;
+    }
+    .tag--no-meat {
+      background-color: $tag-no-meat-background;
+      color: $tag-no-meat-font-color;
+    }
+    .tag--no-pork {
+      background-color: $tag-no-pork-background;
+      color: $tag-no-pork-font-color;
+    }
+    .tag--alcohol-free {
+      background-color: $tag-no-alcohol-background;
+      color: $tag-no-alcohol-font-color;
     }
 
 // Gallery
@@ -1179,7 +1195,7 @@ legend {
     margin-bottom: .25em;
   }
   .photo__caption {
-    color: #FFFFFF;
+    color: $card-font-color;
   }
 
 /**
@@ -1289,12 +1305,12 @@ x:-o-prefocus, .lb-overlay img {
     color: $accent-color;
     text-decoration: none;
     &:hover, &:focus {
-      color: #999;
+      color: scale-color($accent-color, $lightness: -25%);
     }
   }
 }
   .contact-item__name {
-    color: #FFFFFF;
+    color: $card-font-color;
     margin-bottom: .5em;
   }
   .contact-item__label {
@@ -1302,7 +1318,7 @@ x:-o-prefocus, .lb-overlay img {
   }
 
   .restaurant-informations {
-    background-color: #282828;
+    background-color: $card-background;
     border-radius: 5px;
     text-align: center;
     margin-bottom: 1em;
@@ -1314,13 +1330,13 @@ x:-o-prefocus, .lb-overlay img {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     .section__title {
-      color: #FFFFFF;
+      color: $font-color-on-accent-background;
       padding: 1em;
     }
   }
   .restaurant-informations__body {
     padding: 1em;
-    color: #FFFFFF;
+    color: $card-font-color;
   }
   .opening-hours--contact {
     width: 100%;
@@ -1505,7 +1521,7 @@ x:-o-prefocus, .lb-overlay img {
       .social__item {
         width: 50px;
         height: 50px;
-        background-color: #282828;
+        background-color: $card-background;
         border-radius: 50%;
         margin: .5em 0;
         transition: background-color .25s;
@@ -1516,7 +1532,7 @@ x:-o-prefocus, .lb-overlay img {
         .social__link {
           font-size: 1.35em;
           &:hover {
-            color: #FFFFFF;
+            color: $card-font-color;
           }
         }
   .main-content {
