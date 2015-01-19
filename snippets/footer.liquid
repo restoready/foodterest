@@ -21,7 +21,7 @@
     {% if restaurant.phone? %}
     <li class="social__item">
       <a class="social__link" href="tel:{{ restaurant.phone_uri }}">
-        <i class="icon-phone"></i>
+        <i class="icon icon-phone"></i>
         <span class="social__label">{{ restaurant.phone }}</span>
       </a>
     </li>
@@ -29,7 +29,7 @@
     {% if restaurant.email? %}
       <li class="social__item">
         <a class="social__link" href="mailto:#{{restaurant.email}}">
-          <i class="icon-envelop"></i>
+          <i class="icon icon-envelop"></i>
           <span class="social__label">{{ "Envoyer un email" | t }}</span>
         </a>
       </li>
@@ -37,7 +37,7 @@
     {% if restaurant.facebook_url? %}
       <li class="social__item">
         <a class="social__link" href="{{restaurant.facebook_url}}">
-          <i class="icon-facebook"></i>
+          <i class="icon icon-facebook"></i>
           <span class="social__label">{{ "Notre page Facebook" | t }}</span>
         </a>
       </li>
@@ -45,7 +45,7 @@
     {% if restaurant.twitter_url? %}
       <li class="social__item">
         <a class="social__link" href="{{restaurant.twitter_url}}">
-          <i class="icon-twitter"></i>
+          <i class="icon icon-twitter"></i>
           <span class="social__label">{{ "Notre compte Twitter" | t }}</span>
         </a>
       </li>
@@ -53,7 +53,7 @@
     {% if restaurant.tripadvisor_url? %}
       <li class="social__item">
         <a class="social__link" href="{{restaurant.tripadvisor_url}}">
-          <i class="icon-trip"></i>
+          <i class="icon icon-tripadvisor"></i>
           <span class="social__label">{{ "Notre page TripAdvisor" | t }}</span>
         </a>
       </li>
