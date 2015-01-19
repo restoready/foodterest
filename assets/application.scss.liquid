@@ -538,7 +538,6 @@ ul, li {
 
 .main-header {
   overflow: hidden;
-  margin-top: 5px;
 }
   .logo {
     float: left;
@@ -977,7 +976,7 @@ legend {
 // menus & menu templates
 .section__subscribe {
   max-width: 300px;
-  margin: 0 auto 2em auto;
+  margin: .5em auto 1em auto;
   .input {
     margin-bottom: 0;
     input {
@@ -989,6 +988,10 @@ legend {
   }
 }
 // all menus - menus template
+.breadcrumb {
+  text-align: center;
+  width: 100%;
+}
 .menus-wrapper {
   text-align: center;
   margin: 0 0 1.25em 0;
@@ -1470,7 +1473,6 @@ x:-o-prefocus, .lb-overlay img {
 // Large
 @include at-query($min, $medium) {
   .main-header {
-    margin-bottom: .5em;
   }
   .logo__image {
     height: 65px;
@@ -1519,7 +1521,7 @@ x:-o-prefocus, .lb-overlay img {
         }
   .main-content {
     overflow: hidden;
-    padding: 1em 5em 1.5em 1em;
+    padding: 0 5em 1.5em 1em;
   }
   .opening-hours,
   .directions {
@@ -1619,7 +1621,22 @@ x:-o-prefocus, .lb-overlay img {
     width: 120px;
     height: 120px;
   }
-
+  .section__subscribe {
+    max-width: 500px;
+    //margin: .5em auto 1em auto;
+    .input {
+      margin-bottom: 0;
+      float:left;
+      width: 75%;
+    }
+    .submit {
+      width: 25%;
+      float: right;
+    }
+    .submit-newsletter {
+      height: 2.3em;
+    }
+  }
   .lb-overlay a.lb-close{
     top: 45px;
   }
@@ -1633,14 +1650,7 @@ x:-o-prefocus, .lb-overlay img {
   .page-body--contact {
     padding: 0;
   }
-  // .aside--contact {
-  //   float: left;
-  //   width: floor($siteWidth / 3);
-  // }
-  // .page-header--contact,
-  // .page-body--contact {
-  //   margin-left: ceil($siteWidth / 3) + $gutter;
-  // }
+
   .restaurant-informations,
   .opening-hours--contact {
     float: left;

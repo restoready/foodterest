@@ -1,7 +1,48 @@
 <section class="page-header page-header--menu">
-  {% for ancestor in menu.ancestors %}
-    <p>{{ ancestor.name }}</p>
-  {% endfor %}
+  <div class="breadcrumb">
+    <ul class="menus-wrapper">
+      <li class="menus" style="background:url('{{ restaurant.main_image | custom_image_url: '200x200#' }}');background-size:cover;">
+        <div class="menus-overlay"></div>
+        <a href="{{ restaurant.menus_path }}" class="menus__menu-link">
+          <div class="section__header menus__header">
+              <h2 class="section__title">
+                {{ "Toute la carte" | t }}
+              </h2>
+          </div>
+        </a>
+      </li>
+      {% if menu.parent? %}
+        {% for ancestor in menu.ancestors %}
+          <li class="menus" style="background:url('{{ ancestor.main_image | custom_image_url: '200x200#' }}');background-size:cover;">
+            <div class="menus-overlay"></div>
+            <a href="{{ ancestor.url }}" class="menus__menu-link">
+              <div class="section__header menus__header">
+                  <h2 class="section__title">
+                    {{ ancestor.name }}
+                  </h2>
+              </div>
+            </a>
+          </li>
+        {% endfor %}
+      {% endif %}
+    </ul>
+    {% if theme_settings.display_newsletter %}
+      <div class="section__subscribe">
+        {% newsletter_subscribe_form %}
+          <fieldset class="field-group">
+            <div class="input">
+              <input id="subscriberEmail" name="subscriber[email]" type="email" placeholder="{{ "Inscrivez-vous à notre newsletter&nbsp;" | t }}" required>
+            </div>
+            <div class="submit">
+              <button class="button submit-newsletter" type="submit">
+                <i class="icon-check"></i> {{ "Valider" | t }}
+              </button>
+            </div>
+          </fieldset>
+        {% endnewsletter_subscribe_form %}
+      </div>
+    {% endif %}
+  </div>
   <header class="section__header page-header__header">
     <h1 class="section__title page-header__title">{{ menu.name }}</h1>
     {% if menu.children? %}

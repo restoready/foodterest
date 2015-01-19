@@ -32,6 +32,9 @@ msgstr "The restaurant"
 msgid "Voir toute la carte"
 msgstr "All menus"
 
+msgid "Toute la carte"
+msgstr "All menus"
+
 msgid "Nos suggestions"
 msgstr "Our suggestions"
 
