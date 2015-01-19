@@ -13,13 +13,11 @@
 
 {% if photos.size > 0 %}
   <section class="restaurant-gallery">
-    <div class="wrapper">
-      <main class="section__main gallery">
-        {% for photo in photos %}
-          {% include 'photo' with photo:photo, i:forloop.index, l:forloop.length %}
-        {% endfor %}
-      </main>
-    </div>
+    <main class="section__main gallery container">
+      {% for photo in photos %}
+        {% include 'photo' with photo:photo, i:forloop.index, l:forloop.length %}
+      {% endfor %}
+    </main>
   </section>
 {% endif %}
 

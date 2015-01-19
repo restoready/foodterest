@@ -1155,38 +1155,27 @@ legend {
     }
 
 // Gallery
+.page-header--restaurant {
+  margin-bottom: 1em;
+}
 .restaurant-gallery {
   margin-bottom: 1em;
 }
-  .gallery__item {
-    position: relative;
-    margin-bottom: 1em;
-  }
-    .gallery__img {
-      img {
-        @extend .auto;
-        vertical-align: middle;
-      }
+  .gallery__img {
+    img {
+      width: 100%;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
     }
-      .photo__link {
-        display: block;
-        &:hover {
-          .photo__caption {
-            background-color: $accent-color;
-          }
-        }
-      }
-        .photo__caption {
-          color: white;
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          padding: .5em;
-          font-size: 1em;
-          font-weight: 700;
-          background-color: rgba($body-color, .75);
-        }
+  }
+  .photo__link {
+    text-decoration: none;
+    display: block;
+    margin-bottom: .25em;
+  }
+  .photo__caption {
+    color: #FFFFFF;
+  }
 
 /**
  * Pure CSS Lightbox
@@ -1222,6 +1211,7 @@ legend {
   height: 23px;
   overflow: hidden;
   text-decoration: none;
+  color: $body-color;
 }
 .lb-overlay img{
   /* height: 100%; For Opera max-height does not seem to work */
@@ -1394,12 +1384,6 @@ x:-o-prefocus, .lb-overlay img {
   .directions__image {
     height: 250px;
   }
-
-  .gallery__item {
-    display: inline-block;
-    vertical-align: top;
-    width: 45%;
-    margin: 2%;
   // menus & menu template
   .menus {
     width: 100px;
@@ -1571,10 +1555,6 @@ x:-o-prefocus, .lb-overlay img {
     height: 120px;
   }
 
-  .gallery__item {
-    width: 30%;
-    margin: 1%;
-  }
   .lb-overlay a.lb-close{
     top: 45px;
   }
