@@ -931,7 +931,7 @@ ul, li {
 // Home page
 
 .featured {
-  margin-bottom: 1.5em;
+  margin-bottom: .5em;
 }
 
 .menus__footer,
@@ -1399,18 +1399,23 @@ x:-o-prefocus, .lb-overlay img {
 
 // All News
 .news {
-  .section__header {
-    padding: .5em 1em .25em 1em;
+  margin-top: 1em;
+  padding: 0 .25em;
+}
+.news__header {
+  padding: .5em 1em .25em 1em;
+  text-align: center;
+  background-color: $accent-color;
+  border-top-left-radius:5px;
+  border-top-right-radius: 5px;
+  transition: background-color .25s;
+  &:hover {
+    background-color: $card-background-hover;
   }
 }
 .home-news-title__link {
   text-decoration: none;
-  color: $body-color;
-  display: inline-block;
-  transition: color .25s;
-  &:hover {
-    color: $accent-color;
-  }
+  color: $font-color-on-accent-background;
 }
 .page-header--news {
   margin-bottom: 1.5em;
