@@ -40,8 +40,8 @@
     <a href="{{ menu.url }}">
       <div class="item">
         {% if menu.main_image? %}
-          <div class="featured__menu-image-wrapper">
-            <img src="{{ menu.main_image | custom_image_url: "370x200#" }}" alt="menu" class="featured__menu-image">
+          <div class="item-wrapper-image">
+            <img src="{{ menu.main_image | custom_image_url: "370x200#" }}" alt="menu" class="featured__menu-image item-image">
           </div>
           <h6 class="menu-tag">Menu</h6>
         {% else %}

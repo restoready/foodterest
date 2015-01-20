@@ -804,6 +804,20 @@ ul, li {
     background-color: $card-background-hover;
   }
 }
+.item-wrapper-image {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 54%;
+}
+.item-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
 .item.see-all-menus {
   background-color: $accent-color;
 }
@@ -822,22 +836,10 @@ ul, li {
     &:hover {
       background-color: $card-background-hover;
     }
-    .all-menus-wrapper {
-      position: relative;
-      height: 0;
-      padding-bottom: 54%;
-      width: 100%;
-      img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        display: block;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-        margin-bottom: .5em;
-      }
+    img {
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      margin-bottom: .5em;
     }
   }
 
@@ -1085,19 +1087,7 @@ ul, li {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
   }
-  .featured__menu-image-wrapper {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 54%;
-  }
   .featured__menu-image {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    display: block;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
   }
@@ -1119,19 +1109,7 @@ ul, li {
 // Food - food template
 .food {
 }
-  .food__image-wrapper {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 54%;
-  }
   .food__image {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    display: block;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
   }
@@ -1223,19 +1201,8 @@ ul, li {
     text-decoration: none;
     display: block;
     margin-bottom: .25em;
-  }
-  .photo__link-image-wrapper {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 58%;
-    img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: block;
+    &>div.item-wrapper-image {
+      padding-bottom: 58%;
     }
   }
   .photo__caption {

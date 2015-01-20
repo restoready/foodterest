@@ -1,8 +1,8 @@
 <div class="gallery__item item">
   <div class="gallery__img">
     <a href="#image-{{ i }}" class="photo__link">
-      <div class="photo__link-image-wrapper">
-        <img src="{{ photo.image | custom_image_url: '600x350#' }}" alt="{{ photo.caption }}">
+      <div class="item-wrapper-image">
+        <img src="{{ photo.image | custom_image_url: '600x350#' }}" alt="{{ photo.caption }}" class="item-image">
       </div>
       <span class="photo__caption">{{ photo.caption }}</span>
     </a>
