@@ -21,7 +21,7 @@
     "card-background": "#282828",
     "card-font-color": "#FFFFFF",
     "card-background-hover": "#404040",
-    "food-summary-color": "#DDDDDD",
+    "summary-color": "#DDDDDD",
     "food-price-value-color": "#DDDDDD",
 
     "nav-background": "#FFFFFF",
@@ -65,7 +65,7 @@
       "card-background": "#282828",
       "card-font-color": "#FFFFFF",
       "card-background-hover": "#404040",
-      "food-summary-color": "#DDDDDD",
+      "summary-color": "#DDDDDD",
       "food-price-value-color": "#DDDDDD",
 
       "nav-background": "#FFFFFF",

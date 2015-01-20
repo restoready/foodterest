@@ -49,7 +49,7 @@ $nav-font-color: {{ theme_settings.nav-font-color }};
 $card-background: {{ theme_settings.card-background }};
 $card-font-color: {{ theme_settings.card-font-color }};
 $card-background-hover: {{ theme_settings.card-background-hover }};
-$food-summary-color: {{  theme_settings.food-summary-color }};
+$summary-color: {{  theme_settings.summary-color }};
 $food-price-value-color: {{ theme_settings.food-price-value-color }};
 
 $tag-vegetarian-background: {{ theme_settings.tag-vegetarian-background }};
@@ -1074,7 +1074,7 @@ ul, li {
 }
   .menu--featured {
   }
-  .menu-tag {
+  .item-tag {
     color: $font-color-on-accent-background;
     text-align: center;
     padding: .25em 0;
@@ -1083,7 +1083,7 @@ ul, li {
     background-color: $accent-color;
     margin-bottom: .5em;
   }
-  .menu-tag--no-img {
+  .item-tag--no-img {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
   }
@@ -1126,7 +1126,7 @@ ul, li {
     }
     .food__summary {
       font-size: 1em;
-      color: $food-summary-color;
+      color: $summary-color;
       line-height: 1.35;
     }
 .food--featured {
@@ -1388,8 +1388,8 @@ x:-o-prefocus, .lb-overlay img {
     }
   }
 /*
-  Icon Font: fontcustom
-*/
+ *Icon Font: fontcustom
+ */
 
 @font-face {
   font-family: "fontcustom";
