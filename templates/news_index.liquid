@@ -1,0 +1,50 @@
+<section class="page-header page-header--news">
+  <div class="wrapper">
+    <header class="section__header page-header__header">
+      <h1 class="section__title page-header__title">{{ "Actualités" | t }}</h1>
+    </header>
+    {% if theme_settings.display_newsletter %}
+      <div class="section__subscribe">
+        {% newsletter_subscribe_form %}
+          <fieldset class="field-group">
+            <div class="input">
+              <input id="subscriberEmail" name="subscriber[email]" type="email" placeholder="{{ 'Inscrivez-vous à notre newsletter' | t }}" required>
+            </div>
+            <div class="submit">
+              <button class="button submit-newsletter" type="submit">
+                <i class="icon-check"></i> {{ "Valider" | t }}
+              </button>
+            </div>
+          </fieldset>
+        {% endnewsletter_subscribe_form %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% if all_news.size > 0 %}
+  <section class="page-body page-body--news">
+    <main class="section__main news container">
+      {% for news in all_news %}
+        <div class="item">
+          <a href="{{ news.url }}">
+              {% if news.image? %}
+                <div class="item-wrapper-image">
+                  {{ news.image | custom_image_url:'370x200#' | image_tag:'class:news__image item-image' }}
+                </div>
+              {% endif %}
+              <h6 class="item-tag">{{ news.date }}</h6>
+            <div class="news__body">
+              {% if news.title %}
+                <h5 class="news__title">{{ news.title }}</h5>
+              {% endif %}
+              {% if news.summary %}
+                <p class="news__summary">{{ news.summary }}</p>
+              {% endif %}
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </main>
+  </section>
+{% endif %}

@@ -160,3 +160,6 @@ msgstr "Your phone number :"
 
 msgid "Votre message :"
 msgstr "Your message :"
+
+msgid "Actualités"
+msgstr "News"
