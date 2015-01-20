@@ -21,12 +21,12 @@
     {% endif %}
   </div>
 </section>
-<ul class="menus-wrapper">
+<ul class="shortcut-wrapper">
   {% for menu in menus %}
-    <li class="menus" style="{% if menu.main_image? %}background:url('{{ menu.main_image | custom_image_url: '200x200#' }}');background-size:cover;{% endif %}">
-      <div class="menus-overlay"></div>
-      <a class="menus__menu-link" href="{{ menu.url }}">
-        <div class="section__header menus__header">
+    <li class="shortcut" style="{% if menu.main_image? %}background:url('{{ menu.main_image | custom_image_url: '200x200#' }}');background-size:cover;{% endif %}">
+      <div class="shortcut__overlay"></div>
+      <a class="shortcut__link" href="{{ menu.url }}">
+        <div class="section__header shortcut__header">
           <h2 class="section__title">
             {{ menu.name }}
           </h2>

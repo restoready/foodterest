@@ -1,10 +1,10 @@
 <section class="page-header page-header--menu">
   <div class="breadcrumb">
-    <ul class="menus-wrapper">
-      <li class="menus" style="{% if restaurant.main_image? %}background:url('{{ restaurant.main_image | custom_image_url: '200x200#' }}');background-size:cover;{% endif %}">
-        <div class="menus-overlay"></div>
-        <a href="{{ restaurant.menus_path }}" class="menus__menu-link">
-          <div class="section__header menus__header">
+    <ul class="shortcut-wrapper">
+      <li class="shortcut" style="{% if restaurant.main_image? %}background:url('{{ restaurant.main_image | custom_image_url: '200x200#' }}');background-size:cover;{% endif %}">
+        <div class="shortcut__overlay"></div>
+        <a href="{{ restaurant.menus_path }}" class="shortcut__link">
+          <div class="section__header shortcut__header">
               <h2 class="section__title">
                 {{ "Toute la carte" | t }}
               </h2>
@@ -13,10 +13,10 @@
       </li>
       {% if menu.parent? %}
         {% for ancestor in menu.ancestors %}
-          <li class="menus" style="{% if ancestor.main_image? %}background:url('{{ ancestor.main_image | custom_image_url: '200x200#' }}');background-size:cover;{% endif %}">
-            <div class="menus-overlay"></div>
-            <a href="{{ ancestor.url }}" class="menus__menu-link">
-              <div class="section__header menus__header">
+          <li class="shortcut" style="{% if ancestor.main_image? %}background:url('{{ ancestor.main_image | custom_image_url: '200x200#' }}');background-size:cover;{% endif %}">
+            <div class="shortcut__overlay"></div>
+            <a href="{{ ancestor.url }}" class="shortcut__link">
+              <div class="section__header shortcut__header">
                   <h2 class="section__title">
                     {{ ancestor.name }}
                   </h2>
@@ -46,12 +46,12 @@
   <header class="section__header page-header__header">
     <h1 class="section__title page-header__title">{{ menu.name }}</h1>
     {% if menu.children? %}
-      <ul class="menus-wrapper">
+      <ul class="shortcut-wrapper">
         {% for child in menu.children %}
-          <li class="menus" style="{% if child.main_image? %}background:url('{{ child.main_image | custom_image_url: '200x200#' }}');background-size:cover;{% endif %}">
-            <div class="menus-overlay"></div>
-            <a href="{{ child.url }}" class="menus__menu-link">
-              <div class="section__header menus__header">
+          <li class="shortcut" style="{% if child.main_image? %}background:url('{{ child.main_image | custom_image_url: '200x200#' }}');background-size:cover;{% endif %}">
+            <div class="shortcut__overlay"></div>
+            <a href="{{ child.url }}" class="shortcut__link">
+              <div class="section__header shortcut__header">
                 <h2 class="section__title">
                   {{ child.name }}
                 </h2>

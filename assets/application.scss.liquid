@@ -884,6 +884,50 @@ ul, li {
   }
 }
 
+// shortcut
+.shortcut-wrapper {
+  text-align: center;
+  margin: 0 0 .5em 0;
+}
+.shortcut {
+  position: relative;
+  display: inline-block;
+  margin: .5em .25em;
+  width: 80px;
+  height: 80px;
+  border-radius: 5px;
+  background-color: $accent-color;
+  &:hover .shortcut__overlay {
+    opacity: .25;
+  }
+}
+.shortcut__overlay {
+  position: absolute;
+  border-radius: 5px;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: $card-background;
+  opacity: 0.5;
+  transition: opacity .25s;
+}
+.shortcut__link {
+  text-decoration: none;
+  color: $font-color-on-photo;
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+}
+.shortcut__header {
+  text-align: center;
+  position: absolute;
+  bottom: .25em;
+  left: 0;
+  right: 0;
+  .section__title {
+    font-size: 1em;
+    font-family: $bodyFontStack;
+    font-weight: bold;
+  }
+}
+
 // Home page
 
 .featured {
@@ -1025,48 +1069,6 @@ ul, li {
 .breadcrumb {
   text-align: center;
   width: 100%;
-}
-.menus-wrapper {
-  text-align: center;
-  margin: 0 0 1.25em 0;
-}
-.menus {
-  position: relative;
-  display: inline-block;
-  margin: .5em .25em;
-  width: 80px;
-  height: 80px;
-  border-radius: 5px;
-  background-color: $accent-color;
-  &:hover .menus-overlay {
-    opacity: .25;
-  }
-}
-.menus-overlay {
-  position: absolute;
-  border-radius: 5px;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: $card-background;
-  opacity: 0.5;
-  transition: opacity .25s;
-}
-.menus__header {
-  text-align: center;
-  position: absolute;
-  bottom: .25em;
-  left: 0;
-  right: 0;
-  .section__title {
-    font-size: 1em;
-    font-family: $bodyFontStack;
-    font-weight: bold;
-  }
-}
-.menus__menu-link {
-  text-decoration: none;
-  color: $font-color-on-photo;
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
 }
 // Menu - menu template
 .menu {
@@ -1487,8 +1489,8 @@ x:-o-prefocus, .lb-overlay img {
   .directions__image {
     height: 250px;
   }
-  // menus & menu template
-  .menus {
+  // shortcut
+  .shortcut {
     width: 100px;
     height: 100px;
   }
@@ -1651,11 +1653,12 @@ x:-o-prefocus, .lb-overlay img {
       {% endunless %}
     }
   }
-  // menus & menu template
-  .menus {
+  // shortcut
+  .shortcut {
     width: 120px;
     height: 120px;
   }
+
   .section__subscribe {
     max-width: 500px;
     //margin: .5em auto 1em auto;
