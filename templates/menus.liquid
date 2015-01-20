@@ -23,7 +23,7 @@
 </section>
 <ul class="menus-wrapper">
   {% for menu in menus %}
-    <li class="menus" style="background:url('{{ menu.main_image | custom_image_url: '200x200#' }}');background-size:cover;">
+    <li class="menus" style="{% if menu.main_image? %}background:url('{{ menu.main_image | custom_image_url: '200x200#' }}');background-size:cover;{% endif %}">
       <div class="menus-overlay"></div>
       <a class="menus__menu-link" href="{{ menu.url }}">
         <div class="section__header menus__header">

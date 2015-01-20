@@ -1027,7 +1027,7 @@ ul, li {
   border-radius: 5px;
   background-color: $accent-color;
   &:hover .menus-overlay {
-    opacity: 0;
+    opacity: .25;
   }
 }
 .menus-overlay {
@@ -1035,7 +1035,7 @@ ul, li {
   border-radius: 5px;
   top: 0; left: 0; right: 0; bottom: 0;
   background-color: $card-background;
-  opacity: 0.25;
+  opacity: 0.5;
   transition: opacity .25s;
 }
 .menus__header {
@@ -1544,19 +1544,19 @@ x:-o-prefocus, .lb-overlay img {
     overflow: hidden;
     position: relative;
     padding: 0;
-    margin: 1%;
+    margin: .5%;
   }
 
   .opening-hours {
     {% if theme_settings.home-image-opening-hours %}
-      width: 98%;
+      width: 99%;
     {% else %}
-      width: 48%;
+      width: 49%;
       float: left;
     {% endif %}
 
     {% if theme_settings.home-image-directions %}
-      width: 98%;
+      width: 99%;
     {% endif %}
   }
   .opening-hours__body {
@@ -1587,14 +1587,14 @@ x:-o-prefocus, .lb-overlay img {
 
   .directions {
     {% if theme_settings.home-image-directions %}
-      width: 98%;
+      width: 99%;
     {% else %}
-      width: 48%;
+      width: 49%;
       float: right;
     {% endif %}
 
     {% if theme_settings.home-image-opening-hours %}
-      width: 98%;
+      width: 99%;
     {% endif %}
   }
   .directions__body {

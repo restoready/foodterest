@@ -1,7 +1,7 @@
 <section class="page-header page-header--menu">
   <div class="breadcrumb">
     <ul class="menus-wrapper">
-      <li class="menus" style="background:url('{{ restaurant.main_image | custom_image_url: '200x200#' }}');background-size:cover;">
+      <li class="menus" style="{% if restaurant.main_image? %}background:url('{{ restaurant.main_image | custom_image_url: '200x200#' }}');background-size:cover;{% endif %}">
         <div class="menus-overlay"></div>
         <a href="{{ restaurant.menus_path }}" class="menus__menu-link">
           <div class="section__header menus__header">
@@ -13,7 +13,7 @@
       </li>
       {% if menu.parent? %}
         {% for ancestor in menu.ancestors %}
-          <li class="menus" style="background:url('{{ ancestor.main_image | custom_image_url: '200x200#' }}');background-size:cover;">
+          <li class="menus" style="{% if ancestor.main_image? %}background:url('{{ ancestor.main_image | custom_image_url: '200x200#' }}');background-size:cover;{% endif %}">
             <div class="menus-overlay"></div>
             <a href="{{ ancestor.url }}" class="menus__menu-link">
               <div class="section__header menus__header">
@@ -48,7 +48,7 @@
     {% if menu.children? %}
       <ul class="menus-wrapper">
         {% for child in menu.children %}
-          <li class="menus" style="background:url('{{ child.main_image | custom_image_url: '200x200#' }}');background-size:cover;">
+          <li class="menus" style="{% if child.main_image? %}background:url('{{ child.main_image | custom_image_url: '200x200#' }}');background-size:cover;{% endif %}">
             <div class="menus-overlay"></div>
             <a href="{{ child.url }}" class="menus__menu-link">
               <div class="section__header menus__header">
