@@ -1,0 +1,47 @@
+<div class="breadcrumb">
+  <ul class="shortcut-wrapper">
+    <li class="shortcut" style="{% if restaurant.main_image? %}background:url('{{ restaurant.main_image | custom_image_url: '200x200#' }}');background-size:cover;{% endif %}">
+      <div class="shortcut__overlay"></div>
+      <a href="{{ localized_root_path }}/news" class="shortcut__link">
+        <div class="section__header shortcut__header">
+            <h2 class="section__title">
+              {{ "Actualités" | t }}
+            </h2>
+        </div>
+      </a>
+    </li>
+  </ul>
+  {% if theme_settings.display_newsletter %}
+    <div class="section__subscribe">
+      {% newsletter_subscribe_form %}
+        <fieldset class="field-group">
+          <div class="input">
+            <input id="subscriberEmail" name="subscriber[email]" type="email" placeholder="{{ 'Inscrivez-vous à notre newsletter' | t }}" required>
+          </div>
+          <div class="submit">
+            <button class="button submit-newsletter" type="submit">
+              <i class="icon-check"></i> {{ "Valider" | t }}
+            </button>
+          </div>
+        </fieldset>
+      {% endnewsletter_subscribe_form %}
+    </div>
+  {% endif %}
+</div>
+
+<section class="page-header page-header--news">
+  <div class="wrapper">
+    <header class="section__header page-header__header">
+      <h1 class="section__title page-header__title">{{ news.title }}</h1>
+    </header>
+    <div class="news__date-wrapper"><h5 class="news__date">{{ news.date }}</h5></div>
+  </div>
+</section>
+
+<section class="page-body page-body--news">
+  <div class="wrapper">
+    <main class="section__main">
+      {{ news.content }}
+    </main>
+  </div>
+</section>
