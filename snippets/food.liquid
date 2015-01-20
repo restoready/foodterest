@@ -1,6 +1,8 @@
 <div class="item food {% if food.featured_in_menu? %}food--featured{% endif %} {{food.auto_css_classes}}" id="food-{{food.id}}">
   {% if food.main_image? %}
-    {{ food.main_image | custom_image_url:'370x200#' | image_tag:'class:food__image' }}
+    <div class="food__image-wrapper">
+      {{ food.main_image | custom_image_url:'370x200#' | image_tag:'class:food__image' }}
+    </div>
   {% endif %}
   <div class="food__body">
     <h5 class="food__title">

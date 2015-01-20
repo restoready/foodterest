@@ -1,7 +1,9 @@
 <div class="gallery__item item">
   <div class="gallery__img">
     <a href="#image-{{ i }}" class="photo__link">
-      <img src="{{ photo.image | custom_image_url: '600x350#' }}" alt="{{ photo.caption }}">
+      <div class="photo__link-image-wrapper">
+        <img src="{{ photo.image | custom_image_url: '600x350#' }}" alt="{{ photo.caption }}">
+      </div>
       <span class="photo__caption">{{ photo.caption }}</span>
     </a>
     <div class="lb-overlay" id="image-{{ i }}">

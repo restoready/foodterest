@@ -9,7 +9,9 @@
         {% endif %}
           <div class="item">
             {% if menu.main_image? %}
-              <img src="{{ menu.main_image | custom_image_url: "370x200#" }}" alt="menu" class="featured__menu-image">
+              <div class="featured__menu-image-wrapper">
+                <img src="{{ menu.main_image | custom_image_url: "370x200#" }}" alt="menu" class="featured__menu-image">
+              </div>
               <h6 class="menu-tag">Menu</h6>
             {% else %}
               <h6 class="menu-tag menu-tag--no-img">Menu</h6>
@@ -25,7 +27,9 @@
         </a>
       {% endfor %}
       <div class="item see-all-menus">
-        <img src="{{ 'see-all-menus.jpg' | asset_url | custom_image_url: "370x200#" }}" alt="all-menus">
+        <div class="all-menus-wrapper">
+          <img src="{{ 'see-all-menus.jpg' | asset_url | custom_image_url: "370x200#" }}" alt="all-menus">
+        </div>
         <a href="{{ restaurant.menus_path }}">
           {{ "Voir toute la carte" | t }}
         </a>
