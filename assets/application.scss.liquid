@@ -667,20 +667,23 @@ ul, li {
   float: right;
   margin-right: 5px;
   cursor: pointer;
-  p {
-    font-size: 1em;
-    text-transform: uppercase;
-    font-weight: bold;
-    color: $body-color;
-    margin-bottom: 0;
-  }
+  margin-top: 8px;
+}
+.main-header__hamburger-stroke {
   div {
-    margin-bottom: .5em;
+    margin-bottom: .2em;
     background-color: $body-color;
-    height: 6px;
+    height: 3px;
     width: 42px;
     border-radius: 5px;
   }
+}
+.main-header__hamburger-title {
+  font-size: 1em;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: $body-color;
+  margin-bottom: 0;
 }
 
 .phone-medium-down {
@@ -710,7 +713,7 @@ ul, li {
   position: absolute;
   z-index: 99;
   right: 1em;
-  top: 4.5em;
+  top: 4em;
   border-radius: 5px;
   background-color: $nav-background;
 }
@@ -1537,14 +1540,28 @@ x:-o-prefocus, .lb-overlay img {
     height: 60px;
   }
   .main-header__hamburger {
+    margin-top: 0;
+  }
+  .main-header__hamburger-stroke {
+    margin-top: 5px;
+    display: inline-block;
+    vertical-align: middle;
     div {
-      width: 52px;
+      width: 25px;
+      height: 4px;
     }
+  }
+  .main-header__hamburger-title {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1.5em;
   }
   .phone {
     margin: 1em 0;
   }
-
+  .main-nav {
+    top: 3em;
+  }
   .opening-hours__image,
   .directions__image {
     height: 250px;
@@ -1579,11 +1596,6 @@ x:-o-prefocus, .lb-overlay img {
     float: left;
     margin-left: 2em;
     margin-top: .5em;
-  }
-  .main-header__hamburger {
-    div {
-      width: 52px;
-    }
   }
   .phone-medium-down {
     display: none;
