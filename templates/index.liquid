@@ -98,33 +98,37 @@
 </section>
 
 {% if ten_latest_news.size > 0 %}
-  <section class="news">
-    <header class="section__header news__header">
-      <a href="{{ localized_root_path }}/news" class="home-news-title__link">
-        <h1 class="section__title">{{ "Actualités" | t }}</h1>
-      </a>
-    </header>
-    <main class="section__main container">
-      {% for news in ten_latest_news %}
-        <a href="{{ news.url }}">
-          <div class="item">
-            {% if news.image? %}
-              <div class="item-wrapper-image">
-                {{ news.image | custom_image_url:'370x200#' | image_tag:'class:news__image item-image' }}
-              </div>
-            {% endif %}
-            <h6 class="item-tag">{{ news.date }}</h6>
-            <div class="news__body">
-              {% if news.title %}
-                <h5 class="news__title">{{ news.title }}</h5>
-              {% endif %}
-              {% if news.summary %}
-                <p class="news__summary">{{ news.summary }}</p>
-              {% endif %}
+  <section class="wrapper">
+    <section class="news block">
+      <main class="section__main news__body block__body">
+        <header class="section__header news__header block__header">
+          <a href="{{ localized_root_path }}/news" class="home-news-title__link">
+            <div class="section__title">
+              <h2>{{ "Actualités" | t }}</h2>
             </div>
-          </div>
-        </a>
-      {% endfor %}
-    </main>
+          </a>
+        </header>
+        {% for news in ten_latest_news %}
+          <section class="news__one-news">
+            <a href="{{ news.url }}" class="news__one-news-link">
+              {% if news.image? %}
+              <div class="news__one-news-image block__image {% cycle 'group-image': 'block__image--odd', 'block__image--even' %}" style="background:url('{{ news.image | custom_image_url: '768x400#' }}'); background-size:cover;"></div>
+              {% endif %}
+              <div class="news__one-news-content-wrapper {% cycle 'group-content': 'news__one-news-content-wrapper--odd', 'news__one-news-content-wrapper--even' %}">
+                <h6 class="item-tag">{{ news.date }}</h6>
+                <div class="news__one-news-content">
+                  {% if news.title %}
+                    <h5 class="news__one-news-title">{{ news.title }}</h5>
+                  {% endif %}
+                  {% if news.summary %}
+                    <p class="news__one-news-summary">{{ news.summary }}</p>
+                  {% endif %}
+                </div>
+              </div>
+            </a>
+          </section>
+        {% endfor %}
+      </main>
+    </section>
   </section>
 {% endif %}
