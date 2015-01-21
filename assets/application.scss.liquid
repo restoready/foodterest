@@ -770,9 +770,12 @@ a {
         margin: 0 .5em;
         display: inline-block;
       }
+      .social__item--newsletter {
+        display: none;
+      }
         .social__link {
           color: $card-font-color;
-          padding: .25em;
+          padding: .5em .25em;
           font-size: 2em;
           text-decoration: none;
           vertical-align: bottom;
@@ -1367,6 +1370,11 @@ input.submit-contact {
     width: 100%;
   }
 }
+.section__subscribe--home {
+}
+.section__subscribe--layout {
+  display: none;
+}
 
 // Page
 .page-body--page {
@@ -1464,17 +1472,18 @@ input.submit-contact {
   padding: .5em 1em;
   color: $font-color-on-accent-background;
 }
+
 /*
- *Icon Font: fontcustom
- */
+  Icon Font: fontcustom
+*/
 
 @font-face {
   font-family: "fontcustom";
-  src: url("{{ 'fontcustom_59b636c4da100feede4bb20e45e8ca7b.eot' | asset_url }}");
-  src: url("{{ 'fontcustom_59b636c4da100feede4bb20e45e8ca7b.eot?#iefix' | asset_url }}") format("embedded-opentype"),
-       url("{{ 'fontcustom_59b636c4da100feede4bb20e45e8ca7b.woff' | asset_url }}") format("woff"),
-       url("{{ 'fontcustom_59b636c4da100feede4bb20e45e8ca7b.ttf' | asset_url }}") format("truetype"),
-       url("{{ 'fontcustom_59b636c4da100feede4bb20e45e8ca7b.svg#fontcustom' | asset_url }}") format("svg");
+  src: url("./fontcustom_c35105239c362af506f42e5466fe6044.eot");
+  src: url("./fontcustom_c35105239c362af506f42e5466fe6044.eot?#iefix") format("embedded-opentype"),
+       url("./fontcustom_c35105239c362af506f42e5466fe6044.woff") format("woff"),
+       url("./fontcustom_c35105239c362af506f42e5466fe6044.ttf") format("truetype"),
+       url("./fontcustom_c35105239c362af506f42e5466fe6044.svg#fontcustom") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -1482,7 +1491,7 @@ input.submit-contact {
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: "fontcustom";
-    src: url("{{ 'fontcustom_59b636c4da100feede4bb20e45e8ca7b.svg#fontcustom' | asset_url }}") format("svg");
+    src: url("./fontcustom_c35105239c362af506f42e5466fe6044.svg#fontcustom") format("svg");
   }
 }
 
@@ -1496,6 +1505,7 @@ input.submit-contact {
 .icon-envelop:before,
 .icon-error:before,
 .icon-facebook:before,
+.icon-newsletter:before,
 .icon-phone:before,
 .icon-star:before,
 .icon-tripadvisor:before,
@@ -1521,11 +1531,11 @@ input.submit-contact {
 .icon-envelop:before { content: "\f104"; }
 .icon-error:before { content: "\f105"; }
 .icon-facebook:before { content: "\f106"; }
+.icon-newsletter:before { content: "\f10b"; }
 .icon-phone:before { content: "\f107"; }
 .icon-star:before { content: "\f108"; }
 .icon-tripadvisor:before { content: "\f109"; }
 .icon-twitter:before { content: "\f10a"; }
-
 
 
 // ===========================================================================
@@ -1606,7 +1616,7 @@ input.submit-contact {
   .footer__social {
     position: fixed;
     right: .5em;
-    bottom: 5em;
+    bottom: 2em;
     width: 8%;
     background-color: transparent;
     border-top: none;
@@ -1627,6 +1637,7 @@ input.submit-contact {
       }
         .social__link {
           font-size: 1.35em;
+          padding: .25em;
           &:hover {
             color: $card-font-color;
           }
@@ -1834,13 +1845,46 @@ input.submit-contact {
   .footer__social {
     width: 6%;
   }
-
   /**
    * masonry elements styles
    */
   .item {
     width: 19%;
     margin: 0.5%;
+  }
+}
+
+// >Desktop
+@include at-query($min, 1025px) {
+  .social__item--newsletter {
+    display: inline-block;
+  }
+  // newsletter
+  .section__subscribe--home {
+    display: none;
+  }
+  .section__subscribe--layout {
+    width: 350px;
+    background-color: #FFF;
+    border-radius: 5px;
+    padding: 1.5em;
+    position: absolute;
+    top: 5.5em;
+    left: -21em;
+    .input--layout, .submit--layout {
+      float: none;
+      width: 100%;
+    }
+  }
+  .section__subscribe-triangle {
+    position: absolute;
+    top: 2.5em;
+    right: -1em;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 0 20px 20px;
+    border-color: transparent transparent transparent #FFFFFF;
   }
 }
 

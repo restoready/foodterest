@@ -134,6 +134,9 @@ msgstr "See dishes"
 msgid "Entrez votre email pour recevoir notre newsletter&nbsp;:"
 msgstr "Enter your email to receive our newsletter&nbsp;:"
 
+msgid "Notre newsletter"
+msgstr "Our newsletter"
+
 msgid "Inscrivez-vous à notre newsletter"
 msgstr "Sign up for our newsletter"
 

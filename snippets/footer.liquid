@@ -16,6 +16,12 @@
         </a>
       </li>
     {% endif %}
+    <li class="social__item social__item--newsletter">
+      <a class="social__link">
+        <i class="icon icon-newsletter"></i>
+        <span class="social__label">{{ "Notre newsletter" }}</span>
+      </a>
+    </li>
     {% if restaurant.facebook_url? %}
       <li class="social__item">
         <a class="social__link" href="{{restaurant.facebook_url}}">
@@ -41,4 +47,21 @@
       </li>
     {% endif %}
   </ul>
+  {% if theme_settings.display_newsletter %}
+  <div class="section__subscribe section__subscribe--layout">
+    <div class="section__subscribe-triangle"></div>
+    {% newsletter_subscribe_form %}
+      <fieldset class="field-group">
+        <div class="input input--layout">
+          <input id="subscriberEmail" name="subscriber[email]" type="email" placeholder="{{ 'Inscrivez-vous à notre newsletter' | t }}" required>
+        </div>
+        <div class="submit submit--layout">
+          <button class="button submit-newsletter" type="submit">
+            <i class="icon-check"></i> {{ "Valider" | t }}
+          </button>
+        </div>
+      </fieldset>
+    {% endnewsletter_subscribe_form %}
+  </div>
+{% endif %}
 </div>

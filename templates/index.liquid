@@ -133,3 +133,20 @@
     <div class="directions__image block__image"></div>
   {% endif %}
 </section>
+
+{% if theme_settings.display_newsletter %}
+  <div class="section__subscribe section__subscribe--home">
+    {% newsletter_subscribe_form %}
+      <fieldset class="field-group">
+        <div class="input">
+          <input id="subscriberEmail" name="subscriber[email]" type="email" placeholder="{{ 'Inscrivez-vous à notre newsletter' | t }}" required>
+        </div>
+        <div class="submit">
+          <button class="button submit-newsletter" type="submit">
+            <i class="icon-check"></i> {{ "Valider" | t }}
+          </button>
+        </div>
+      </fieldset>
+    {% endnewsletter_subscribe_form %}
+  </div>
+{% endif %}
