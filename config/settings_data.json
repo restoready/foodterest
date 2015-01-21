@@ -10,6 +10,7 @@
 
     "home-image-opening-hours": true,
     "home-image-directions": true,
+    "home-image-news": true,
 
     "google_business_view_url": "",
     "display_google_business_view_url": false,
@@ -53,7 +54,7 @@
 
       "home-image-opening-hours": true,
       "home-image-directions": true,
-
+      "home-image-news": true,
 
       "google_business_view_url": "",
       "display_google_business_view_url": false,
