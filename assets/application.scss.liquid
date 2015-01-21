@@ -624,6 +624,13 @@ body {
 ul, li {
   margin-bottom: 0;
 }
+p {
+  margin-bottom: .25em;
+}
+a {
+  color: $accent-color;
+  text-decoration: none;
+}
 .page {
   @extend .clearfix;
 }
@@ -887,6 +894,35 @@ ul, li {
   }
 }
 
+// block
+.block {
+  padding: 0 .25em;
+  margin-bottom: 1em;
+}
+.block__body {
+  border-radius: 5px;
+  background-color: $card-background;
+  color: $card-font-color;
+  text-align: center;
+}
+.block__header {
+  text-align: center;
+  background-color: $accent-color;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  .section__title {
+    padding: 1em 0;
+    color: $font-color-on-accent-background;
+  }
+}
+.block__image {
+  background-size: cover;
+  background-position: center center;
+  height: 200px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
 // shortcut
 .shortcut-wrapper {
   text-align: center;
@@ -943,39 +979,21 @@ ul, li {
 }
 
 .opening-hours {
-  padding: 0 .25em;
   margin-bottom: 1em;
   {% if theme_settings.home-image-opening-hours %}
     margin-bottom: 0;
   {% endif %}
 }
-.opening-hours__header {
-  text-align: center;
-  background-color: $accent-color;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  .section__title {
-    padding: 1em 0;
-    color: $font-color-on-accent-background;
-  }
-}
 .opening-hours__image {
   background-image: url({{ 'opening-hours-image.jpg' | asset_url }});
-  background-size: cover;
-  background-position: center center;
-  height: 200px;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
   margin-bottom: 1em;
 }
+
 .opening-hours__body {
-  border-radius: 5px;
   {% if theme_settings.home-image-opening-hours %}
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
   {% endif %}
-  background-color: $card-background;
-  text-align: center;
 }
   .opening-days {
     padding: 1em;
@@ -994,26 +1012,8 @@ ul, li {
       color: $card-font-color;
     }
 
-.directions, .business-view {
-  padding: 0 .25em;
-}
-.directions__header {
-  text-align: center;
-  background-color: $accent-color;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  .section__title {
-    padding: 1em 0;
-    color: $font-color-on-accent-background;
-  }
-}
 .directions__image {
   background-image: url({{ 'directions-image.jpg' | asset_url }});
-  background-size: cover;
-  background-position: center center;
-  height: 200px;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
 }
 .directions__body {
 }
@@ -1029,7 +1029,8 @@ ul, li {
       width: 100%;
       height: auto;
     }
-  .directions__footer {
+  .directions__footer,
+  .business-view__footer {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -1311,10 +1312,22 @@ x:-o-prefocus, .lb-overlay img {
 
 
 // Contact page
-.aside--contact,
-.page-header--contact,
 .page-body--contact {
-  padding: 0 .5em;
+  margin: 1.5em 0;
+  padding: 0 .25em;
+  input {
+    margin-bottom: 1.5em;
+  }
+  input, textarea {
+    outline: none;
+  }
+}
+.textarea--message {
+  margin-bottom: 0;
+}
+input.submit-contact {
+  width: 100%;
+  margin-bottom: 0;
 }
 .contact-item {
   a {
@@ -1332,66 +1345,28 @@ x:-o-prefocus, .lb-overlay img {
   .contact-item__label {
     font-weight: 700;
   }
-
-  .restaurant-informations {
-    background-color: $card-background;
-    border-radius: 5px;
-    text-align: center;
-    margin-bottom: 1em;
-  }
-  .restaurant-informations__header {
-    background-color: $accent-color;
-    width: 100%;
-    text-align: center;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    .section__title {
-      color: $font-color-on-accent-background;
-      padding: 1em;
+  .aside--contact {
+    .block__body {
+      border-radius: 5px;
     }
   }
-  .restaurant-informations__body {
+  .restaurant-informations__content {
     padding: 1em;
-    color: $card-font-color;
-  }
-  .opening-hours--contact {
-    width: 100%;
-    padding: 0;
-    margin-bottom: 1em;
-  }
-  .opening-hours__body--contact {
-    border-radius: 5px;
-  }
-  .page-body--contact {
-    margin: 1.5em 0;
-    input {
-      margin-bottom: 1.5em;
-    }
-    input, textarea {
-      outline: none;
-    }
-  }
-  .textarea--message {
-    margin-bottom: 0;
-  }
-  input.submit-contact {
-    width: 100%;
-    margin-bottom: 0;
   }
 
-  // newsletter
-  .newsletter-form {
-    margin: 0 auto 2em auto;
-    .input {
-      margin-bottom: 0;
-      input {
-      outline: none;
-      }
-    }
-    .submit-newsletter {
-      width: 100%;
+// newsletter
+.newsletter-form {
+  margin: 0 auto 2em auto;
+  .input {
+    margin-bottom: 0;
+    input {
+    outline: none;
     }
   }
+  .submit-newsletter {
+    width: 100%;
+  }
+}
 
 // Page
 .page-body--page {
@@ -1632,12 +1607,18 @@ x:-o-prefocus, .lb-overlay img {
     overflow: hidden;
     padding: 0 5em 1.5em 1em;
   }
-  .opening-hours,
-  .directions {
+  // block
+  .block {
     overflow: hidden;
     position: relative;
     padding: 0;
-    margin: .5%;
+    margin: 0 .5% 1em;
+  }
+  .block__image {
+    position: absolute;
+    width: 50%;
+    height: auto;
+    margin-bottom: 0;
   }
 
   .opening-hours {
@@ -1669,13 +1650,9 @@ x:-o-prefocus, .lb-overlay img {
     {% endif %}
   }
   .opening-hours__image {
-    position: absolute;
-    width: 50%;
     top: 0; left: 50%; right: 0; bottom: 0;
-    height: auto;
     border-top-right-radius: 5px;
     border-bottom-left-radius: 0;
-    margin-bottom: 0;
   }
 
   .directions {
@@ -1705,11 +1682,7 @@ x:-o-prefocus, .lb-overlay img {
     {% endif %}
   }
   .directions__image {
-    position: absolute;
-    width: 50%;
     top: 0; left: 0; right: 50%; bottom: 0;
-    height: auto;
-    margin-bottom: 0;
     border-top-left-radius: 5px;
     border-bottom-right-radius: 0;
   }
@@ -1761,19 +1734,21 @@ x:-o-prefocus, .lb-overlay img {
     padding: 0;
   }
 
-  .restaurant-informations,
-  .opening-hours--contact {
-    float: left;
-    width:48%;
-    margin: 1%
+  .aside--contact {
+    .block {
+      float: left;
+      width: 48%;
+      margin: 1%;
+    }
+    .block__body {
+      width: 100%;
+      margin: 0;
+    }
+    .block__header {
+      border-radius: 5px;
+    }
   }
-  .opening-hours__body--contact {
-    width: 100%;
-    margin: 0;
-  }
-  .opening-hours__header--contact {
-    border-top-right-radius: 5px;
-  }
+
   /**
    * masonry elements styles
    */

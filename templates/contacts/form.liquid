@@ -31,59 +31,53 @@
   </section>
 
   <aside class="aside aside--contact" itemscope itemtype="http://schema.org/Restaurant">
-    <section class="restaurant-informations">
-      <header class="section__header restaurant-informations__header">
-        <div class="section__title">
-          <h2>{{ "Infos" | t }}</h2>
-        </div>
-      </header>
-      <div class="restaurant-informations__body">
-        <div class="contact-item">
+    <section class="restaurant-informations block">
+      <main class="restaurant-informations__body block__body">
+        <header class="section__header restaurant-informations__header block__header">
+          <div class="section__title">
+            <h2>{{ "Infos" | t }}</h2>
+          </div>
+        </header>
+        <div class="restaurant-informations__content">
           <h3 class="contact-item__name" itemprop="name">{{ restaurant.name }}</h3>
-        </div>
-        {% if restaurant.phone? %}
-        <div class="contact-item">
-          <p>
-            <span class="contact-item__label">{{ "Téléphone :" | t }}</span>
-            <br>
+          {% if restaurant.phone? %}
+          <div class="restaurant-informations__content-phone">
+            <p>{{ "Téléphone :" | t }}</p>
             <a href="tel:{{ restaurant.phone_uri }}">
-              <span itemprop="telephone">{{ restaurant.phone }}</span>
+              <p itemprop="telephone">{{ restaurant.phone }}</p>
             </a>
-          </p>
-        </div>
-        {% endif %}
-        {% if restaurant.email? %}
-        <div class="contact-item">
-          <p>
-            <span class="contact-item__label">{{ "Adresse email :" | t }}</span>
-            <br>
+          </div>
+          {% endif %}
+          {% if restaurant.email? %}
+          <div class="restaurant-informations__content-email">
+            <p>{{ "Adresse email :" | t }}</p>
             <a href="mailto:{{ restaurant.email }}">
-              <span itemprop="email">{{ restaurant.email }}</span>
+              <p itemprop="email">{{ restaurant.email }}</p>
             </a>
-          </p>
-        </div>
-        {% endif %}
-        <div class="contact-item">
-          <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-            <span class="contact-item__label">{{ "Adresse :" | t }}</span>
-            <br>
-            {% if restaurant.street_address? %}
-              <span itemprop="streetAddress">{{ restaurant.street_address }}</span>
+          </div>
+          {% endif %}
+          <div class="restaurant-informations__content-address">
+            <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+              <span class="contact-item__label">{{ "Adresse :" | t }}</span>
               <br>
-            {% endif %}
-            {% if restaurant.zip_code? %}
-              <span itemprop="postalCode">{{ restaurant.zip_code }}</span>
-            {% endif %}
-            {% if restaurant.city? %}
-              <span itemprop="addressLocality">{{ restaurant.city }}</span>
-            {% endif %}
-          </p>
+              {% if restaurant.street_address? %}
+                <span itemprop="streetAddress">{{ restaurant.street_address }}</span>
+                <br>
+              {% endif %}
+              {% if restaurant.zip_code? %}
+                <span itemprop="postalCode">{{ restaurant.zip_code }}</span>
+              {% endif %}
+              {% if restaurant.city? %}
+                <span itemprop="addressLocality">{{ restaurant.city }}</span>
+              {% endif %}
+            </p>
+          </div>
         </div>
-      </div>
+      </main>
     </section>
-    <section class="opening-hours opening-hours--contact">
-      <main class="section__main opening-hours__body opening-hours__body--contact">
-        <header class="section__header opening-hours__header opening-hours__header--contact">
+    <section class="opening-hours block">
+      <main class="section__main opening-hours__body block__body">
+        <header class="section__header opening-hours__header block__header">
         <div class="section__title">
             <h2>{{ "Horaires" | t }}</h2>
           </div>
