@@ -23,28 +23,30 @@
 </section>
 
 {% if all_news.size > 0 %}
-  <section class="page-body page-body--news">
-    <main class="section__main container">
-      {% for news in all_news %}
-        <div class="item">
-          <a href="{{ news.url }}">
+  <section class="wrapper">
+    <section class="news block">
+      <main class="section__main news__body block__body">
+        {% for news in all_news %}
+          <section class="news__one-news {% if forloop.first %}news__one-news--first{% endif %}{% if forloop.last %}news__one-news--last{% endif %}">
+            <a href="{{ news.url }}" class="news__one-news-link">
               {% if news.image? %}
-                <div class="item-wrapper-image">
-                  {{ news.image | custom_image_url:'370x200#' | image_tag:'class:news__image item-image' }}
+              <div class="news__one-news-image block__image {% cycle 'group-image': 'block__image--odd', 'block__image--even' %}" style="background:url('{{ news.image | custom_image_url: '768x400#' }}'); background-size:cover;"></div>
+              {% endif %}
+              <div class="news__one-news-content-wrapper {% cycle 'group-content': 'news__one-news-content-wrapper--odd', 'news__one-news-content-wrapper--even' %}">
+                <h6 class="item-tag item-tag--date">{{ news.date }}</h6>
+                <div class="news__one-news-content">
+                  {% if news.title %}
+                    <h5 class="news__one-news-title">{{ news.title }}</h5>
+                  {% endif %}
+                  {% if news.summary %}
+                    <p class="news__one-news-summary">{{ news.summary }}</p>
+                  {% endif %}
                 </div>
-              {% endif %}
-              <h6 class="item-tag">{{ news.date }}</h6>
-            <div class="news__body">
-              {% if news.title %}
-                <h5 class="news__title">{{ news.title }}</h5>
-              {% endif %}
-              {% if news.summary %}
-                <p class="news__summary">{{ news.summary }}</p>
-              {% endif %}
-            </div>
-          </a>
-        </div>
-      {% endfor %}
-    </main>
+              </div>
+            </a>
+          </section>
+        {% endfor %}
+      </main>
+    </section>
   </section>
 {% endif %}
