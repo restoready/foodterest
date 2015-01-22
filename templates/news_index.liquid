@@ -33,7 +33,7 @@
               <div class="news__one-news-image block__image" style="background:url('{{ news.image | custom_image_url: '768x400#' }}'); background-size:cover;"></div>
               {% endif %}
               <div class="{% if news.image? %}news__one-news-content-wrapper{% else if %}news__one-news-content-wrapper news__one-news-content-wrapper--no-image{% endif %}">
-                <h6 class="item-tag item-tag--date">{{ news.date }}</h6>
+                <h6 class="">{{ news.date }}</h6>
                 <div class="news__one-news-content">
                   {% if news.title %}
                     <h5 class="news__one-news-title">{{ news.title }}</h5>

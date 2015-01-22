@@ -291,7 +291,7 @@ $class-type: unquote(".");
   @include clearfix();
   max-width: $siteWidth;
   margin: 0 auto;
-  padding: 0 .25em;
+  padding: 0 .75em;
 }
 
 // ===========================================================================
@@ -533,13 +533,16 @@ legend {
 }
   .input-hint {
     padding: .15em .4em;
+    border-radius: 5px;
   }
   .input-hint--info {
     background: #68708A;
+    border-radius: 5px;
     color: #fff;
   }
   .input-hint--error {
     background: #DF5900;
+    border-radius: 5px;
     color: #fff;
   }
 
@@ -560,14 +563,17 @@ legend {
 .message--success {
   background-color: #4E6F25;
   color: #fff;
+  border-radius: 5px;
 }
 .message--notice {
   background-color: #DF5900;
   color: #fff;
+  border-radius: 5px;
 }
 .message--error {
   background-color: #811515;
   color: #fff;
+  border-radius: 5px;
 }
 
 
@@ -844,7 +850,6 @@ a {
       font-weight: bold;
       display: block;
       margin-bottom: .5em;
-      padding: 0 .5em;
     }
     &:hover {
       background-color: $card-background-hover;
@@ -853,6 +858,10 @@ a {
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
       margin-bottom: .5em;
+    }
+    .menu__title {
+      margin-top: .25em;
+      font-size: 1em;
     }
   }
 
@@ -875,7 +884,7 @@ a {
   padding: 0;
 }
 .page-header--page {
-  margin-bottom: 1em;
+  margin: 1.5em 0;
 }
 .page-body {
   ol, ul, dl {
@@ -1058,20 +1067,6 @@ a {
     }
   }
 
-// menus & menu templates
-.section__subscribe {
-  max-width: 300px;
-  margin: .5em auto 1em auto;
-  .input {
-    margin-bottom: 0;
-    input {
-    outline: none;
-    }
-  }
-  .submit-newsletter {
-    width: 100%;
-  }
-}
 // all menus - menus template
 .breadcrumb {
   text-align: center;
@@ -1323,6 +1318,11 @@ x:-o-prefocus, .lb-overlay img {
   }
   input, textarea {
     outline: none;
+    border-radius: 5px;
+  }
+  textarea {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
   }
 }
 .textarea--message {
@@ -1331,6 +1331,8 @@ x:-o-prefocus, .lb-overlay img {
 input.submit-contact {
   width: 100%;
   margin-bottom: 0;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
 }
 .contact-item {
   a {
@@ -1364,16 +1366,38 @@ input.submit-contact {
     margin-bottom: 0;
     input {
     outline: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     }
   }
   .submit-newsletter {
     width: 100%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
   }
 }
 .section__subscribe--home {
 }
 .section__subscribe--layout {
   display: none;
+}
+
+.section__subscribe {
+  max-width: 300px;
+  margin: .5em auto 1em auto;
+  .input {
+    margin-bottom: 0;
+    input {
+    outline: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    }
+  }
+  .submit-newsletter {
+    width: 100%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
 }
 
 // Page
@@ -1386,11 +1410,13 @@ input.submit-contact {
 // All News
 .page-header--news {
   margin-bottom: 1.5em;
+  text-align: left;
 }
 .news {
   margin-top: 1em;
 }
 .news__body {
+  text-align: left;
 }
 .news__header {
   transition: background-color .25s;
@@ -1428,8 +1454,10 @@ input.submit-contact {
   display: block;
 }
 
+.news__one-news-content-wrapper {
+  padding: 1.5em 2em;
+}
 .news__one-news-content {
-  padding: .25em 1em;
 }
 .item-tag--date {
   //background-color: scale-color($card-background-hover, $lightness: -15%);
@@ -1462,15 +1490,12 @@ input.submit-contact {
   border-top-left-radius: 5px;
 }
 .news__date-wrapper {
-  text-align: center;
 }
 .news__date {
   font-family: $bodyFontStack;
-  display: inline-block;
   font-weight: bold;
-  background-color: $accent-color;
-  padding: .5em 1em;
-  color: $font-color-on-accent-background;
+  color: $body-color;
+  margin-top: .5em;
 }
 
 /*
@@ -1752,6 +1777,10 @@ input.submit-contact {
       margin-bottom: 0;
       float:left;
       width: 75%;
+      input {
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 5px;
+      }
     }
     .submit {
       width: 25%;
@@ -1759,6 +1788,8 @@ input.submit-contact {
     }
     .submit-newsletter {
       height: 2.3em;
+      border-bottom-left-radius: 0px;
+      border-top-right-radius: 5px;
     }
   }
   .lb-overlay a.lb-close{
