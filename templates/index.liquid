@@ -49,24 +49,26 @@
         </a>
       </header>
       {% for news in ten_latest_news %}
-        <section class="news__one-news {% if forloop.last %}news__one-news--last news__one-news--home-last{% endif %} {% cycle 'news__one-news--odd', 'news__one-news--even' %}">
-          <a href="{{ news.url }}" class="news__one-news-link">
-            {% if news.image? %}
-            <div class="news__one-news-image block__image" style="background:url('{{ news.image | custom_image_url: '768x400#' }}'); background-size:cover;"></div>
-            {% endif %}
-            <div class="{% if news.image? %}news__one-news-content-wrapper{% else if %}news__one-news-content-wrapper news__one-news-content-wrapper--no-image{% endif %}">
-              <!-- <h6 class="item-tag item-tag--date">{{ news.date }}</h6> -->
-              <div class="news__one-news-content">
-                {% if news.title %}
-                  <h5 class="news__one-news-title">{{ news.title }}</h5>
-                {% endif %}
-                {% if news.summary %}
-                  <p class="news__one-news-summary">{{ news.summary }}</p>
-                {% endif %}
+        {% if forloop.index <= 5 %}
+          <section class="news__one-news {% if forloop.last %}news__one-news--last news__one-news--home-last{% endif %} {% cycle 'news__one-news--odd', 'news__one-news--even' %}">
+            <a href="{{ news.url }}" class="news__one-news-link">
+              {% if news.image? %}
+              <div class="news__one-news-image block__image" style="background:url('{{ news.image | custom_image_url: '768x400#' }}'); background-size:cover;"></div>
+              {% endif %}
+              <div class="{% if news.image? %}news__one-news-content-wrapper{% else if %}news__one-news-content-wrapper news__one-news-content-wrapper--no-image{% endif %}">
+                <!-- <h6 class="item-tag item-tag--date">{{ news.date }}</h6> -->
+                <div class="news__one-news-content">
+                  {% if news.title %}
+                    <h5 class="news__one-news-title">{{ news.title }}</h5>
+                  {% endif %}
+                  {% if news.summary %}
+                    <p class="news__one-news-summary">{{ news.summary }}</p>
+                  {% endif %}
+                </div>
               </div>
-            </div>
-          </a>
-        </section>
+            </a>
+          </section>
+        {% endif %}
       {% endfor %}
     </main>
     {% if theme_settings.home-image-news %}
