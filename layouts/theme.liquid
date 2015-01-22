@@ -106,6 +106,14 @@
           }
         });
 
+        $(document).click(function(event) {
+          if(!$(event.target).closest('.social__item--newsletter, .section__subscribe--layout').length) {
+            if($('.section__subscribe--layout').is(":visible")) {
+              $('.section__subscribe--layout').hide();
+            }
+          }
+        });
+
         $('.btn-see-location').click(function(e){
           e.preventDefault();
           $(this).parents('.map-overlay').fadeOut('slow');
