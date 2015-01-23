@@ -25,7 +25,7 @@
 {% if all_news.size > 0 %}
   <section class="wrapper">
     <section class="news block">
-      <main class="section__main news__body block__body">
+      <div class="section__main news__body block__body">
         {% for news in all_news %}
           <section class="news__one-news {% if forloop.first %}news__one-news--first{% endif %}{% if forloop.last %}news__one-news--last{% endif %} {% cycle 'news__one-news--odd', 'news__one-news--even' %}">
             <a href="{{ news.url }}" class="news__one-news-link">
@@ -46,7 +46,7 @@
             </a>
           </section>
         {% endfor %}
-      </main>
+      </div>
     </section>
   </section>
 {% endif %}

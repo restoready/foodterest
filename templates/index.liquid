@@ -1,6 +1,6 @@
 {% if home_menus.size > 0 or if home_foods.size > 0 %}
   <section class="featured">
-    <main class="section__main container">
+    <section class="section__main container">
       {% for menu in home_menus %}
         {% if menu.parent? %}
           <a href="{{ menu.root_parent.url }}#menu-{{menu.id}}">
@@ -34,13 +34,13 @@
           <h3 class="menu__title">{{ "Voir toute la carte" | t }}</h3>
         </a>
       </div>
-    </main>
+    </section>
   </section>
 {% endif %}
 
 {% if ten_latest_news.size > 0 %}
   <section class="news block">
-    <main class="section__main news__body news__body--home block__body">
+    <section class="section__main news__body news__body--home block__body">
       <header class="section__header news__header block__header">
         <a href="{{ localized_root_path }}/news" class="home-news-title__link">
           <div class="section__title">
@@ -70,7 +70,7 @@
           </section>
         {% endif %}
       {% endfor %}
-    </main>
+    </section>
     {% if theme_settings.home-image-news %}
       <div class="news__image block__image"></div>
     {% endif %}
@@ -78,7 +78,7 @@
 {% endif %}
 
 <section class="opening-hours block">
-  <main class="section__main opening-hours__body block__body">
+  <section class="section__main opening-hours__body block__body">
     <header class="section__header opening-hours__header block__header">
     <div class="section__title">
         <h2>{{ "Horaires" | t }}</h2>
@@ -99,14 +99,14 @@
         <p>{{ restaurant.opening_hours_information }}</p>
       </div>
     {% endif %}
-  </main>
+  </section>
   {% if theme_settings.home-image-opening-hours %}
     <div class="opening-hours__image block__image"></div>
   {% endif %}
 </section>
 
 <section class="directions block">
-  <main class="section__main directions__body block__body">
+  <section class="section__main directions__body block__body">
     <header class="section__header directions__header block__header">
       <div class="section__title">
         <h2>{{ "Localisation" | t }}</h2>
@@ -130,7 +130,7 @@
         </div>
       </div>
     {% endif %}
-  </main>
+  </section>
   {% if theme_settings.home-image-directions %}
     <div class="directions__image block__image"></div>
   {% endif %}

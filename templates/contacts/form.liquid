@@ -3,9 +3,9 @@
     <header class="section__header page-header__header">
       <h1 class="section__title page-header__title">{{ contact_settings.contact_title }}</h1>
     </header>
-    <main class="section__main page-header__description">
+    <section class="section__main page-header__description">
       {{ contact_settings.contact_content }}
-    </main>
+    </section>
   </section>
 
   <section class="page-body page-body--contact">
@@ -32,7 +32,7 @@
 
   <aside class="aside aside--contact" itemscope itemtype="http://schema.org/Restaurant">
     <section class="restaurant-informations block">
-      <main class="restaurant-informations__body block__body">
+      <div class="restaurant-informations__body block__body">
         <header class="section__header restaurant-informations__header block__header">
           <div class="section__title">
             <h2>{{ "Infos" | t }}</h2>
@@ -73,10 +73,10 @@
             </p>
           </div>
         </div>
-      </main>
+      </div>
     </section>
     <section class="opening-hours block">
-      <main class="section__main opening-hours__body block__body">
+      <div class="section__main opening-hours__body block__body">
         <header class="section__header opening-hours__header block__header">
         <div class="section__title">
             <h2>{{ "Horaires" | t }}</h2>
@@ -97,7 +97,7 @@
             <p>{{ restaurant.opening_hours_information }}</p>
           </div>
         {% endif %}
-      </main>
+      </div>
     </section>
   </aside>
 </div>

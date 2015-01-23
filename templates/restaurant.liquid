@@ -4,26 +4,26 @@
       <header class="section__header page-header__header">
         <h1 class="section__title page-header__title">{{ "Le restaurant" | t }}</h1>
       </header>
-      <main class="section__main page-header__description">
+      <div class="section__main page-header__description">
         {{ restaurant.summary }}
-      </main>
+      </div>
     </div>
   </section>
 {% endif %}
 
 {% if photos.size > 0 %}
   <section class="restaurant-gallery">
-    <main class="section__main gallery container">
+    <div class="section__main gallery container">
       {% for photo in photos %}
         {% include 'photo' with photo:photo, i:forloop.index, l:forloop.length %}
       {% endfor %}
-    </main>
+    </div>
   </section>
 {% endif %}
 
 {% if theme_settings.display_google_business_view_embed %}
   <section class="business-view block">
-    <main class="section__main business-view__body block__body">
+    <div class="section__main business-view__body block__body">
       <header class="section__header business-view__header block__header">
         <h2 class="section__title">{{ "Visite virtuelle" | t }}</h2>
       </header>
@@ -37,6 +37,6 @@
           </p>
         </footer>
       {% endif %}
-    </main>
+    </div>
   </section>
 {% endif %}

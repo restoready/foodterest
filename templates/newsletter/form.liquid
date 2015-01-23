@@ -4,7 +4,7 @@
       <header class="section__header page-header__header">
         <h1 class="section__title page-header__title">{{ "Inscription à la newsletter" | t }}</h1>
       </header>
-      <main class="section__main page-header__description">
+      <div class="section__main page-header__description">
         {% if form.created_successfully? %}
           <p>{{ "Abonnez-vous à notre newsletter pour recevoir les dernières nouveautés du restaurant." | t }}</p>
         {% else %}
@@ -17,7 +17,7 @@
             </div>
           </div>
         {% endif %}
-      </main>
+      </div>
     </div>
   </section>
 
