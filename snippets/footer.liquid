@@ -48,7 +48,7 @@
     {% endif %}
   </ul>
   {% if theme_settings.display_newsletter %}
-  <div class="section__subscribe section__subscribe--layout">
+  <div class="section__subscribe section__subscribe--layout" id="section__subscribe--layout-ajax">
     <div class="section__subscribe-triangle"></div>
     {% newsletter_subscribe_form %}
       <fieldset class="field-group">
@@ -56,12 +56,13 @@
           <input id="subscriberEmail" name="subscriber[email]" type="email" placeholder="{{ 'Inscrivez-vous à notre newsletter' | t }}" required>
         </div>
         <div class="submit submit--layout">
-          <button class="button submit-newsletter" type="submit">
+          <button class="button submit-newsletter" type="button">
             <i class="icon-check"></i> {{ "Valider" | t }}
           </button>
         </div>
       </fieldset>
     {% endnewsletter_subscribe_form %}
+    <div class="subscribe__message"></div>
   </div>
 {% endif %}
 </div>
