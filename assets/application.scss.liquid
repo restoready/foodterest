@@ -659,6 +659,12 @@ a {
 
 .restaurant-name {
   float: left;
+  {% unless restaurant.logo? %}
+    margin-left: .5em;
+  {% endunless %}
+  {% unless restaurant.slogan? %}
+    margin-top: .5em;
+  {% endunless %}
 }
   .slogan {
     color: $body-color;
@@ -1628,6 +1634,11 @@ input.submit-contact {
   }
   .logo__image {
     height: 65px;
+  }
+  .restaurant-name {
+    {% unless restaurant.logo? %}
+      margin-left: 1.5em;
+    {% endunless %}
   }
   .phone-large {
     display: block;
