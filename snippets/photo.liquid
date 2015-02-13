@@ -1,25 +1,12 @@
 <div class="gallery__item item">
   <div class="gallery__img">
-    <a href="#image-{{ i }}" class="photo__link">
+    <a href="{{ photo.image | custom_image_url: '1600x1600' }}" class="photo__link venobox" data-gall="myGallery">
       <div class="item-wrapper-image">
-        <img src="{{ photo.image | custom_image_url: '600x350#' }}" alt="{{ photo.caption }}" class="item-image">
+        <img src="{{ photo.image | medium_image_url }}" alt="{{ photo.caption }}">
       </div>
-      <span class="photo__caption">{{ photo.caption }}</span>
+      {% if photo.caption %}
+        <span class="photo__caption">{{ photo.caption }}</span>
+      {% endif %}
     </a>
-    <div class="lb-overlay" id="image-{{ i }}">
-      <img src="{{ photo.image | large_image_url }}" alt="{{ photo.caption }}" />
-      <div>
-        <h3>{{ photo.caption }}</h3>
-        <a href="#image-{% if i == 1 %}{{ l }}{% else %}{{ i | minus: 1 }}{% endif %}" class="lb-prev">
-          <i class="icon icon-arrow-left"></i>
-        </a>
-        <a href="#image-{% if i == l %}{{ 1 }}{% else %}{{ i | plus: 1 }}{% endif %}" class="lb-next">
-          <i class="icon icon-arrow-right"></i>
-        </a>
-      </div>
-      <a href="#page" class="lb-close">
-        <i class="icon icon-close"></i>
-      </a>
-    </div>
   </div>
 </div>

@@ -86,6 +86,7 @@
     {{ 'jquery-2.1.1.min.js' | javascript_tag }}
     {{ 'newsletter_ajax.js' | asset_url | javascript_tag }}
     {{ 'masonry.min.js' | javascript_tag }}
+    {{ 'venobox.min.js' | javascript_tag }}
     <script type="text/javascript">
       $( function() {
         var $container = $('.container');
@@ -94,6 +95,8 @@
           columnWidth: '.item',
           itemSelector: '.item'
         });
+
+        $('.venobox').venobox();
 
         $('.main-header__hamburger').click(function(){
           $('.main-nav').slideToggle('fast');
