@@ -33,12 +33,14 @@
     "tag-news-background": "#d8c061",
     "tag-no-pork-background": "#c36b80",
     "tag-no-alcohol-background": "#66a0c3",
+    "tag-daily-food-background": "#999999",
 
     "tag-vegetarian-font-color": "#FFFFFF",
     "tag-no-meat-font-color": "#FFFFFF",
     "tag-news-font-color": "#FFFFFF",
     "tag-no-pork-font-color": "#FFFFFF",
     "tag-no-alcohol-font-color": "#FFFFFF",
+    "tag-daily-food-font-color": "#FFFFFF",
 
     "font-color-on-photo": "#FFFFFF"
   },
@@ -77,11 +79,14 @@
       "tag-news-background": "#d8c061",
       "tag-no-pork-background": "#c36b80",
       "tag-no-alcohol-background": "#66a0c3",
+      "tag-daily-food-background": "#999999",
+
       "tag-vegetarian-font-color": "#FFFFFF",
       "tag-no-meat-font-color": "#FFFFFF",
       "tag-news-font-color": "#FFFFFF",
       "tag-no-pork-font-color": "#FFFFFF",
       "tag-no-alcohol-font-color": "#FFFFFF",
+      "tag-daily-food-font-color": "#FFFFFF",
 
       "font-color-on-photo": "#FFFFFF"
     }

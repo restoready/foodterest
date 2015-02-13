@@ -124,6 +124,14 @@
             <label for="tag-no-alcohol-font-color">Sans-alcool : texte</label>
             <input name="admin_theme_settings[tag-no-alcohol-font-color]" id="tag-no-alcohol-font-color" value="{{ theme_settings.tag-no-alcohol-font-color }}" type="text" class="minicolors">
           </div>
+          <div class="columns medium-4 large-3">
+            <label for="tag-daily-food-background">Suggestion du jour : fond</label>
+            <input name="admin_theme_settings[tag-daily-food-background]" id="tag-daily-food-background" value="{{ theme_settings.tag-daily-food-background }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3 end">
+            <label for="tag-daily-food-font-color">Suggestion du jour : texte</label>
+            <input name="admin_theme_settings[tag-daily-food-font-color]" id="tag-daily-food-font-color" value="{{ theme_settings.tag-daily-food-font-color }}" type="text" class="minicolors">
+          </div>
         </div>
       </fieldset>
     </div>
@@ -157,7 +165,7 @@
       <fieldset>
         <legend>Communication</legend>
         <div class="columns">
-            <input class="icheck-me" name="admin_theme_settings[display_newsletter]" id="display_newsletter" type="checkbox" value="{{ theme_settings.display_newsletter }}" {% if theme_settings.display_newsletter %}checked{% endif %} data-skin='black-green' checked/>
+            <input class="icheck-me boolean-icheck" name="admin_theme_settings[display_newsletter]" id="display_newsletter" type="checkbox" value="{{ theme_settings.display_newsletter }}" {% if theme_settings.display_newsletter %}checked{% endif %} data-skin='black-green' checked/>
           <label style="margin-right:.5em;" for="display_newsletter">Afficher la newsletter</label>
         </div>
       </fieldset>
@@ -165,11 +173,11 @@
       <fieldset>
         <legend>Carte Google</legend>
         <div class="columns">
-          <input class="icheck-me" name="admin_theme_settings[google_map_type]" id="radio_google_none" type="radio" value="" data-skin='black-green' {% if theme_settings.google_map_type == "" %}checked{% endif %}/>
+          <input class="icheck-me boolean-icheck" name="admin_theme_settings[google_map_type]" id="radio_google_none" type="radio" value="" data-skin='black-green' {% if theme_settings.google_map_type == "" %}checked{% endif %}/>
           <label style="margin-right:.5em;" for="radio_google_none">Ne pas afficher la carte</label>
-          <input class="icheck-me" name="admin_theme_settings[google_map_type]" id="radio_google_map_image" type="radio" value="image" data-skin='black-green' {% if theme_settings.google_map_type == "image" %}checked{% endif %}/>
+          <input class="icheck-me boolean-icheck" name="admin_theme_settings[google_map_type]" id="radio_google_map_image" type="radio" value="image" data-skin='black-green' {% if theme_settings.google_map_type == "image" %}checked{% endif %}/>
           <label style="margin-right:.5em;" for="radio_google_map_image">Afficher la carte sous forme d'image</label>
-          <input class="icheck-me" name="admin_theme_settings[google_map_type]" id="radio_google_map_embed" type="radio" value="embed" data-skin='black-green' {% if theme_settings.google_map_type == "embed" %}checked{% endif %}/>
+          <input class="icheck-me boolean-icheck" name="admin_theme_settings[google_map_type]" id="radio_google_map_embed" type="radio" value="embed" data-skin='black-green' {% if theme_settings.google_map_type == "embed" %}checked{% endif %}/>
           <label style="margin-right:.5em;" for="radio_google_map_embed">Afficher la carte interactive</label>
         </div>
       </fieldset>
@@ -190,7 +198,7 @@
         <div class="columns large-6">
           <div class="row">
             <div class="columns">
-              <input class="icheck-me" name="admin_theme_settings[display_google_business_view_embed]" id="display_google_business_view_embed" type="checkbox" value="{{ theme_settings.display_google_business_view_embed }}" data-skin='black-green' {% if theme_settings.display_google_business_view_embed %}checked{% endif %}/>
+              <input class="icheck-me boolean-icheck" name="admin_theme_settings[display_google_business_view_embed]" id="display_google_business_view_embed" type="checkbox" value="{{ theme_settings.display_google_business_view_embed }}" data-skin='black-green' {% if theme_settings.display_google_business_view_embed %}checked{% endif %}/>
             <label style="margin-right:.5em;" for="display_google_business_view_embed">Afficher la visite virtuelle</label>
             </div>
           </div>
@@ -206,7 +214,7 @@
         <div class="columns large-6">
           <div class="row">
             <div class="columns">
-              <input class="icheck-me" name="admin_theme_settings[display_google_business_view_url]" id="display_google_business_view_url" type="checkbox" value="{{ theme_settings.display_google_business_view_url }}" data-skin='black-green' {% if theme_settings.display_google_business_view_url %}checked{% endif %}/>
+              <input class="icheck-me boolean-icheck" name="admin_theme_settings[display_google_business_view_url]" id="display_google_business_view_url" type="checkbox" value="{{ theme_settings.display_google_business_view_url }}" data-skin='black-green' {% if theme_settings.display_google_business_view_url %}checked{% endif %}/>
               <label style="margin-right:.5em;" for="display_google_business_view_url">Afficher le lien</label>
             </div>
           </div>
@@ -231,9 +239,9 @@
             </div>
             <div class="large-11">
               {% if theme_settings.home-image-news %}
-              <input class="icheck-me" name="admin_theme_settings[home-image-news]" id="home-image-news" type="checkbox" value="{{ theme_settings.home-image-news }}" data-skin='black-green' checked/>
+              <input class="icheck-me boolean-icheck" name="admin_theme_settings[home-image-news]" id="home-image-news" type="checkbox" value="{{ theme_settings.home-image-news }}" data-skin='black-green' checked/>
               {% else %}
-              <input class="icheck-me" name="admin_theme_settings[home-image-news]" id="home-image-news" type="checkbox" value="{{ theme_settings.home-image-news }}" data-skin='black-green' />
+              <input class="icheck-me boolean-icheck" name="admin_theme_settings[home-image-news]" id="home-image-news" type="checkbox" value="{{ theme_settings.home-image-news }}" data-skin='black-green' />
               {% endif %}
               <label for="home-image-news">Afficher l'image</label>
             </div>
@@ -256,9 +264,9 @@
             </div>
             <div class="large-11">
               {% if theme_settings.home-image-opening-hours %}
-              <input class="icheck-me" name="admin_theme_settings[home-image-opening-hours]" id="home-image-opening-hours" type="checkbox" value="{{ theme_settings.home-image-opening-hours }}" data-skin='black-green' checked/>
+              <input class="icheck-me boolean-icheck" name="admin_theme_settings[home-image-opening-hours]" id="home-image-opening-hours" type="checkbox" value="{{ theme_settings.home-image-opening-hours }}" data-skin='black-green' checked/>
               {% else %}
-              <input class="icheck-me" name="admin_theme_settings[home-image-opening-hours]" id="home-image-opening-hours" type="checkbox" value="{{ theme_settings.home-image-opening-hours }}" data-skin='black-green' />
+              <input class="icheck-me boolean-icheck" name="admin_theme_settings[home-image-opening-hours]" id="home-image-opening-hours" type="checkbox" value="{{ theme_settings.home-image-opening-hours }}" data-skin='black-green' />
               {% endif %}
               <label for="home-image-opening-hours">Afficher l'image</label>
             </div>
@@ -281,9 +289,9 @@
             </div>
             <div class="large-11">
               {% if theme_settings.home-image-directions %}
-              <input class="icheck-me" name="admin_theme_settings[home-image-directions]" id="home-image-directions" type="checkbox" value="{{ theme_settings.home-image-directions }}" data-skin='black-green' checked/>
+              <input class="icheck-me boolean-icheck" name="admin_theme_settings[home-image-directions]" id="home-image-directions" type="checkbox" value="{{ theme_settings.home-image-directions }}" data-skin='black-green' checked/>
               {% else %}
-              <input class="icheck-me" name="admin_theme_settings[home-image-directions]" id="home-image-directions" type="checkbox" value="{{ theme_settings.home-image-directions }}" data-skin='black-green' />
+              <input class="icheck-me boolean-icheck" name="admin_theme_settings[home-image-directions]" id="home-image-directions" type="checkbox" value="{{ theme_settings.home-image-directions }}" data-skin='black-green' />
               {% endif %}
               <label for="home-image-directions">Afficher l'image</label>
             </div>
