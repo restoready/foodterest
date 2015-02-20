@@ -1735,11 +1735,11 @@ input.submit-contact {
 
 @font-face {
   font-family: "fontcustom";
-  src: url("./fontcustom_c35105239c362af506f42e5466fe6044.eot");
-  src: url("./fontcustom_c35105239c362af506f42e5466fe6044.eot?#iefix") format("embedded-opentype"),
-       url("./fontcustom_c35105239c362af506f42e5466fe6044.woff") format("woff"),
-       url("./fontcustom_c35105239c362af506f42e5466fe6044.ttf") format("truetype"),
-       url("./fontcustom_c35105239c362af506f42e5466fe6044.svg#fontcustom") format("svg");
+  src: url("{{ 'fontcustom_7024cfa625811233776d9e9b6449446b.eot' | asset_url }}");
+  src: url("{{ 'fontcustom_7024cfa625811233776d9e9b6449446b.eot?#iefix' | asset_url }}") format("embedded-opentype"),
+       url("{{ 'fontcustom_7024cfa625811233776d9e9b6449446b.woff' | asset_url }}") format("woff"),
+       url("{{ 'fontcustom_7024cfa625811233776d9e9b6449446b.ttf' | asset_url }}") format("truetype"),
+       url("{{ 'fontcustom_7024cfa625811233776d9e9b6449446b.svg#fontcustom' | asset_url }}") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -1747,20 +1747,18 @@ input.submit-contact {
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: "fontcustom";
-    src: url("./fontcustom_c35105239c362af506f42e5466fe6044.svg#fontcustom") format("svg");
+    src: url("{{ 'fontcustom_7024cfa625811233776d9e9b6449446b.svg#fontcustom' | asset_url }}") format("svg");
   }
 }
 
 [data-icon]:before { content: attr(data-icon); }
 
 [data-icon]:before,
-.icon-arrow-left:before,
-.icon-arrow-right:before,
 .icon-check:before,
-.icon-close:before,
 .icon-envelop:before,
 .icon-error:before,
 .icon-facebook:before,
+.icon-google:before,
 .icon-newsletter:before,
 .icon-phone:before,
 .icon-star:before,
@@ -1780,13 +1778,11 @@ input.submit-contact {
   font-smoothing: antialiased;
 }
 
-.icon-arrow-left:before { content: "\f100"; }
-.icon-arrow-right:before { content: "\f101"; }
 .icon-check:before { content: "\f102"; }
-.icon-close:before { content: "\f103"; }
 .icon-envelop:before { content: "\f104"; }
 .icon-error:before { content: "\f105"; }
 .icon-facebook:before { content: "\f106"; }
+.icon-google:before { content: "\f10c"; }
 .icon-newsletter:before { content: "\f10b"; }
 .icon-phone:before { content: "\f107"; }
 .icon-star:before { content: "\f108"; }
