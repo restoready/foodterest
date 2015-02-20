@@ -28,19 +28,18 @@
     "nav-background": "#FFFFFF",
     "nav-font-color": "#282828",
 
-    "tag-vegetarian-background": "#8a9e6c",
-    "tag-no-meat-background": "#c34d18",
-    "tag-news-background": "#d8c061",
-    "tag-no-pork-background": "#c36b80",
-    "tag-no-alcohol-background": "#66a0c3",
-    "tag-daily-food-background": "#999999",
-
-    "tag-vegetarian-font-color": "#FFFFFF",
-    "tag-no-meat-font-color": "#FFFFFF",
-    "tag-news-font-color": "#FFFFFF",
-    "tag-no-pork-font-color": "#FFFFFF",
-    "tag-no-alcohol-font-color": "#FFFFFF",
-    "tag-daily-food-font-color": "#FFFFFF",
+    "tags":{
+      "vegan-background": "#8a9e6c",
+      "vegan-color": "#ffffff",
+      "new-background": "#d8c061",
+      "new-color": "#ffffff",
+      "no-pork-background": "#73ABE1",
+      "no-pork-color": "#ffffff",
+      "no-meat-background": "#DACD13",
+      "no-meat-color": "#ffffff",
+      "alcohol-free-background": "#48caf2",
+      "alcohol-free-color": "#ffffff"
+    },
 
     "font-color-on-photo": "#FFFFFF"
   },
@@ -74,19 +73,18 @@
       "nav-background": "#FFFFFF",
       "nav-font-color": "#282828",
 
-      "tag-vegetarian-background": "#8a9e6c",
-      "tag-no-meat-background": "#c34d18",
-      "tag-news-background": "#d8c061",
-      "tag-no-pork-background": "#c36b80",
-      "tag-no-alcohol-background": "#66a0c3",
-      "tag-daily-food-background": "#999999",
-
-      "tag-vegetarian-font-color": "#FFFFFF",
-      "tag-no-meat-font-color": "#FFFFFF",
-      "tag-news-font-color": "#FFFFFF",
-      "tag-no-pork-font-color": "#FFFFFF",
-      "tag-no-alcohol-font-color": "#FFFFFF",
-      "tag-daily-food-font-color": "#FFFFFF",
+      "tags":{
+        "vegan-background": "#8a9e6c",
+        "vegan-color": "#ffffff",
+        "new-background": "#d8c061",
+        "new-color": "#ffffff",
+        "no-pork-background": "#73ABE1",
+        "no-pork-color": "#ffffff",
+        "no-meat-background": "#DACD13",
+        "no-meat-color": "#ffffff",
+        "alcohol-free-background": "#48caf2",
+        "alcohol-free-color": "#ffffff"
+      },
 
       "font-color-on-photo": "#FFFFFF"
     }

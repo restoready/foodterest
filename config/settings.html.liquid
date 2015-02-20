@@ -82,56 +82,22 @@
         </div>
       </fieldset>
       <fieldset>
-        <legend>Tags</legend>
+        <legend>Étiquettes</legend>
         <div class="row">
-          <div class="columns medium-4 large-3">
-            <label for="tag-vegetarian-background">Végétarien : fond</label>
-            <input name="admin_theme_settings[tag-vegetarian-background]" id="tag-vegetarian-background" value="{{ theme_settings.tag-vegetarian-background }}" type="text" class="minicolors">
-          </div>
-          <div class="columns medium-4 large-3">
-            <label for="tag-vegetarian-font-color">Végétarien : texte</label>
-            <input name="admin_theme_settings[tag-vegetarian-font-color]" id="tag-vegetarian-font-color" value="{{ theme_settings.tag-vegetarian-font-color }}" type="text" class="minicolors">
-          </div>
-          <div class="columns medium-4 large-3">
-            <label for="tag-news-background">Nouveauté : fond</label>
-            <input name="admin_theme_settings[tag-news-background]" id="tag-news-background" value="{{ theme_settings.tag-news-background }}" type="text" class="minicolors">
-          </div>
-          <div class="columns medium-4 large-3">
-            <label for="tag-news-font-color">Nouveauté : texte</label>
-            <input name="admin_theme_settings[tag-news-font-color]" id="tag-news-font-color" value="{{ theme_settings.tag-news-font-color }}" type="text" class="minicolors">
-          </div>
-          <div class="columns medium-4 large-3">
-            <label for="tag-no-meat-background">Sans-viandes : fond</label>
-            <input name="admin_theme_settings[tag-no-meat-background]" id="tag-no-meat-background" value="{{ theme_settings.tag-no-meat-background }}" type="text" class="minicolors">
-          </div>
-          <div class="columns medium-4 large-3">
-            <label for="tag-no-meat-font-color">Sans-viandes : texte</label>
-            <input name="admin_theme_settings[tag-no-meat-font-color]" id="tag-no-meat-font-color" value="{{ theme_settings.tag-no-meat-font-color }}" type="text" class="minicolors">
-          </div>
-          <div class="columns medium-4 large-3">
-            <label for="tag-no-pork-background">Sans-porc : fond</label>
-            <input name="admin_theme_settings[tag-no-pork-background]" id="tag-no-pork-background" value="{{ theme_settings.tag-no-pork-background }}" type="text" class="minicolors">
-          </div>
-          <div class="columns medium-4 large-3">
-            <label for="tag-no-pork-font-color">Sans-porc : texte</label>
-            <input name="admin_theme_settings[tag-no-pork-font-color]" id="tag-no-pork-font-color" value="{{ theme_settings.tag-no-pork-font-color }}" type="text" class="minicolors">
-          </div>
-          <div class="columns medium-4 large-3">
-            <label for="tag-no-alcohol-background">Sans-alcool : fond</label>
-            <input name="admin_theme_settings[tag-no-alcohol-background]" id="tag-no-alcohol-background" value="{{ theme_settings.tag-no-alcohol-background }}" type="text" class="minicolors">
-          </div>
-          <div class="columns medium-4 large-3 end">
-            <label for="tag-no-alcohol-font-color">Sans-alcool : texte</label>
-            <input name="admin_theme_settings[tag-no-alcohol-font-color]" id="tag-no-alcohol-font-color" value="{{ theme_settings.tag-no-alcohol-font-color }}" type="text" class="minicolors">
-          </div>
-          <div class="columns medium-4 large-3">
-            <label for="tag-daily-food-background">Suggestion du jour : fond</label>
-            <input name="admin_theme_settings[tag-daily-food-background]" id="tag-daily-food-background" value="{{ theme_settings.tag-daily-food-background }}" type="text" class="minicolors">
-          </div>
-          <div class="columns medium-4 large-3 end">
-            <label for="tag-daily-food-font-color">Suggestion du jour : texte</label>
-            <input name="admin_theme_settings[tag-daily-food-font-color]" id="tag-daily-food-font-color" value="{{ theme_settings.tag-daily-food-font-color }}" type="text" class="minicolors">
-          </div>
+          {% for tag in tags %}
+            <div class="columns medium-4 large-3">
+              <label for="label-{{ tag.css_class }}-background">{{ tag.name }} (fond)</label>
+              <input name="admin_theme_settings[tags][{{ tag.css_class }}-background]" id="label-{{ tag.css_class }}-background" value="{{ tag.background_value }}" type="text" class="minicolors">
+            </div>
+            {% if forloop.last %}
+              <div class="columns medium-4 large-3 end">
+            {% else %}
+              <div class="columns medium-4 large-3">
+            {% endif %}
+              <label for="label-{{ tag.css_class }}-color">{{ tag.name }} (texte)</label>
+              <input name="admin_theme_settings[tags][{{ tag.css_class }}-color]" id="label-{{ tag.css_class }}-color" value="{{ tag.color_value }}" type="text" class="minicolors">
+            </div>
+          {% endfor %}
         </div>
       </fieldset>
     </div>
