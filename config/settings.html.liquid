@@ -134,6 +134,23 @@
             <input class="icheck-me boolean-icheck" name="admin_theme_settings[display_newsletter]" id="display_newsletter" type="checkbox" value="{{ theme_settings.display_newsletter }}" {% if theme_settings.display_newsletter %}checked{% endif %} data-skin='black-green' checked/>
           <label style="margin-right:.5em;" for="display_newsletter">Afficher la newsletter</label>
         </div>
+        <div class="small-12 medium-6 large-6 columns">
+          {% if theme_settings.home_display_news %}
+            <input class="icheck-me boolean-icheck" name="admin_theme_settings[home_display_news]" id="home_display_news" type="checkbox" value="{{ theme_settings.home_display_news }}" data-skin='black-green' checked/>
+          {% else %}
+            <input class="icheck-me boolean-icheck" name="admin_theme_settings[home_display_news]" id="home_display_news" type="checkbox" value="{{ theme_settings.home_display_news }}" data-skin='black-green' />
+          {% endif %}
+          <label style="margin-right:.5em;" for="home_display_news">Afficher les dernières actualités sur la page d'accueil</label>
+        </div>
+
+        <div class="small-12 medium-6 large-6 columns">
+          {% if theme_settings.restaurant_display_news %}
+            <input class="icheck-me boolean-icheck" name="admin_theme_settings[restaurant_display_news]" id="restaurant_display_news" type="checkbox" value="{{ theme_settings.restaurant_display_news }}" data-skin='black-green' checked/>
+          {% else %}
+            <input class="icheck-me boolean-icheck" name="admin_theme_settings[restaurant_display_news]" id="restaurant_display_news" type="checkbox" value="{{ theme_settings.restaurant_display_news }}" data-skin='black-green' />
+          {% endif %}
+          <label style="margin-right:.5em;" for="restaurant_display_news">Afficher les dernières actualités sur la page restaurant</label>
+        </div>
       </fieldset>
 
       <fieldset>
