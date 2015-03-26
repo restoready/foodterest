@@ -1,8 +1,8 @@
 # RestoReady
 # Theme : foodterest
-# Copyright (C) 2013
+# Copyright (C) 2015
 # This file is distributed under the same license as the RestoReady package.
-# Pierre-Emmanuel Fringant <pierre.fringant@gmail.com>, 2013.
+# Derivery Damien <damien.derivery@gmail.com>, 2015.
 #
 msgid ""
 msgstr ""
@@ -11,173 +11,173 @@ msgstr ""
 "POT-Creation-Date: 2013-08-06 10:55+0200\n"
 "PO-Revision-Date: 2013-08-06 11:37+0100\n"
 "Last-Translator: \n"
-"Language-Team: Pierre-Emmanuel Fringant <pierre.fringant@gmail.com>\n"
+"Language-Team: Derivery Damien <damien.derivery@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.5.7\n"
-"Language: English\n"
+"Language: Swedish\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 msgid "Tél. : "
-msgstr "Phone :"
+msgstr ""
 
 msgid "Accueil"
-msgstr "Home"
+msgstr ""
 
 msgid "Le restaurant"
-msgstr "The restaurant"
+msgstr ""
 
 msgid "Voir toute la carte"
-msgstr "All menus"
+msgstr ""
 
 msgid "Toute la carte"
-msgstr "All menus"
+msgstr ""
 
 msgid "Nos suggestions"
-msgstr "Our suggestions"
+msgstr ""
 
 msgid "Horaires"
-msgstr "Opening hours"
+msgstr ""
 
 msgid "Fermé"
-msgstr "Closed"
+msgstr ""
 
 msgid "Localisation"
-msgstr "Location"
+msgstr ""
 
 msgid "Voir l'itinéraire"
-msgstr "Directions"
+msgstr ""
 
 msgid "Retour au menu"
-msgstr "Back to menu"
+msgstr ""
 
 msgid "Recommandé par le chef"
-msgstr "Recommended by the chef"
+msgstr ""
 
 msgid "Cette semaine"
-msgstr "This week"
+msgstr ""
 
 msgid "Plats de la semaine"
-msgstr "Food of week"
+msgstr ""
 
 msgid "Une erreur s'est produite lors de votre abonnement."
-msgstr "An error has occurred while processing your subscription."
+msgstr ""
 
 msgid "Votre inscription à la newsletter a bien été enregistrée."
-msgstr "Your newsletter subscription has been registered."
+msgstr ""
 
 msgid "Abonnez-vous à notre newsletter pour recevoir les dernières nouveautés du restaurant."
-msgstr "Subscribe to our newsletter for the latest news of the restaurant."
+msgstr ""
 
 msgid "Abonnement Newsletter"
-msgstr "Newsletter Subscription"
+msgstr ""
 
 msgid "S'abonner"
-msgstr "Subscribe"
+msgstr ""
 
 msgid "Infos"
-msgstr "Infos"
+msgstr ""
 
 msgid "Mentions légales"
-msgstr "Terms of use"
+msgstr ""
 
 msgid "Suivez-nous"
-msgstr "Follow Us"
+msgstr ""
 
 msgid "Nouveaux plats"
-msgstr "New foods"
+msgstr ""
 
 msgid "Venez découvrir nos derniers plats."
-msgstr "Discover our latest foods."
+msgstr ""
 
 msgid "Les incontournables"
-msgstr "Must sees"
+msgstr ""
 
 msgid "Haut de page"
-msgstr "Back to top"
+msgstr ""
 
 msgid "Nom"
-msgstr "Name"
+msgstr ""
 
 msgid "Email"
-msgstr "E-mail"
+msgstr ""
 
 msgid "Téléphone"
-msgstr "Phone"
+msgstr ""
 
 msgid "Message"
-msgstr "Message"
+msgstr ""
 
 msgid "Envoyer"
-msgstr "Send"
+msgstr ""
 
 msgid "Visite virtuelle"
-msgstr "Virtual tour"
+msgstr ""
 
 msgid "Visiter"
-msgstr "Visit"
+msgstr ""
 
 msgid "Valider"
-msgstr "Validate"
+msgstr ""
 
 msgid "Haut de la page"
-msgstr "Top"
+msgstr ""
 
 msgid "Notre carte"
-msgstr "Our menu"
+msgstr ""
 
 msgid "Voir les plats"
-msgstr "See dishes"
+msgstr ""
 
 msgid "Entrez votre email pour recevoir notre newsletter&nbsp;:"
-msgstr "Enter your email to receive our newsletter&nbsp;:"
+msgstr ""
 
 msgid "Entrez votre email pour recevoir notre newsletter"
-msgstr "Enter your email to receive our newsletter"
+msgstr ""
 
 msgid "Notre newsletter"
-msgstr "Our newsletter"
+msgstr ""
 
 msgid "Inscrivez-vous à notre newsletter"
-msgstr "Sign up for our newsletter"
+msgstr ""
 
 msgid "Téléphone :"
-msgstr "Phone :"
+msgstr ""
 
 msgid "Adresse email :"
-msgstr "Email address :"
+msgstr ""
 
 msgid "Adresse :"
-msgstr "Address :"
+msgstr ""
 
 msgid "Horaires :"
-msgstr "Opening hours :"
+msgstr ""
 
 msgid "Votre nom :"
-msgstr "Your name :"
+msgstr ""
 
 msgid "Votre adresse email :"
-msgstr "Your email address :"
+msgstr ""
 
 msgid "Votre numéro de téléphone :"
-msgstr "Your phone number :"
+msgstr ""
 
 msgid "Votre message :"
-msgstr "Your message :"
+msgstr ""
 
 msgid "Votre nom"
-msgstr "Your name"
+msgstr ""
 
 msgid "Votre adresse email"
-msgstr "Your email address"
+msgstr ""
 
 msgid "Votre numéro de téléphone"
-msgstr "Your phone number"
+msgstr ""
 
 msgid "Votre message"
-msgstr "Your message"
+msgstr ""
 
 msgid "Actualités"
-msgstr "News"
+msgstr ""
